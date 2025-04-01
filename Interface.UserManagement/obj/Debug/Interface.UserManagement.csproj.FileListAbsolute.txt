@@ -1,0 +1,128 @@
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojResolveAssemblyReference.cache
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojResolveAssemblyReference.cache
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csprojAssemblyReference.cache
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+C:\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+C:\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+C:\GWCTest\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+C:\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+C:\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+C:\GWCTest\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+D:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+D:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+D:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+D:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+D:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+D:\GWC TEST\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll.config
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.UserManagement\bin\Debug\Interface.UserManagement.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.csproj.CoreCompileInputs.cache
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.UserManagement\obj\Debug\Interface.UserManagement.pdb

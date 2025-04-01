@@ -1,0 +1,1627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="mCompany" EntityType="BISPL_CRMDBModel.Store.mCompany" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mDepartment" EntityType="BISPL_CRMDBModel.Store.mDepartment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mDesignation" EntityType="BISPL_CRMDBModel.Store.mDesignation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mDropdownValues" EntityType="BISPL_CRMDBModel.Store.mDropdownValues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mRole" EntityType="BISPL_CRMDBModel.Store.mRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mUserProfileHead" EntityType="BISPL_CRMDBModel.Store.mUserProfileHead" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mUserRolesDetail" EntityType="BISPL_CRMDBModel.Store.mUserRolesDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mUserTerritoryDetail" EntityType="BISPL_CRMDBModel.Store.mUserTerritoryDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vDesignation" EntityType="BISPL_CRMDBModel.Store.vDesignation" store:Type="Views" store:Schema="dbo" store:Name="vDesignation">
+            <DefiningQuery>SELECT 
+      [vDesignation].[ID] AS [ID], 
+      [vDesignation].[Name] AS [Name], 
+      [vDesignation].[Sequence] AS [Sequence], 
+      [vDesignation].[Active] AS [Active], 
+      [vDesignation].[Department] AS [Department]
+      FROM [dbo].[vDesignation] AS [vDesignation]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vGetGWCRoleMasterData" EntityType="BISPL_CRMDBModel.Store.vGetGWCRoleMasterData" store:Type="Views" store:Schema="dbo" store:Name="vGetGWCRoleMasterData">
+            <DefiningQuery>SELECT 
+      [vGetGWCRoleMasterData].[DepartmentName] AS [DepartmentName], 
+      [vGetGWCRoleMasterData].[DepartmentID] AS [DepartmentID], 
+      [vGetGWCRoleMasterData].[CompanyID] AS [CompanyID], 
+      [vGetGWCRoleMasterData].[CompanyName] AS [CompanyName], 
+      [vGetGWCRoleMasterData].[UserID] AS [UserID], 
+      [vGetGWCRoleMasterData].[UserType] AS [UserType], 
+      [vGetGWCRoleMasterData].[RoleName] AS [RoleName], 
+      [vGetGWCRoleMasterData].[Active] AS [Active], 
+      [vGetGWCRoleMasterData].[ID] AS [ID]
+      FROM [dbo].[vGetGWCRoleMasterData] AS [vGetGWCRoleMasterData]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vGetRoleMasterData" EntityType="BISPL_CRMDBModel.Store.vGetRoleMasterData" store:Type="Views" store:Schema="dbo" store:Name="vGetRoleMasterData">
+            <DefiningQuery>SELECT 
+      [vGetRoleMasterData].[DepartmentName] AS [DepartmentName], 
+      [vGetRoleMasterData].[DepartmentID] AS [DepartmentID], 
+      [vGetRoleMasterData].[DesignationName] AS [DesignationName], 
+      [vGetRoleMasterData].[DesignationID] AS [DesignationID], 
+      [vGetRoleMasterData].[RoleName] AS [RoleName], 
+      [vGetRoleMasterData].[Active] AS [Active], 
+      [vGetRoleMasterData].[mrID] AS [mrID], 
+      [vGetRoleMasterData].[mrSequence] AS [mrSequence], 
+      [vGetRoleMasterData].[DeptSequence] AS [DeptSequence], 
+      [vGetRoleMasterData].[DesigSequence] AS [DesigSequence]
+      FROM [dbo].[vGetRoleMasterData] AS [vGetRoleMasterData]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vGetUserProfileByUserID" EntityType="BISPL_CRMDBModel.Store.vGetUserProfileByUserID" store:Type="Views" store:Schema="dbo" store:Name="vGetUserProfileByUserID">
+            <DefiningQuery>SELECT 
+      [vGetUserProfileByUserID].[userID] AS [userID], 
+      [vGetUserProfileByUserID].[userName] AS [userName], 
+      [vGetUserProfileByUserID].[deptname] AS [deptname], 
+      [vGetUserProfileByUserID].[desiName] AS [desiName], 
+      [vGetUserProfileByUserID].[EmailID] AS [EmailID], 
+      [vGetUserProfileByUserID].[MobileNo] AS [MobileNo], 
+      [vGetUserProfileByUserID].[Active] AS [Active], 
+      [vGetUserProfileByUserID].[EmployeeID] AS [EmployeeID], 
+      [vGetUserProfileByUserID].[Title] AS [Title], 
+      [vGetUserProfileByUserID].[ProfileImg] AS [ProfileImg], 
+      [vGetUserProfileByUserID].[PhoneNo] AS [PhoneNo], 
+      [vGetUserProfileByUserID].[DateOfBirth] AS [DateOfBirth], 
+      [vGetUserProfileByUserID].[DateOfJoining] AS [DateOfJoining], 
+      [vGetUserProfileByUserID].[OtherID] AS [OtherID], 
+      [vGetUserProfileByUserID].[HighestQualification] AS [HighestQualification], 
+      [vGetUserProfileByUserID].[InterestedIn] AS [InterestedIn], 
+      [vGetUserProfileByUserID].[Gender] AS [Gender], 
+      [vGetUserProfileByUserID].[ReportingTo] AS [ReportingTo]
+      FROM [dbo].[vGetUserProfileByUserID] AS [vGetUserProfileByUserID]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vGetUserProfileList" EntityType="BISPL_CRMDBModel.Store.vGetUserProfileList" store:Type="Views" store:Schema="dbo" store:Name="vGetUserProfileList">
+            <DefiningQuery>SELECT 
+      [vGetUserProfileList].[userID] AS [userID], 
+      [vGetUserProfileList].[userName] AS [userName], 
+      [vGetUserProfileList].[deptname] AS [deptname], 
+      [vGetUserProfileList].[desiName] AS [desiName], 
+      [vGetUserProfileList].[EmailID] AS [EmailID], 
+      [vGetUserProfileList].[MobileNo] AS [MobileNo], 
+      [vGetUserProfileList].[Active] AS [Active], 
+      [vGetUserProfileList].[EmployeeID] AS [EmployeeID]
+      FROM [dbo].[vGetUserProfileList] AS [vGetUserProfileList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vGWCGetUserList" EntityType="BISPL_CRMDBModel.Store.vGWCGetUserList" store:Type="Views" store:Schema="dbo" store:Name="vGWCGetUserList">
+            <DefiningQuery>SELECT 
+      [vGWCGetUserList].[userID] AS [userID], 
+      [vGWCGetUserList].[userName] AS [userName], 
+      [vGWCGetUserList].[DeptName] AS [DeptName], 
+      [vGWCGetUserList].[EmailID] AS [EmailID], 
+      [vGWCGetUserList].[MobileNo] AS [MobileNo], 
+      [vGWCGetUserList].[DepartmentID] AS [DepartmentID], 
+      [vGWCGetUserList].[Active] AS [Active], 
+      [vGWCGetUserList].[EmployeeID] AS [EmployeeID], 
+      [vGWCGetUserList].[CompanyID] AS [CompanyID], 
+      [vGWCGetUserList].[CompanyName] AS [CompanyName]
+      FROM [dbo].[vGWCGetUserList] AS [vGWCGetUserList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vGWCGetUserProfileList" EntityType="BISPL_CRMDBModel.Store.vGWCGetUserProfileList" store:Type="Views" store:Schema="dbo" store:Name="vGWCGetUserProfileList">
+            <DefiningQuery>SELECT 
+      [vGWCGetUserProfileList].[userID] AS [userID], 
+      [vGWCGetUserProfileList].[UserType] AS [UserType], 
+      [vGWCGetUserProfileList].[userName] AS [userName], 
+      [vGWCGetUserProfileList].[DeptName] AS [DeptName], 
+      [vGWCGetUserProfileList].[EmailID] AS [EmailID], 
+      [vGWCGetUserProfileList].[MobileNo] AS [MobileNo], 
+      [vGWCGetUserProfileList].[DepartmentID] AS [DepartmentID], 
+      [vGWCGetUserProfileList].[Active] AS [Active], 
+      [vGWCGetUserProfileList].[EmployeeID] AS [EmployeeID], 
+      [vGWCGetUserProfileList].[userIDPass] AS [userIDPass], 
+      [vGWCGetUserProfileList].[locked] AS [locked]
+      FROM [dbo].[vGWCGetUserProfileList] AS [vGWCGetUserProfileList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VGetRollNameByDeptID" EntityType="BISPL_CRMDBModel.Store.VGetRollNameByDeptID" store:Type="Views" store:Schema="GWCQA" store:Name="VGetRollNameByDeptID">
+            <DefiningQuery>SELECT 
+      [VGetRollNameByDeptID].[ID] AS [ID], 
+      [VGetRollNameByDeptID].[RoleName] AS [RoleName], 
+      [VGetRollNameByDeptID].[TerritoryID] AS [TerritoryID]
+      FROM [GWCQA].[VGetRollNameByDeptID] AS [VGetRollNameByDeptID]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_mDesignation_mDepartment" Association="BISPL_CRMDBModel.Store.FK_mDesignation_mDepartment">
+            <End Role="mDepartment" EntitySet="mDepartment" />
+            <End Role="mDesignation" EntitySet="mDesignation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mRole_mDepartment" Association="BISPL_CRMDBModel.Store.FK_mRole_mDepartment">
+            <End Role="mDepartment" EntitySet="mDepartment" />
+            <End Role="mRole" EntitySet="mRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mRole_mDesignation" Association="BISPL_CRMDBModel.Store.FK_mRole_mDesignation">
+            <End Role="mDesignation" EntitySet="mDesignation" />
+            <End Role="mRole" EntitySet="mRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mUserProfileHead_mDesignation" Association="BISPL_CRMDBModel.Store.FK_mUserProfileHead_mDesignation">
+            <End Role="mDesignation" EntitySet="mDesignation" />
+            <End Role="mUserProfileHead" EntitySet="mUserProfileHead" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="mCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentID" Type="bigint" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="AddressLine3" Type="nvarchar" MaxLength="100" />
+          <Property Name="Landmark" Type="nvarchar" MaxLength="50" />
+          <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="LogoPath" Type="nvarchar(max)" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="MainDataSource" Type="nvarchar" MaxLength="500" />
+          <Property Name="MainDataBaseName" Type="nvarchar" MaxLength="100" />
+          <Property Name="MainDBPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataSource" Type="nvarchar" MaxLength="500" />
+          <Property Name="DataBaseName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="MainServerLogin" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logo" Type="image" />
+          <Property Name="StampImg" Type="image" />
+          <Property Name="Complogo" Type="varbinary(max)" />
+          <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="mDepartment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mDesignation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="TerritoryID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="mDropdownValues">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="Parameter" Type="nvarchar(max)" />
+          <Property Name="StatusID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="mRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+          <Property Name="DesignationID" Type="bigint" Nullable="false" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="TerritoryID" Type="bigint" />
+          <Property Name="CommonValueID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="mTerritory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentID" Type="bigint" />
+          <Property Name="Level" Type="smallint" />
+          <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+          <Property Name="Territory" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="IsMandatory" Type="bit" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+          <Property Name="ApprovalLevel" Type="bigint" />
+          <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+          <Property Name="cancelDays" Type="bigint" />
+          <Property Name="Active" Type="varchar" MaxLength="5" />
+          <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+          <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+          <Property Name="AutoRemSchedule" Type="bigint" />
+          <Property Name="ApproRemSchedul" Type="bigint" />
+          <Property Name="ECommerce" Type="bit" />
+          <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+          <Property Name="GwcDeliveries" Type="bit" />
+          <Property Name="MaxDeliveryDays" Type="bigint" />
+          <Property Name="FinApproverID" Type="bigint" />
+          <Property Name="AddressType" Type="bigint" />
+          <Property Name="PriceChange" Type="bit" />
+          <Property Name="location" Type="nvarchar" MaxLength="5" />
+          <Property Name="MerchantCode" Type="int" />
+          <Property Name="TokenExptime" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="UserID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="mUserProfileHead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleID" Type="bigint" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddelName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+          <Property Name="DesignationID" Type="bigint" Nullable="false" />
+          <Property Name="DateOfJoining" Type="datetime" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReportingTo" Type="nvarchar" MaxLength="50" />
+          <Property Name="InterestedIn" Type="nvarchar(max)" />
+          <Property Name="Hobbies" Type="nvarchar(max)" />
+          <Property Name="OtherID" Type="nvarchar" MaxLength="50" />
+          <Property Name="HighestQualification" Type="nvarchar" MaxLength="50" />
+          <Property Name="CollegeOrUniversity" Type="nvarchar(max)" />
+          <Property Name="HighSchool" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProfileImg" Type="image" />
+          <Property Name="Title" Type="varchar" MaxLength="20" />
+          <Property Name="Gender" Type="varchar" MaxLength="1" />
+          <Property Name="DefaultAddress" Type="varchar" MaxLength="50" />
+          <Property Name="MobileInterface" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="mUserRolesDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="ObjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Add" Type="bit" />
+          <Property Name="Edit" Type="bit" />
+          <Property Name="View" Type="bit" />
+          <Property Name="Delete" Type="bit" />
+          <Property Name="Approval" Type="bit" />
+          <Property Name="AssignTask" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mUserTerritoryDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TerritoryID" Type="bigint" />
+          <Property Name="Level" Type="bigint" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastMofidiedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vDesignation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vDesignation">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetGWCRoleMasterData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vGetGWCRoleMasterData">
+          <Key>
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="bigint" />
+          <Property Name="CompanyID" Type="bigint" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="UserType" Type="nvarchar(max)" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="ID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetRoleMasterData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vGetRoleMasterData">
+          <Key>
+            <PropertyRef Name="DepartmentName" />
+            <PropertyRef Name="DepartmentID" />
+            <PropertyRef Name="DesignationName" />
+            <PropertyRef Name="DesignationID" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="mrID" />
+          </Key>
+          <Property Name="DepartmentName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+          <Property Name="DesignationName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DesignationID" Type="bigint" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="mrID" Type="bigint" Nullable="false" />
+          <Property Name="mrSequence" Type="bigint" />
+          <Property Name="DeptSequence" Type="bigint" />
+          <Property Name="DesigSequence" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetUserProfileByUserID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vGetUserProfileByUserID">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="desiName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="deptname" />
+          </Key>
+          <Property Name="userID" Type="bigint" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="103" />
+          <Property Name="deptname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="desiName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="20" />
+          <Property Name="ProfileImg" Type="image" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="DateOfJoining" Type="datetime" />
+          <Property Name="OtherID" Type="nvarchar" MaxLength="50" />
+          <Property Name="HighestQualification" Type="nvarchar" MaxLength="50" />
+          <Property Name="InterestedIn" Type="nvarchar(max)" />
+          <Property Name="Gender" Type="varchar" MaxLength="1" />
+          <Property Name="ReportingTo" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetUserProfileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vGetUserProfileList">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="deptname" />
+            <PropertyRef Name="desiName" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="userID" Type="bigint" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="158" />
+          <Property Name="deptname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="desiName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGWCGetUserList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vGWCGetUserList">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="userID" Type="bigint" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="103" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="bigint" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGWCGetUserProfileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vGWCGetUserProfileList">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="userID" Type="bigint" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+          <Property Name="userName" Type="nvarchar" MaxLength="158" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="bigint" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+          <Property Name="userIDPass" Type="nvarchar(max)" />
+          <Property Name="locked" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.GWCQA.VGetRollNameByDeptID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="VGetRollNameByDeptID">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TerritoryID" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_mDesignation_mDepartment">
+          <End Role="mDepartment" Type="BISPL_CRMDBModel.Store.mDepartment" Multiplicity="1" />
+          <End Role="mDesignation" Type="BISPL_CRMDBModel.Store.mDesignation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDepartment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mDesignation">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mRole_mDepartment">
+          <End Role="mDepartment" Type="BISPL_CRMDBModel.Store.mDepartment" Multiplicity="1" />
+          <End Role="mRole" Type="BISPL_CRMDBModel.Store.mRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDepartment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mRole">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mRole_mDesignation">
+          <End Role="mDesignation" Type="BISPL_CRMDBModel.Store.mDesignation" Multiplicity="1" />
+          <End Role="mRole" Type="BISPL_CRMDBModel.Store.mRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDesignation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mRole">
+              <PropertyRef Name="DesignationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mUserProfileHead_mDesignation">
+          <End Role="mDesignation" Type="BISPL_CRMDBModel.Store.mDesignation" Multiplicity="1" />
+          <End Role="mUserProfileHead" Type="BISPL_CRMDBModel.Store.mUserProfileHead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDesignation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mUserProfileHead">
+              <PropertyRef Name="DesignationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_GetDataToBindRoleMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GetMenuHTML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GetMenuHTMLArabic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GetUserRoleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+          <Parameter Name="paraUserIDForRole" Type="bigint" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GWCGetDataToBindRoleMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GWCGetUserRoleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+          <Parameter Name="paraUserIDForRole" Type="bigint" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertIntomUserProfieTerritoryDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="Level" Type="bigint" Mode="In" />
+          <Parameter Name="TerritoryIDs" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertIntoRoleMasterDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="xmlData" Type="xml" Mode="In" />
+          <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertIntoUserRoleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="xmlData" Type="xml" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="varchar" Mode="In" />
+          <Parameter Name="paraUserIDForRole" Type="bigint" Mode="In" />
+          <Parameter Name="paraUserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mDepartments" EntityType="BISPL_CRMDBModel.mDepartment" />
+          <EntitySet Name="mDesignations" EntityType="BISPL_CRMDBModel.mDesignation" />
+          <EntitySet Name="mRoles" EntityType="BISPL_CRMDBModel.mRole" />
+          <EntitySet Name="mUserProfileHeads" EntityType="BISPL_CRMDBModel.mUserProfileHead" />
+          <EntitySet Name="vGetRoleMasterDatas" EntityType="BISPL_CRMDBModel.vGetRoleMasterData" />
+          <EntitySet Name="vGetUserProfileByUserIDs" EntityType="BISPL_CRMDBModel.vGetUserProfileByUserID" />
+          <EntitySet Name="vGetUserProfileLists" EntityType="BISPL_CRMDBModel.vGetUserProfileList" />
+          <AssociationSet Name="FK_mDesignation_mDepartment" Association="BISPL_CRMDBModel.FK_mDesignation_mDepartment">
+            <End Role="mDepartment" EntitySet="mDepartments" />
+            <End Role="mDesignation" EntitySet="mDesignations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mRole_mDepartment" Association="BISPL_CRMDBModel.FK_mRole_mDepartment">
+            <End Role="mDepartment" EntitySet="mDepartments" />
+            <End Role="mRole" EntitySet="mRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mUserProfileHead_mDepartment" Association="BISPL_CRMDBModel.FK_mUserProfileHead_mDepartment">
+            <End Role="mDepartment" EntitySet="mDepartments" />
+            <End Role="mUserProfileHead" EntitySet="mUserProfileHeads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mRole_mDesignation" Association="BISPL_CRMDBModel.FK_mRole_mDesignation">
+            <End Role="mDesignation" EntitySet="mDesignations" />
+            <End Role="mRole" EntitySet="mRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mUserProfileHead_mDesignation" Association="BISPL_CRMDBModel.FK_mUserProfileHead_mDesignation">
+            <End Role="mDesignation" EntitySet="mDesignations" />
+            <End Role="mUserProfileHead" EntitySet="mUserProfileHeads" />
+          </AssociationSet>
+          <FunctionImport Name="SP_GetDataToBindRoleMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GetDataToBindRoleMaster_Result)">
+            <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetUserRoleDetail" ReturnType="Collection(BISPL_CRMDBModel.SP_GetUserRoleDetail_Result)">
+            <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+            <Parameter Name="paraUserIDForRole" Mode="In" Type="Int64" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="mUserRolesDetails" EntityType="BISPL_CRMDBModel.mUserRolesDetail" />
+          <EntitySet Name="mUserTerritoryDetails" EntityType="BISPL_CRMDBModel.mUserTerritoryDetail" />
+          <EntitySet Name="vDesignations" EntityType="BISPL_CRMDBModel.vDesignation" />
+          <FunctionImport Name="SP_GetMenuHTML" ReturnType="Collection(BISPL_CRMDBModel.SP_GetMenuHTML_Result)">
+          <Parameter Name="UserID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertIntoUserRoleDetail">
+            <Parameter Name="xmlData" Mode="In" Type="String" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="String" />
+            <Parameter Name="paraUserIDForRole" Mode="In" Type="Int64" />
+            <Parameter Name="paraUserID" Mode="In" Type="String" />
+            <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertIntomUserProfieTerritoryDetail">
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="Level" Mode="In" Type="Int64" />
+            <Parameter Name="TerritoryIDs" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertIntoRoleMasterDetail">
+            <Parameter Name="xmlData" Mode="In" Type="String" />
+            <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetMenuHTMLArabic" ReturnType="Collection(BISPL_CRMDBModel.SP_GetMenuHTMLArabic_Result)">
+          <Parameter Name="UserID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="mCompanies" EntityType="BISPL_CRMDBModel.mCompany" />
+          <FunctionImport Name="SP_GWCGetDataToBindRoleMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetDataToBindRoleMaster_Result)">
+            <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="mDropdownValues" EntityType="BISPL_CRMDBModel.mDropdownValue" />
+          <EntitySet Name="vGetGWCRoleMasterDatas" EntityType="BISPL_CRMDBModel.vGetGWCRoleMasterData" />
+          <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+          <FunctionImport Name="SP_GWCGetUserRoleDetail" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetUserRoleDetail_Result)">
+            <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+            <Parameter Name="paraUserIDForRole" Mode="In" Type="Int64" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="vGWCGetUserLists" EntityType="BISPL_CRMDBModel.vGWCGetUserList" />
+          <EntitySet Name="VGetRollNameByDeptIDs" EntityType="BISPL_CRMDBModel.VGetRollNameByDeptID" />
+          <EntitySet Name="vGWCGetUserProfileLists" EntityType="BISPL_CRMDBModel.vGWCGetUserProfileList" />
+        </EntityContainer>
+        <EntityType Name="mDepartment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <NavigationProperty Name="mDesignations" Relationship="BISPL_CRMDBModel.FK_mDesignation_mDepartment" FromRole="mDepartment" ToRole="mDesignation" />
+          <NavigationProperty Name="mRoles" Relationship="BISPL_CRMDBModel.FK_mRole_mDepartment" FromRole="mDepartment" ToRole="mRole" />
+          <NavigationProperty Name="mUserProfileHeads" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDepartment" FromRole="mDepartment" ToRole="mUserProfileHead" />
+        </EntityType>
+        <EntityType Name="mDesignation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <NavigationProperty Name="mDepartment" Relationship="BISPL_CRMDBModel.FK_mDesignation_mDepartment" FromRole="mDesignation" ToRole="mDepartment" />
+          <NavigationProperty Name="mRoles" Relationship="BISPL_CRMDBModel.FK_mRole_mDesignation" FromRole="mDesignation" ToRole="mRole" />
+          <NavigationProperty Name="mUserProfileHeads" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDesignation" FromRole="mDesignation" ToRole="mUserProfileHead" />
+          <Property Type="Int64" Name="TerritoryID" />
+        </EntityType>
+        <EntityType Name="mRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+          <Property Type="Int64" Name="DesignationID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <NavigationProperty Name="mDepartment" Relationship="BISPL_CRMDBModel.FK_mRole_mDepartment" FromRole="mRole" ToRole="mDepartment" />
+          <NavigationProperty Name="mDesignation" Relationship="BISPL_CRMDBModel.FK_mRole_mDesignation" FromRole="mRole" ToRole="mDesignation" />
+          <Property Type="Int64" Name="TerritoryID" />
+          <Property Type="Int64" Name="CommonValueID" />
+        </EntityType>
+        <EntityType Name="mUserProfileHead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="RoleID" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddelName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+          <Property Type="Int64" Name="DesignationID" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfJoining" Precision="3" />
+          <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportingTo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InterestedIn" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Hobbies" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OtherID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HighestQualification" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CollegeOrUniversity" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HighSchool" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="UserType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="ProfileImg" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Title" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DefaultAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="mDepartment" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDepartment" FromRole="mUserProfileHead" ToRole="mDepartment" />
+          <NavigationProperty Name="mDesignation" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDesignation" FromRole="mUserProfileHead" ToRole="mDesignation" />
+          <Property Type="String" Name="MobileInterface" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vGetRoleMasterData">
+          <Key>
+            <PropertyRef Name="DepartmentName" />
+            <PropertyRef Name="DepartmentID" />
+            <PropertyRef Name="DesignationName" />
+            <PropertyRef Name="DesignationID" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="mrID" />
+          </Key>
+          <Property Type="String" Name="DepartmentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+          <Property Type="String" Name="DesignationName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DesignationID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="mrID" Nullable="false" />
+          <Property Type="Int64" Name="mrSequence" />
+          <Property Type="Int64" Name="DeptSequence" />
+          <Property Type="Int64" Name="DesigSequence" />
+        </EntityType>
+        <EntityType Name="vGetUserProfileByUserID">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="deptname" />
+            <PropertyRef Name="desiName" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Type="Int64" Name="userID" Nullable="false" />
+          <Property Type="String" Name="userName" MaxLength="103" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="deptname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="desiName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="ProfileImg" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+          <Property Type="DateTime" Name="DateOfJoining" Precision="3" />
+          <Property Type="String" Name="OtherID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HighestQualification" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InterestedIn" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gender" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReportingTo" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vGetUserProfileList">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="deptname" />
+            <PropertyRef Name="desiName" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Type="Int64" Name="userID" Nullable="false" />
+          <Property Type="String" Name="userName" MaxLength="158" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="deptname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="desiName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_mDesignation_mDepartment">
+          <End Type="BISPL_CRMDBModel.mDepartment" Role="mDepartment" Multiplicity="1" />
+          <End Type="BISPL_CRMDBModel.mDesignation" Role="mDesignation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDepartment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mDesignation">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mRole_mDepartment">
+          <End Type="BISPL_CRMDBModel.mDepartment" Role="mDepartment" Multiplicity="1" />
+          <End Type="BISPL_CRMDBModel.mRole" Role="mRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDepartment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mRole">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mUserProfileHead_mDepartment">
+          <End Type="BISPL_CRMDBModel.mDepartment" Role="mDepartment" Multiplicity="1" />
+          <End Type="BISPL_CRMDBModel.mUserProfileHead" Role="mUserProfileHead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDepartment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mUserProfileHead">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mRole_mDesignation">
+          <End Type="BISPL_CRMDBModel.mDesignation" Role="mDesignation" Multiplicity="1" />
+          <End Type="BISPL_CRMDBModel.mRole" Role="mRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDesignation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mRole">
+              <PropertyRef Name="DesignationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mUserProfileHead_mDesignation">
+          <End Type="BISPL_CRMDBModel.mDesignation" Role="mDesignation" Multiplicity="1" />
+          <End Type="BISPL_CRMDBModel.mUserProfileHead" Role="mUserProfileHead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mDesignation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mUserProfileHead">
+              <PropertyRef Name="DesignationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="SP_GetDataToBindRoleMaster_Result">
+          <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="mSequence" Nullable="true" />
+          <Property Type="Int64" Name="pSequence" Nullable="true" />
+          <Property Type="Int64" Name="oSequence" Nullable="true" />
+          <Property Type="Boolean" Name="Add" Nullable="true" />
+          <Property Type="Boolean" Name="Edit" Nullable="true" />
+          <Property Type="Boolean" Name="View" Nullable="true" />
+          <Property Type="Boolean" Name="Delete" Nullable="true" />
+          <Property Type="Boolean" Name="Approval" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+          <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GetUserRoleDetail_Result">
+          <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="mSequence" Nullable="true" />
+          <Property Type="Int64" Name="pSequence" Nullable="true" />
+          <Property Type="Int64" Name="oSequence" Nullable="true" />
+          <Property Type="Boolean" Name="Add" Nullable="true" />
+          <Property Type="Boolean" Name="Edit" Nullable="true" />
+          <Property Type="Boolean" Name="View" Nullable="true" />
+          <Property Type="Boolean" Name="Delete" Nullable="true" />
+          <Property Type="Boolean" Name="Approval" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+          <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="mUserRolesDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Add" />
+          <Property Type="Boolean" Name="Edit" />
+          <Property Type="Boolean" Name="View" />
+          <Property Type="Boolean" Name="Delete" />
+          <Property Type="Boolean" Name="Approval" />
+          <Property Type="Boolean" Name="AssignTask" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mUserTerritoryDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="TerritoryID" />
+          <Property Type="Int64" Name="Level" />
+          <Property Type="Int64" Name="UserID" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastMofidiedDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="vDesignation">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Department" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="SP_GetMenuHTML_Result">
+          <Property Type="String" Name="HTMLMenu" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GetMenuHTMLArabic_Result">
+          <Property Type="String" Name="HTMLMenu" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="mCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ParentID" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Website" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine3" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Landmark" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="County" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FaxNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LogoPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="String" Name="MainDataSource" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MainDataBaseName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MainDBPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataSource" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataBaseName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DBPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MainServerLogin" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="StampImg" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="Complogo" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="SP_GWCGetDataToBindRoleMaster_Result">
+          <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="mSequence" Nullable="true" />
+          <Property Type="Int64" Name="pSequence" Nullable="true" />
+          <Property Type="Int64" Name="oSequence" Nullable="true" />
+          <Property Type="Boolean" Name="Add" Nullable="true" />
+          <Property Type="Boolean" Name="Edit" Nullable="true" />
+          <Property Type="Boolean" Name="View" Nullable="true" />
+          <Property Type="Boolean" Name="Delete" Nullable="true" />
+          <Property Type="Boolean" Name="Approval" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+          <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="mDropdownValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parameter" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="StatusID" />
+        </EntityType>
+        <EntityType Name="vGetGWCRoleMasterData">
+          <Key>
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="DepartmentName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="DepartmentID" />
+          <Property Type="Int64" Name="CompanyID" />
+          <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserType" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" />
+        </EntityType>
+        <EntityType Name="mTerritory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ParentID" />
+          <Property Type="Int16" Name="Level" />
+          <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Boolean" Name="IsMandatory" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ApprovalLevel" />
+          <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="cancelDays" />
+          <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="AutoRemSchedule" />
+          <Property Type="Int64" Name="ApproRemSchedul" />
+          <Property Type="Boolean" Name="ECommerce" />
+          <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="GwcDeliveries" />
+          <Property Type="Int64" Name="MaxDeliveryDays" />
+          <Property Type="Int64" Name="FinApproverID" />
+          <Property Type="Int64" Name="AddressType" />
+          <Property Type="Boolean" Name="PriceChange" />
+          <Property Type="String" Name="location" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MerchantCode" />
+          <Property Type="Decimal" Name="TokenExptime" Precision="10" Scale="2" />
+          <Property Type="Int64" Name="UserID" />
+        </EntityType>
+        <ComplexType Name="SP_GWCGetUserRoleDetail_Result">
+          <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="mSequence" Nullable="true" />
+          <Property Type="Int64" Name="pSequence" Nullable="true" />
+          <Property Type="Int64" Name="oSequence" Nullable="true" />
+          <Property Type="Boolean" Name="Add" Nullable="true" />
+          <Property Type="Boolean" Name="Edit" Nullable="true" />
+          <Property Type="Boolean" Name="View" Nullable="true" />
+          <Property Type="Boolean" Name="Delete" Nullable="true" />
+          <Property Type="Boolean" Name="Approval" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+          <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+          <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="vGWCGetUserList">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Type="Int64" Name="userID" Nullable="false" />
+          <Property Type="String" Name="userName" MaxLength="103" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeptName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DepartmentID" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VGetRollNameByDeptID">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="TerritoryID" />
+        </EntityType>
+        <EntityType Name="vGWCGetUserProfileList">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Type="Int64" Name="userID" Nullable="false" />
+          <Property Type="String" Name="UserType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userName" MaxLength="158" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeptName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DepartmentID" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userIDPass" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="locked" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <EntitySetMapping Name="mDepartments">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mDepartment">
+              <MappingFragment StoreEntitySet="mDepartment">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mDesignations">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mDesignation">
+              <MappingFragment StoreEntitySet="mDesignation">
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mRoles">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mRole">
+              <MappingFragment StoreEntitySet="mRole">
+                <ScalarProperty Name="CommonValueID" ColumnName="CommonValueID" />
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mUserProfileHeads">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mUserProfileHead">
+              <MappingFragment StoreEntitySet="mUserProfileHead">
+                <ScalarProperty Name="MobileInterface" ColumnName="MobileInterface" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DefaultAddress" ColumnName="DefaultAddress" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ProfileImg" ColumnName="ProfileImg" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+                <ScalarProperty Name="CollegeOrUniversity" ColumnName="CollegeOrUniversity" />
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="InterestedIn" ColumnName="InterestedIn" />
+                <ScalarProperty Name="ReportingTo" ColumnName="ReportingTo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddelName" ColumnName="MiddelName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vGetRoleMasterDatas">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGetRoleMasterData">
+              <MappingFragment StoreEntitySet="vGetRoleMasterData">
+                <ScalarProperty Name="DesigSequence" ColumnName="DesigSequence" />
+                <ScalarProperty Name="DeptSequence" ColumnName="DeptSequence" />
+                <ScalarProperty Name="mrSequence" ColumnName="mrSequence" />
+                <ScalarProperty Name="mrID" ColumnName="mrID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+                <ScalarProperty Name="DesignationName" ColumnName="DesignationName" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vGetUserProfileByUserIDs">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGetUserProfileByUserID">
+              <MappingFragment StoreEntitySet="vGetUserProfileByUserID">
+                <ScalarProperty Name="ReportingTo" ColumnName="ReportingTo" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="InterestedIn" ColumnName="InterestedIn" />
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="ProfileImg" ColumnName="ProfileImg" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="desiName" ColumnName="desiName" />
+                <ScalarProperty Name="deptname" ColumnName="deptname" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vGetUserProfileLists">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGetUserProfileList">
+              <MappingFragment StoreEntitySet="vGetUserProfileList">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="desiName" ColumnName="desiName" />
+                <ScalarProperty Name="deptname" ColumnName="deptname" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetDataToBindRoleMaster" FunctionName="BISPL_CRMDBModel.Store.SP_GetDataToBindRoleMaster">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetDataToBindRoleMaster_Result">
+                <ScalarProperty Name="DisplayModuleName" ColumnName="DisplayModuleName" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="DisplayPhaseName" ColumnName="DisplayPhaseName" />
+                <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+                <ScalarProperty Name="ObjectDisplayName" ColumnName="ObjectDisplayName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="mSequence" ColumnName="mSequence" />
+                <ScalarProperty Name="pSequence" ColumnName="pSequence" />
+                <ScalarProperty Name="oSequence" ColumnName="oSequence" />
+                <ScalarProperty Name="Add" ColumnName="Add" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="Delete" ColumnName="Delete" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+                <ScalarProperty Name="AssignTask" ColumnName="AssignTask" />
+                <ScalarProperty Name="ApprovalVisible" ColumnName="ApprovalVisible" />
+                <ScalarProperty Name="AssignTaskVisible" ColumnName="AssignTaskVisible" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetUserRoleDetail" FunctionName="BISPL_CRMDBModel.Store.SP_GetUserRoleDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetUserRoleDetail_Result">
+                <ScalarProperty Name="DisplayModuleName" ColumnName="DisplayModuleName" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="DisplayPhaseName" ColumnName="DisplayPhaseName" />
+                <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+                <ScalarProperty Name="ObjectDisplayName" ColumnName="ObjectDisplayName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="mSequence" ColumnName="mSequence" />
+                <ScalarProperty Name="pSequence" ColumnName="pSequence" />
+                <ScalarProperty Name="oSequence" ColumnName="oSequence" />
+                <ScalarProperty Name="Add" ColumnName="Add" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="Delete" ColumnName="Delete" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+                <ScalarProperty Name="AssignTask" ColumnName="AssignTask" />
+                <ScalarProperty Name="ApprovalVisible" ColumnName="ApprovalVisible" />
+                <ScalarProperty Name="AssignTaskVisible" ColumnName="AssignTaskVisible" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="mUserRolesDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mUserRolesDetail">
+              <MappingFragment StoreEntitySet="mUserRolesDetail">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AssignTask" ColumnName="AssignTask" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+                <ScalarProperty Name="Delete" ColumnName="Delete" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="Add" ColumnName="Add" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mUserTerritoryDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mUserTerritoryDetail">
+              <MappingFragment StoreEntitySet="mUserTerritoryDetail">
+                <ScalarProperty Name="LastMofidiedDate" ColumnName="LastMofidiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDesignations">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vDesignation">
+              <MappingFragment StoreEntitySet="vDesignation">
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetMenuHTML" FunctionName="BISPL_CRMDBModel.Store.SP_GetMenuHTML">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetMenuHTML_Result">
+                <ScalarProperty Name="HTMLMenu" ColumnName="HTMLMenu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertIntoUserRoleDetail" FunctionName="BISPL_CRMDBModel.Store.SP_InsertIntoUserRoleDetail" />
+          <FunctionImportMapping FunctionImportName="SP_InsertIntomUserProfieTerritoryDetail" FunctionName="BISPL_CRMDBModel.Store.SP_InsertIntomUserProfieTerritoryDetail" />
+          <FunctionImportMapping FunctionImportName="SP_InsertIntoRoleMasterDetail" FunctionName="BISPL_CRMDBModel.Store.SP_InsertIntoRoleMasterDetail" />
+          <FunctionImportMapping FunctionImportName="SP_GetMenuHTMLArabic" FunctionName="BISPL_CRMDBModel.Store.SP_GetMenuHTMLArabic">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetMenuHTMLArabic_Result">
+                <ScalarProperty Name="HTMLMenu" ColumnName="HTMLMenu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="mCompanies">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mCompany">
+              <MappingFragment StoreEntitySet="mCompany">
+                <ScalarProperty Name="OrderFormat" ColumnName="OrderFormat" />
+                <ScalarProperty Name="Complogo" ColumnName="Complogo" />
+                <ScalarProperty Name="StampImg" ColumnName="StampImg" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="MainServerLogin" ColumnName="MainServerLogin" />
+                <ScalarProperty Name="DBPassword" ColumnName="DBPassword" />
+                <ScalarProperty Name="DataBaseName" ColumnName="DataBaseName" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="MainDBPassword" ColumnName="MainDBPassword" />
+                <ScalarProperty Name="MainDataBaseName" ColumnName="MainDataBaseName" />
+                <ScalarProperty Name="MainDataSource" ColumnName="MainDataSource" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GWCGetDataToBindRoleMaster" FunctionName="BISPL_CRMDBModel.Store.SP_GWCGetDataToBindRoleMaster">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GWCGetDataToBindRoleMaster_Result">
+                <ScalarProperty Name="DisplayModuleName" ColumnName="DisplayModuleName" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="DisplayPhaseName" ColumnName="DisplayPhaseName" />
+                <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+                <ScalarProperty Name="ObjectDisplayName" ColumnName="ObjectDisplayName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="mSequence" ColumnName="mSequence" />
+                <ScalarProperty Name="pSequence" ColumnName="pSequence" />
+                <ScalarProperty Name="oSequence" ColumnName="oSequence" />
+                <ScalarProperty Name="Add" ColumnName="Add" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="Delete" ColumnName="Delete" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+                <ScalarProperty Name="AssignTask" ColumnName="AssignTask" />
+                <ScalarProperty Name="ApprovalVisible" ColumnName="ApprovalVisible" />
+                <ScalarProperty Name="AssignTaskVisible" ColumnName="AssignTaskVisible" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="mDropdownValues">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mDropdownValue">
+              <MappingFragment StoreEntitySet="mDropdownValues">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vGetGWCRoleMasterDatas">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGetGWCRoleMasterData">
+              <MappingFragment StoreEntitySet="vGetGWCRoleMasterData">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mTerritories">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mTerritory">
+              <MappingFragment StoreEntitySet="mTerritory">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TokenExptime" ColumnName="TokenExptime" />
+                <ScalarProperty Name="MerchantCode" ColumnName="MerchantCode" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="PriceChange" ColumnName="PriceChange" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="FinApproverID" ColumnName="FinApproverID" />
+                <ScalarProperty Name="MaxDeliveryDays" ColumnName="MaxDeliveryDays" />
+                <ScalarProperty Name="GwcDeliveries" ColumnName="GwcDeliveries" />
+                <ScalarProperty Name="OrderFormat" ColumnName="OrderFormat" />
+                <ScalarProperty Name="ECommerce" ColumnName="ECommerce" />
+                <ScalarProperty Name="ApproRemSchedul" ColumnName="ApproRemSchedul" />
+                <ScalarProperty Name="AutoRemSchedule" ColumnName="AutoRemSchedule" />
+                <ScalarProperty Name="AutoCancRen" ColumnName="AutoCancRen" />
+                <ScalarProperty Name="ApprovalRem" ColumnName="ApprovalRem" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="cancelDays" ColumnName="cancelDays" />
+                <ScalarProperty Name="AutoCancel" ColumnName="AutoCancel" />
+                <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+                <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Territory" ColumnName="Territory" />
+                <ScalarProperty Name="GroupTitle" ColumnName="GroupTitle" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GWCGetUserRoleDetail" FunctionName="BISPL_CRMDBModel.Store.SP_GWCGetUserRoleDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GWCGetUserRoleDetail_Result">
+                <ScalarProperty Name="DisplayModuleName" ColumnName="DisplayModuleName" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="DisplayPhaseName" ColumnName="DisplayPhaseName" />
+                <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+                <ScalarProperty Name="ObjectDisplayName" ColumnName="ObjectDisplayName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="mSequence" ColumnName="mSequence" />
+                <ScalarProperty Name="pSequence" ColumnName="pSequence" />
+                <ScalarProperty Name="oSequence" ColumnName="oSequence" />
+                <ScalarProperty Name="Add" ColumnName="Add" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="Delete" ColumnName="Delete" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+                <ScalarProperty Name="AssignTask" ColumnName="AssignTask" />
+                <ScalarProperty Name="ApprovalVisible" ColumnName="ApprovalVisible" />
+                <ScalarProperty Name="AssignTaskVisible" ColumnName="AssignTaskVisible" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="vGWCGetUserLists">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGWCGetUserList">
+              <MappingFragment StoreEntitySet="vGWCGetUserList">
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VGetRollNameByDeptIDs">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.VGetRollNameByDeptID">
+              <MappingFragment StoreEntitySet="VGetRollNameByDeptID">
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vGWCGetUserProfileLists">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGWCGetUserProfileList">
+              <MappingFragment StoreEntitySet="vGWCGetUserProfileList">
+                <ScalarProperty Name="locked" ColumnName="locked" />
+                <ScalarProperty Name="userIDPass" ColumnName="userIDPass" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

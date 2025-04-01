@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mCompany" EntityType="BISPL_CRMDBModel.Store.mCompany" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mDepartment" EntityType="BISPL_CRMDBModel.Store.mDepartment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mDesignation" EntityType="BISPL_CRMDBModel.Store.mDesignation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mDropdownValues" EntityType="BISPL_CRMDBModel.Store.mDropdownValues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mRole" EntityType="BISPL_CRMDBModel.Store.mRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mUserProfileHead" EntityType="BISPL_CRMDBModel.Store.mUserProfileHead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mUserRolesDetail" EntityType="BISPL_CRMDBModel.Store.mUserRolesDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mUserTerritoryDetail" EntityType="BISPL_CRMDBModel.Store.mUserTerritoryDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vDesignation" EntityType="BISPL_CRMDBModel.Store.vDesignation" store:Type="Views" store:Schema="dbo" store:Name="vDesignation">
+      <DefiningQuery>SELECT 
+      [vDesignation].[ID] AS [ID], 
+      [vDesignation].[Name] AS [Name], 
+      [vDesignation].[Sequence] AS [Sequence], 
+      [vDesignation].[Active] AS [Active], 
+      [vDesignation].[Department] AS [Department]
+      FROM [dbo].[vDesignation] AS [vDesignation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetGWCRoleMasterData" EntityType="BISPL_CRMDBModel.Store.vGetGWCRoleMasterData" store:Type="Views" store:Schema="dbo" store:Name="vGetGWCRoleMasterData">
+      <DefiningQuery>SELECT 
+      [vGetGWCRoleMasterData].[DepartmentName] AS [DepartmentName], 
+      [vGetGWCRoleMasterData].[DepartmentID] AS [DepartmentID], 
+      [vGetGWCRoleMasterData].[CompanyID] AS [CompanyID], 
+      [vGetGWCRoleMasterData].[CompanyName] AS [CompanyName], 
+      [vGetGWCRoleMasterData].[UserID] AS [UserID], 
+      [vGetGWCRoleMasterData].[UserType] AS [UserType], 
+      [vGetGWCRoleMasterData].[RoleName] AS [RoleName], 
+      [vGetGWCRoleMasterData].[Active] AS [Active], 
+      [vGetGWCRoleMasterData].[ID] AS [ID]
+      FROM [dbo].[vGetGWCRoleMasterData] AS [vGetGWCRoleMasterData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetRoleMasterData" EntityType="BISPL_CRMDBModel.Store.vGetRoleMasterData" store:Type="Views" store:Schema="dbo" store:Name="vGetRoleMasterData">
+      <DefiningQuery>SELECT 
+      [vGetRoleMasterData].[DepartmentName] AS [DepartmentName], 
+      [vGetRoleMasterData].[DepartmentID] AS [DepartmentID], 
+      [vGetRoleMasterData].[DesignationName] AS [DesignationName], 
+      [vGetRoleMasterData].[DesignationID] AS [DesignationID], 
+      [vGetRoleMasterData].[RoleName] AS [RoleName], 
+      [vGetRoleMasterData].[Active] AS [Active], 
+      [vGetRoleMasterData].[mrID] AS [mrID], 
+      [vGetRoleMasterData].[mrSequence] AS [mrSequence], 
+      [vGetRoleMasterData].[DeptSequence] AS [DeptSequence], 
+      [vGetRoleMasterData].[DesigSequence] AS [DesigSequence]
+      FROM [dbo].[vGetRoleMasterData] AS [vGetRoleMasterData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetUserProfileByUserID" EntityType="BISPL_CRMDBModel.Store.vGetUserProfileByUserID" store:Type="Views" store:Schema="dbo" store:Name="vGetUserProfileByUserID">
+      <DefiningQuery>SELECT 
+      [vGetUserProfileByUserID].[userID] AS [userID], 
+      [vGetUserProfileByUserID].[userName] AS [userName], 
+      [vGetUserProfileByUserID].[deptname] AS [deptname], 
+      [vGetUserProfileByUserID].[desiName] AS [desiName], 
+      [vGetUserProfileByUserID].[EmailID] AS [EmailID], 
+      [vGetUserProfileByUserID].[MobileNo] AS [MobileNo], 
+      [vGetUserProfileByUserID].[Active] AS [Active], 
+      [vGetUserProfileByUserID].[EmployeeID] AS [EmployeeID], 
+      [vGetUserProfileByUserID].[Title] AS [Title], 
+      [vGetUserProfileByUserID].[ProfileImg] AS [ProfileImg], 
+      [vGetUserProfileByUserID].[PhoneNo] AS [PhoneNo], 
+      [vGetUserProfileByUserID].[DateOfBirth] AS [DateOfBirth], 
+      [vGetUserProfileByUserID].[DateOfJoining] AS [DateOfJoining], 
+      [vGetUserProfileByUserID].[OtherID] AS [OtherID], 
+      [vGetUserProfileByUserID].[HighestQualification] AS [HighestQualification], 
+      [vGetUserProfileByUserID].[InterestedIn] AS [InterestedIn], 
+      [vGetUserProfileByUserID].[Gender] AS [Gender], 
+      [vGetUserProfileByUserID].[ReportingTo] AS [ReportingTo]
+      FROM [dbo].[vGetUserProfileByUserID] AS [vGetUserProfileByUserID]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetUserProfileList" EntityType="BISPL_CRMDBModel.Store.vGetUserProfileList" store:Type="Views" store:Schema="dbo" store:Name="vGetUserProfileList">
+      <DefiningQuery>SELECT 
+      [vGetUserProfileList].[userID] AS [userID], 
+      [vGetUserProfileList].[userName] AS [userName], 
+      [vGetUserProfileList].[deptname] AS [deptname], 
+      [vGetUserProfileList].[desiName] AS [desiName], 
+      [vGetUserProfileList].[EmailID] AS [EmailID], 
+      [vGetUserProfileList].[MobileNo] AS [MobileNo], 
+      [vGetUserProfileList].[Active] AS [Active], 
+      [vGetUserProfileList].[EmployeeID] AS [EmployeeID]
+      FROM [dbo].[vGetUserProfileList] AS [vGetUserProfileList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGWCGetUserList" EntityType="BISPL_CRMDBModel.Store.vGWCGetUserList" store:Type="Views" store:Schema="dbo" store:Name="vGWCGetUserList">
+      <DefiningQuery>SELECT 
+      [vGWCGetUserList].[userID] AS [userID], 
+      [vGWCGetUserList].[userName] AS [userName], 
+      [vGWCGetUserList].[DeptName] AS [DeptName], 
+      [vGWCGetUserList].[EmailID] AS [EmailID], 
+      [vGWCGetUserList].[MobileNo] AS [MobileNo], 
+      [vGWCGetUserList].[DepartmentID] AS [DepartmentID], 
+      [vGWCGetUserList].[Active] AS [Active], 
+      [vGWCGetUserList].[EmployeeID] AS [EmployeeID], 
+      [vGWCGetUserList].[CompanyID] AS [CompanyID], 
+      [vGWCGetUserList].[CompanyName] AS [CompanyName]
+      FROM [dbo].[vGWCGetUserList] AS [vGWCGetUserList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGWCGetUserProfileList" EntityType="BISPL_CRMDBModel.Store.vGWCGetUserProfileList" store:Type="Views" store:Schema="dbo" store:Name="vGWCGetUserProfileList">
+      <DefiningQuery>SELECT 
+      [vGWCGetUserProfileList].[userID] AS [userID], 
+      [vGWCGetUserProfileList].[UserType] AS [UserType], 
+      [vGWCGetUserProfileList].[userName] AS [userName], 
+      [vGWCGetUserProfileList].[DeptName] AS [DeptName], 
+      [vGWCGetUserProfileList].[EmailID] AS [EmailID], 
+      [vGWCGetUserProfileList].[MobileNo] AS [MobileNo], 
+      [vGWCGetUserProfileList].[DepartmentID] AS [DepartmentID], 
+      [vGWCGetUserProfileList].[Active] AS [Active], 
+      [vGWCGetUserProfileList].[EmployeeID] AS [EmployeeID], 
+      [vGWCGetUserProfileList].[userIDPass] AS [userIDPass], 
+      [vGWCGetUserProfileList].[locked] AS [locked]
+      FROM [dbo].[vGWCGetUserProfileList] AS [vGWCGetUserProfileList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VGetRollNameByDeptID" EntityType="BISPL_CRMDBModel.Store.VGetRollNameByDeptID" store:Type="Views" store:Schema="GWCQA" store:Name="VGetRollNameByDeptID">
+      <DefiningQuery>SELECT 
+      [VGetRollNameByDeptID].[ID] AS [ID], 
+      [VGetRollNameByDeptID].[RoleName] AS [RoleName], 
+      [VGetRollNameByDeptID].[TerritoryID] AS [TerritoryID]
+      FROM [GWCQA].[VGetRollNameByDeptID] AS [VGetRollNameByDeptID]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_mDesignation_mDepartment" Association="BISPL_CRMDBModel.Store.FK_mDesignation_mDepartment">
+      <End Role="mDepartment" EntitySet="mDepartment" />
+      <End Role="mDesignation" EntitySet="mDesignation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mRole_mDepartment" Association="BISPL_CRMDBModel.Store.FK_mRole_mDepartment">
+      <End Role="mDepartment" EntitySet="mDepartment" />
+      <End Role="mRole" EntitySet="mRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mRole_mDesignation" Association="BISPL_CRMDBModel.Store.FK_mRole_mDesignation">
+      <End Role="mDesignation" EntitySet="mDesignation" />
+      <End Role="mRole" EntitySet="mRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mUserProfileHead_mDesignation" Association="BISPL_CRMDBModel.Store.FK_mUserProfileHead_mDesignation">
+      <End Role="mDesignation" EntitySet="mDesignation" />
+      <End Role="mUserProfileHead" EntitySet="mUserProfileHead" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="mCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine3" Type="nvarchar" MaxLength="100" />
+    <Property Name="Landmark" Type="nvarchar" MaxLength="50" />
+    <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="LogoPath" Type="nvarchar(max)" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="MainDataSource" Type="nvarchar" MaxLength="500" />
+    <Property Name="MainDataBaseName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MainDBPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="DataSource" Type="nvarchar" MaxLength="500" />
+    <Property Name="DataBaseName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DBPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainServerLogin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="image" />
+    <Property Name="StampImg" Type="image" />
+    <Property Name="Complogo" Type="varbinary(max)" />
+    <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mDepartment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mDesignation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="TerritoryID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mDropdownValues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="Parameter" Type="nvarchar(max)" />
+    <Property Name="StatusID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+    <Property Name="DesignationID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="TerritoryID" Type="bigint" />
+    <Property Name="CommonValueID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApprovalLevel" Type="bigint" />
+    <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+    <Property Name="cancelDays" Type="bigint" />
+    <Property Name="Active" Type="varchar" MaxLength="5" />
+    <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+    <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+    <Property Name="AutoRemSchedule" Type="bigint" />
+    <Property Name="ApproRemSchedul" Type="bigint" />
+    <Property Name="ECommerce" Type="bit" />
+    <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="GwcDeliveries" Type="bit" />
+    <Property Name="MaxDeliveryDays" Type="bigint" />
+    <Property Name="FinApproverID" Type="bigint" />
+    <Property Name="AddressType" Type="bigint" />
+    <Property Name="PriceChange" Type="bit" />
+    <Property Name="location" Type="nvarchar" MaxLength="5" />
+    <Property Name="MerchantCode" Type="int" />
+    <Property Name="TokenExptime" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="UserID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mUserProfileHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="bigint" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MiddelName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+    <Property Name="DesignationID" Type="bigint" Nullable="false" />
+    <Property Name="DateOfJoining" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReportingTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="InterestedIn" Type="nvarchar(max)" />
+    <Property Name="Hobbies" Type="nvarchar(max)" />
+    <Property Name="OtherID" Type="nvarchar" MaxLength="50" />
+    <Property Name="HighestQualification" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollegeOrUniversity" Type="nvarchar(max)" />
+    <Property Name="HighSchool" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProfileImg" Type="image" />
+    <Property Name="Title" Type="varchar" MaxLength="20" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="DefaultAddress" Type="varchar" MaxLength="50" />
+    <Property Name="MobileInterface" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="mUserRolesDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="ObjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Add" Type="bit" />
+    <Property Name="Edit" Type="bit" />
+    <Property Name="View" Type="bit" />
+    <Property Name="Delete" Type="bit" />
+    <Property Name="Approval" Type="bit" />
+    <Property Name="AssignTask" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mUserTerritoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TerritoryID" Type="bigint" />
+    <Property Name="Level" Type="bigint" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastMofidiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vDesignation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vDesignation">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetGWCRoleMasterData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGetGWCRoleMasterData">
+    <Key>
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="UserType" Type="nvarchar(max)" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetRoleMasterData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGetRoleMasterData">
+    <Key>
+      <PropertyRef Name="DepartmentName" />
+      <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="DesignationName" />
+      <PropertyRef Name="DesignationID" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="mrID" />
+    </Key>
+    <Property Name="DepartmentName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+    <Property Name="DesignationName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DesignationID" Type="bigint" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="mrID" Type="bigint" Nullable="false" />
+    <Property Name="mrSequence" Type="bigint" />
+    <Property Name="DeptSequence" Type="bigint" />
+    <Property Name="DesigSequence" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetUserProfileByUserID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGetUserProfileByUserID">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="desiName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="deptname" />
+    </Key>
+    <Property Name="userID" Type="bigint" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="103" />
+    <Property Name="deptname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="desiName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="20" />
+    <Property Name="ProfileImg" Type="image" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="DateOfJoining" Type="datetime" />
+    <Property Name="OtherID" Type="nvarchar" MaxLength="50" />
+    <Property Name="HighestQualification" Type="nvarchar" MaxLength="50" />
+    <Property Name="InterestedIn" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="ReportingTo" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGetUserProfileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGetUserProfileList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="deptname" />
+      <PropertyRef Name="desiName" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="userID" Type="bigint" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="158" />
+    <Property Name="deptname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="desiName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGWCGetUserList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGWCGetUserList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="userID" Type="bigint" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="103" />
+    <Property Name="DeptName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.dbo.vGWCGetUserProfileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGWCGetUserProfileList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="userID" Type="bigint" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="userName" Type="nvarchar" MaxLength="158" />
+    <Property Name="DeptName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="userIDPass" Type="nvarchar(max)" />
+    <Property Name="locked" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDETestNew.GWCQA.VGetRollNameByDeptID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="VGetRollNameByDeptID">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="TerritoryID" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_mDesignation_mDepartment">
+    <End Role="mDepartment" Type="BISPL_CRMDBModel.Store.mDepartment" Multiplicity="1" />
+    <End Role="mDesignation" Type="BISPL_CRMDBModel.Store.mDesignation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDepartment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mDesignation">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mRole_mDepartment">
+    <End Role="mDepartment" Type="BISPL_CRMDBModel.Store.mDepartment" Multiplicity="1" />
+    <End Role="mRole" Type="BISPL_CRMDBModel.Store.mRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDepartment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mRole">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mRole_mDesignation">
+    <End Role="mDesignation" Type="BISPL_CRMDBModel.Store.mDesignation" Multiplicity="1" />
+    <End Role="mRole" Type="BISPL_CRMDBModel.Store.mRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDesignation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mRole">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mUserProfileHead_mDesignation">
+    <End Role="mDesignation" Type="BISPL_CRMDBModel.Store.mDesignation" Multiplicity="1" />
+    <End Role="mUserProfileHead" Type="BISPL_CRMDBModel.Store.mUserProfileHead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDesignation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mUserProfileHead">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_GetDataToBindRoleMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+    <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetMenuHTML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetMenuHTMLArabic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetUserRoleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserIDForRole" Type="bigint" Mode="In" />
+    <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GWCGetDataToBindRoleMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+    <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GWCGetUserRoleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserIDForRole" Type="bigint" Mode="In" />
+    <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertIntomUserProfieTerritoryDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="bigint" Mode="In" />
+    <Parameter Name="Level" Type="bigint" Mode="In" />
+    <Parameter Name="TerritoryIDs" Type="varchar(max)" Mode="In" />
+    <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertIntoRoleMasterDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xmlData" Type="xml" Mode="In" />
+    <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+    <Parameter Name="paraCompanyID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertIntoUserRoleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xmlData" Type="xml" Mode="In" />
+    <Parameter Name="paraCompanyID" Type="varchar" Mode="In" />
+    <Parameter Name="paraUserIDForRole" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="paraRoleID" Type="bigint" Mode="In" />
+  </Function>
+</Schema>

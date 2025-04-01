@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mDepartments" EntityType="BISPL_CRMDBModel.mDepartment" />
+    <EntitySet Name="mDesignations" EntityType="BISPL_CRMDBModel.mDesignation" />
+    <EntitySet Name="mRoles" EntityType="BISPL_CRMDBModel.mRole" />
+    <EntitySet Name="mUserProfileHeads" EntityType="BISPL_CRMDBModel.mUserProfileHead" />
+    <EntitySet Name="vGetRoleMasterDatas" EntityType="BISPL_CRMDBModel.vGetRoleMasterData" />
+    <EntitySet Name="vGetUserProfileByUserIDs" EntityType="BISPL_CRMDBModel.vGetUserProfileByUserID" />
+    <EntitySet Name="vGetUserProfileLists" EntityType="BISPL_CRMDBModel.vGetUserProfileList" />
+    <AssociationSet Name="FK_mDesignation_mDepartment" Association="BISPL_CRMDBModel.FK_mDesignation_mDepartment">
+      <End Role="mDepartment" EntitySet="mDepartments" />
+      <End Role="mDesignation" EntitySet="mDesignations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mRole_mDepartment" Association="BISPL_CRMDBModel.FK_mRole_mDepartment">
+      <End Role="mDepartment" EntitySet="mDepartments" />
+      <End Role="mRole" EntitySet="mRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mUserProfileHead_mDepartment" Association="BISPL_CRMDBModel.FK_mUserProfileHead_mDepartment">
+      <End Role="mDepartment" EntitySet="mDepartments" />
+      <End Role="mUserProfileHead" EntitySet="mUserProfileHeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mRole_mDesignation" Association="BISPL_CRMDBModel.FK_mRole_mDesignation">
+      <End Role="mDesignation" EntitySet="mDesignations" />
+      <End Role="mRole" EntitySet="mRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mUserProfileHead_mDesignation" Association="BISPL_CRMDBModel.FK_mUserProfileHead_mDesignation">
+      <End Role="mDesignation" EntitySet="mDesignations" />
+      <End Role="mUserProfileHead" EntitySet="mUserProfileHeads" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetDataToBindRoleMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GetDataToBindRoleMaster_Result)">
+      <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetUserRoleDetail" ReturnType="Collection(BISPL_CRMDBModel.SP_GetUserRoleDetail_Result)">
+      <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserIDForRole" Mode="In" Type="Int64" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="mUserRolesDetails" EntityType="BISPL_CRMDBModel.mUserRolesDetail" />
+    <EntitySet Name="mUserTerritoryDetails" EntityType="BISPL_CRMDBModel.mUserTerritoryDetail" />
+    <EntitySet Name="vDesignations" EntityType="BISPL_CRMDBModel.vDesignation" />
+    <FunctionImport Name="SP_GetMenuHTML" ReturnType="Collection(BISPL_CRMDBModel.SP_GetMenuHTML_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertIntoUserRoleDetail">
+      <Parameter Name="xmlData" Mode="In" Type="String" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="String" />
+      <Parameter Name="paraUserIDForRole" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+      <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertIntomUserProfieTerritoryDetail">
+      <Parameter Name="UserID" Mode="In" Type="Int64" />
+      <Parameter Name="Level" Mode="In" Type="Int64" />
+      <Parameter Name="TerritoryIDs" Mode="In" Type="String" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertIntoRoleMasterDetail">
+      <Parameter Name="xmlData" Mode="In" Type="String" />
+      <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetMenuHTMLArabic" ReturnType="Collection(BISPL_CRMDBModel.SP_GetMenuHTMLArabic_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="mCompanies" EntityType="BISPL_CRMDBModel.mCompany" />
+    <FunctionImport Name="SP_GWCGetDataToBindRoleMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetDataToBindRoleMaster_Result)">
+      <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="mDropdownValues" EntityType="BISPL_CRMDBModel.mDropdownValue" />
+    <EntitySet Name="vGetGWCRoleMasterDatas" EntityType="BISPL_CRMDBModel.vGetGWCRoleMasterData" />
+    <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+    <FunctionImport Name="SP_GWCGetUserRoleDetail" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetUserRoleDetail_Result)">
+      <Parameter Name="paraRoleID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserIDForRole" Mode="In" Type="Int64" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="vGWCGetUserLists" EntityType="BISPL_CRMDBModel.vGWCGetUserList" />
+    <EntitySet Name="VGetRollNameByDeptIDs" EntityType="BISPL_CRMDBModel.VGetRollNameByDeptID" />
+    <EntitySet Name="vGWCGetUserProfileLists" EntityType="BISPL_CRMDBModel.vGWCGetUserProfileList" />
+  </EntityContainer>
+  <EntityType Name="mDepartment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="mDesignations" Relationship="BISPL_CRMDBModel.FK_mDesignation_mDepartment" FromRole="mDepartment" ToRole="mDesignation" />
+    <NavigationProperty Name="mRoles" Relationship="BISPL_CRMDBModel.FK_mRole_mDepartment" FromRole="mDepartment" ToRole="mRole" />
+    <NavigationProperty Name="mUserProfileHeads" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDepartment" FromRole="mDepartment" ToRole="mUserProfileHead" />
+  </EntityType>
+  <EntityType Name="mDesignation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="mDepartment" Relationship="BISPL_CRMDBModel.FK_mDesignation_mDepartment" FromRole="mDesignation" ToRole="mDepartment" />
+    <NavigationProperty Name="mRoles" Relationship="BISPL_CRMDBModel.FK_mRole_mDesignation" FromRole="mDesignation" ToRole="mRole" />
+    <NavigationProperty Name="mUserProfileHeads" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDesignation" FromRole="mDesignation" ToRole="mUserProfileHead" />
+    <Property Type="Int64" Name="TerritoryID" />
+  </EntityType>
+  <EntityType Name="mRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+    <Property Type="Int64" Name="DesignationID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="mDepartment" Relationship="BISPL_CRMDBModel.FK_mRole_mDepartment" FromRole="mRole" ToRole="mDepartment" />
+    <NavigationProperty Name="mDesignation" Relationship="BISPL_CRMDBModel.FK_mRole_mDesignation" FromRole="mRole" ToRole="mDesignation" />
+    <Property Type="Int64" Name="TerritoryID" />
+    <Property Type="Int64" Name="CommonValueID" />
+  </EntityType>
+  <EntityType Name="mUserProfileHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="RoleID" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MiddelName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+    <Property Type="Int64" Name="DesignationID" Nullable="false" />
+    <Property Type="DateTime" Name="DateOfJoining" Precision="3" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+    <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReportingTo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InterestedIn" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hobbies" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OtherID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighestQualification" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CollegeOrUniversity" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighSchool" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="UserType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="ProfileImg" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="Title" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DefaultAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Gender" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="mDepartment" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDepartment" FromRole="mUserProfileHead" ToRole="mDepartment" />
+    <NavigationProperty Name="mDesignation" Relationship="BISPL_CRMDBModel.FK_mUserProfileHead_mDesignation" FromRole="mUserProfileHead" ToRole="mDesignation" />
+    <Property Type="String" Name="MobileInterface" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vGetRoleMasterData">
+    <Key>
+      <PropertyRef Name="DepartmentName" />
+      <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="DesignationName" />
+      <PropertyRef Name="DesignationID" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="mrID" />
+    </Key>
+    <Property Type="String" Name="DepartmentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+    <Property Type="String" Name="DesignationName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DesignationID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="mrID" Nullable="false" />
+    <Property Type="Int64" Name="mrSequence" />
+    <Property Type="Int64" Name="DeptSequence" />
+    <Property Type="Int64" Name="DesigSequence" />
+  </EntityType>
+  <EntityType Name="vGetUserProfileByUserID">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="deptname" />
+      <PropertyRef Name="desiName" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userName" MaxLength="103" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="deptname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="desiName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Title" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="ProfileImg" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+    <Property Type="DateTime" Name="DateOfJoining" Precision="3" />
+    <Property Type="String" Name="OtherID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighestQualification" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InterestedIn" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gender" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ReportingTo" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vGetUserProfileList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="deptname" />
+      <PropertyRef Name="desiName" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userName" MaxLength="158" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="deptname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desiName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_mDesignation_mDepartment">
+    <End Type="BISPL_CRMDBModel.mDepartment" Role="mDepartment" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mDesignation" Role="mDesignation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDepartment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mDesignation">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mRole_mDepartment">
+    <End Type="BISPL_CRMDBModel.mDepartment" Role="mDepartment" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mRole" Role="mRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDepartment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mRole">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mUserProfileHead_mDepartment">
+    <End Type="BISPL_CRMDBModel.mDepartment" Role="mDepartment" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mUserProfileHead" Role="mUserProfileHead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDepartment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mUserProfileHead">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mRole_mDesignation">
+    <End Type="BISPL_CRMDBModel.mDesignation" Role="mDesignation" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mRole" Role="mRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDesignation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mRole">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mUserProfileHead_mDesignation">
+    <End Type="BISPL_CRMDBModel.mDesignation" Role="mDesignation" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mUserProfileHead" Role="mUserProfileHead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mDesignation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mUserProfileHead">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetDataToBindRoleMaster_Result">
+    <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="mSequence" Nullable="true" />
+    <Property Type="Int64" Name="pSequence" Nullable="true" />
+    <Property Type="Int64" Name="oSequence" Nullable="true" />
+    <Property Type="Boolean" Name="Add" Nullable="true" />
+    <Property Type="Boolean" Name="Edit" Nullable="true" />
+    <Property Type="Boolean" Name="View" Nullable="true" />
+    <Property Type="Boolean" Name="Delete" Nullable="true" />
+    <Property Type="Boolean" Name="Approval" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+    <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetUserRoleDetail_Result">
+    <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="mSequence" Nullable="true" />
+    <Property Type="Int64" Name="pSequence" Nullable="true" />
+    <Property Type="Int64" Name="oSequence" Nullable="true" />
+    <Property Type="Boolean" Name="Add" Nullable="true" />
+    <Property Type="Boolean" Name="Edit" Nullable="true" />
+    <Property Type="Boolean" Name="View" Nullable="true" />
+    <Property Type="Boolean" Name="Delete" Nullable="true" />
+    <Property Type="Boolean" Name="Approval" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+    <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mUserRolesDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Add" />
+    <Property Type="Boolean" Name="Edit" />
+    <Property Type="Boolean" Name="View" />
+    <Property Type="Boolean" Name="Delete" />
+    <Property Type="Boolean" Name="Approval" />
+    <Property Type="Boolean" Name="AssignTask" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mUserTerritoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="TerritoryID" />
+    <Property Type="Int64" Name="Level" />
+    <Property Type="Int64" Name="UserID" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastMofidiedDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="vDesignation">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Department" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SP_GetMenuHTML_Result">
+    <Property Type="String" Name="HTMLMenu" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetMenuHTMLArabic_Result">
+    <Property Type="String" Name="HTMLMenu" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Website" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine2" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine3" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Landmark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="County" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FaxNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LogoPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="String" Name="MainDataSource" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainDataBaseName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainDBPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DataSource" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DataBaseName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DBPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainServerLogin" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+    <Property Type="Binary" Name="StampImg" MaxLength="Max" FixedLength="false" />
+    <Property Type="Binary" Name="Complogo" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SP_GWCGetDataToBindRoleMaster_Result">
+    <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="mSequence" Nullable="true" />
+    <Property Type="Int64" Name="pSequence" Nullable="true" />
+    <Property Type="Int64" Name="oSequence" Nullable="true" />
+    <Property Type="Boolean" Name="Add" Nullable="true" />
+    <Property Type="Boolean" Name="Edit" Nullable="true" />
+    <Property Type="Boolean" Name="View" Nullable="true" />
+    <Property Type="Boolean" Name="Delete" Nullable="true" />
+    <Property Type="Boolean" Name="Approval" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+    <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mDropdownValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Parameter" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="StatusID" />
+  </EntityType>
+  <EntityType Name="vGetGWCRoleMasterData">
+    <Key>
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="String" Name="DepartmentName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserType" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="Int16" Name="Level" />
+    <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Boolean" Name="IsMandatory" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApprovalLevel" />
+    <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="cancelDays" />
+    <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="AutoRemSchedule" />
+    <Property Type="Int64" Name="ApproRemSchedul" />
+    <Property Type="Boolean" Name="ECommerce" />
+    <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="GwcDeliveries" />
+    <Property Type="Int64" Name="MaxDeliveryDays" />
+    <Property Type="Int64" Name="FinApproverID" />
+    <Property Type="Int64" Name="AddressType" />
+    <Property Type="Boolean" Name="PriceChange" />
+    <Property Type="String" Name="location" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="MerchantCode" />
+    <Property Type="Decimal" Name="TokenExptime" Precision="10" Scale="2" />
+    <Property Type="Int64" Name="UserID" />
+  </EntityType>
+  <ComplexType Name="SP_GWCGetUserRoleDetail_Result">
+    <Property Type="String" Name="DisplayModuleName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DisplayPhaseName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PhaseName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ObjectDisplayName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="mSequence" Nullable="true" />
+    <Property Type="Int64" Name="pSequence" Nullable="true" />
+    <Property Type="Int64" Name="oSequence" Nullable="true" />
+    <Property Type="Boolean" Name="Add" Nullable="true" />
+    <Property Type="Boolean" Name="Edit" Nullable="true" />
+    <Property Type="Boolean" Name="View" Nullable="true" />
+    <Property Type="Boolean" Name="Delete" Nullable="true" />
+    <Property Type="Boolean" Name="Approval" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTask" Nullable="true" />
+    <Property Type="Boolean" Name="ApprovalVisible" Nullable="true" />
+    <Property Type="Boolean" Name="AssignTaskVisible" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="vGWCGetUserList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Type="Int64" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userName" MaxLength="103" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeptName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VGetRollNameByDeptID">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="TerritoryID" />
+  </EntityType>
+  <EntityType Name="vGWCGetUserProfileList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="userID" Nullable="false" />
+    <Property Type="String" Name="UserType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="userName" MaxLength="158" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeptName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="userIDPass" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="locked" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
