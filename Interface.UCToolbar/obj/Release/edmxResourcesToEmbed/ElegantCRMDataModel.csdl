@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_CartBeforeUpdateProductLevelTaxDetail" ReturnType="Collection(BISPL_CRMDBModel.SP_CartBeforeUpdateProductLevelTaxDetail_Result)">
+      <Parameter Name="CurrentObjectName" Mode="In" Type="String" />
+      <Parameter Name="SessionID" Mode="In" Type="String" />
+      <Parameter Name="CartSequence" Mode="In" Type="Int64" />
+      <Parameter Name="TaxableAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="SelectedTaxIDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetStatutoryDetails" ReturnType="Collection(BISPL_CRMDBModel.SP_GetStatutoryDetails_Result)">
+      <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+      <Parameter Name="paraObjectName" Mode="In" Type="String" />
+      <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="mUserRolesDetails" EntityType="BISPL_CRMDBModel.mUserRolesDetail" />
+  </EntityContainer>
+  <ComplexType Name="SP_CartBeforeUpdateProductLevelTaxDetail_Result">
+    <Property Type="Int64" Name="ParentTaxID" Nullable="true" />
+    <Property Type="Int64" Name="TaxID" Nullable="true" />
+    <Property Type="String" Name="TaxName" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="TaxPercent" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="TaxAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="CheckBoxVisible" Nullable="true" />
+    <Property Type="String" Name="IsChecked" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="SP_GetStatutoryDetails_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+    <Property Type="Int64" Name="StatutoryID" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StatutoryValue" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Active" Nullable="true" MaxLength="1" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastEditBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastEditDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mUserRolesDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Add" />
+    <Property Type="Boolean" Name="Edit" />
+    <Property Type="Boolean" Name="View" />
+    <Property Type="Boolean" Name="Delete" />
+    <Property Type="Boolean" Name="Approval" />
+    <Property Type="Boolean" Name="AssignTask" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+</Schema>

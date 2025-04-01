@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="mUserRolesDetail" EntityType="BISPL_CRMDBModel.Store.mUserRolesDetail" store:Type="Tables" Schema="dbo" />
+          </EntityContainer>
+        <EntityType Name="mUserRolesDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="ObjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Add" Type="bit" />
+          <Property Name="Edit" Type="bit" />
+          <Property Name="View" Type="bit" />
+          <Property Name="Delete" Type="bit" />
+          <Property Name="Approval" Type="bit" />
+          <Property Name="AssignTask" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'elegantcrm.dbo.vTaxSetupDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <Function Name="SP_CartBeforeUpdateProductLevelTaxDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CurrentObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="SessionID" Type="varchar" Mode="In" />
+          <Parameter Name="CartSequence" Type="bigint" Mode="In" />
+          <Parameter Name="TaxableAmount" Type="decimal" Mode="In" />
+          <Parameter Name="SelectedTaxIDs" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_GetStatutoryDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+          <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+          <Parameter Name="paraObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="paraCompanyID" Type="bigint" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="SP_CartBeforeUpdateProductLevelTaxDetail" ReturnType="Collection(BISPL_CRMDBModel.SP_CartBeforeUpdateProductLevelTaxDetail_Result)">
+            <Parameter Name="CurrentObjectName" Mode="In" Type="String" />
+            <Parameter Name="SessionID" Mode="In" Type="String" />
+            <Parameter Name="CartSequence" Mode="In" Type="Int64" />
+            <Parameter Name="TaxableAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="SelectedTaxIDs" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetStatutoryDetails" ReturnType="Collection(BISPL_CRMDBModel.SP_GetStatutoryDetails_Result)">
+            <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+            <Parameter Name="paraUserID" Mode="In" Type="String" />
+            <Parameter Name="paraObjectName" Mode="In" Type="String" />
+            <Parameter Name="paraCompanyID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="mUserRolesDetails" EntityType="BISPL_CRMDBModel.mUserRolesDetail" />
+        </EntityContainer>
+        <ComplexType Name="SP_CartBeforeUpdateProductLevelTaxDetail_Result">
+          <Property Type="Int64" Name="ParentTaxID" Nullable="true" />
+          <Property Type="Int64" Name="TaxID" Nullable="true" />
+          <Property Type="String" Name="TaxName" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="TaxPercent" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="TaxAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="CheckBoxVisible" Nullable="true" />
+          <Property Type="String" Name="IsChecked" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SP_GetStatutoryDetails_Result">
+          <Property Type="Int32" Name="ID" Nullable="true" />
+          <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+          <Property Type="Int64" Name="StatutoryID" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StatutoryValue" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Active" Nullable="true" MaxLength="1" />
+          <Property Type="Int64" Name="Sequence" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="LastEditBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastEditDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CompanyID" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="mUserRolesDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Add" />
+          <Property Type="Boolean" Name="Edit" />
+          <Property Type="Boolean" Name="View" />
+          <Property Type="Boolean" Name="Delete" />
+          <Property Type="Boolean" Name="Approval" />
+          <Property Type="Boolean" Name="AssignTask" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <FunctionImportMapping FunctionImportName="SP_CartBeforeUpdateProductLevelTaxDetail" FunctionName="BISPL_CRMDBModel.Store.SP_CartBeforeUpdateProductLevelTaxDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_CartBeforeUpdateProductLevelTaxDetail_Result">
+                <ScalarProperty Name="ParentTaxID" ColumnName="ParentTaxID" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+                <ScalarProperty Name="TaxPercent" ColumnName="TaxPercent" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="CheckBoxVisible" ColumnName="CheckBoxVisible" />
+                <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetStatutoryDetails" FunctionName="BISPL_CRMDBModel.Store.SP_GetStatutoryDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetStatutoryDetails_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="StatutoryID" ColumnName="StatutoryID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StatutoryValue" ColumnName="StatutoryValue" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastEditBy" ColumnName="LastEditBy" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="mUserRolesDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mUserRolesDetail">
+              <MappingFragment StoreEntitySet="mUserRolesDetail">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AssignTask" ColumnName="AssignTask" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+                <ScalarProperty Name="Delete" ColumnName="Delete" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="Add" ColumnName="Add" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ElegantCRMDataModel">
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mUserRolesDetail" Width="1.5" PointX="0.5" PointY="2.75" Height="3.7109993489583317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
