@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mProducts" EntityType="BISPL_CRMDBModel.mProduct" />
+    <EntitySet Name="mProductCategories" EntityType="BISPL_CRMDBModel.mProductCategory" />
+    <EntitySet Name="mProductRateDetails" EntityType="BISPL_CRMDBModel.mProductRateDetail" />
+    <EntitySet Name="mProductSpecificationDetails" EntityType="BISPL_CRMDBModel.mProductSpecificationDetail" />
+    <EntitySet Name="mProductSubCategories" EntityType="BISPL_CRMDBModel.mProductSubCategory" />
+    <EntitySet Name="mProductTaxDetails" EntityType="BISPL_CRMDBModel.mProductTaxDetail" />
+    <EntitySet Name="mProductTypes" EntityType="BISPL_CRMDBModel.mProductType" />
+    <AssociationSet Name="FK_mProduct_mProductCategory" Association="BISPL_CRMDBModel.FK_mProduct_mProductCategory">
+      <End Role="mProductCategory" EntitySet="mProductCategories" />
+      <End Role="mProduct" EntitySet="mProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProduct_mProductSubCategory" Association="BISPL_CRMDBModel.FK_mProduct_mProductSubCategory">
+      <End Role="mProductSubCategory" EntitySet="mProductSubCategories" />
+      <End Role="mProduct" EntitySet="mProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProduct_mProductType" Association="BISPL_CRMDBModel.FK_mProduct_mProductType">
+      <End Role="mProductType" EntitySet="mProductTypes" />
+      <End Role="mProduct" EntitySet="mProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tProductSpecificationDetails_mProduct" Association="BISPL_CRMDBModel.FK_tProductSpecificationDetails_mProduct">
+      <End Role="mProduct" EntitySet="mProducts" />
+      <End Role="mProductSpecificationDetail" EntitySet="mProductSpecificationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProductSubCategory_mProductCategory" Association="BISPL_CRMDBModel.FK_mProductSubCategory_mProductCategory">
+      <End Role="mProductCategory" EntitySet="mProductCategories" />
+      <End Role="mProductSubCategory" EntitySet="mProductSubCategories" />
+    </AssociationSet>
+    <EntitySet Name="mTitles" EntityType="BISPL_CRMDBModel.mTitle" />
+    <EntitySet Name="mUOMs" EntityType="BISPL_CRMDBModel.mUOM" />
+    <EntitySet Name="tDiscountHeads" EntityType="BISPL_CRMDBModel.tDiscountHead" />
+    <EntitySet Name="vGetProductCagetoryLists" EntityType="BISPL_CRMDBModel.vGetProductCagetoryList" />
+    <EntitySet Name="vGetProductSubCagetoryLists" EntityType="BISPL_CRMDBModel.vGetProductSubCagetoryList" />
+    <AssociationSet Name="FK_mProduct_mUOM" Association="BISPL_CRMDBModel.FK_mProduct_mUOM">
+      <End Role="mUOM" EntitySet="mUOMs" />
+      <End Role="mProduct" EntitySet="mProducts" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetProductMasterTaxSetupByProductID" ReturnType="Collection(BISPL_CRMDBModel.SP_GetProductMasterTaxSetupByProductID_Result)">
+      <Parameter Name="ProductID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetProductListForDiscountMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GetProductListForDiscountMaster_Result)">
+      <Parameter Name="paraDiscountID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+    <EntitySet Name="vProductSubCategories" EntityType="BISPL_CRMDBModel.vProductSubCategory" />
+    <FunctionImport Name="SP_GetSiteWiseInventoryByProductIDs" ReturnType="Collection(BISPL_CRMDBModel.SP_GetSiteWiseInventoryByProductIDs_Result)">
+      <Parameter Name="ProductIDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertInto_tProductStockDetails">
+      <Parameter Name="ModifiedByUserID" Mode="In" Type="Int64" />
+      <Parameter Name="xmlData" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertInto_mProductTaxDetail">
+      <Parameter Name="xmlData" Mode="In" Type="String" />
+      <Parameter Name="ProductID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="mToolSiteHistories" EntityType="BISPL_CRMDBModel.mToolSiteHistory" />
+    <EntitySet Name="VW_ToolSiteHistoryDetail" EntityType="BISPL_CRMDBModel.VW_ToolSiteHistoryDetail" />
+    <EntitySet Name="tToolTransferDetails" EntityType="BISPL_CRMDBModel.tToolTransferDetail" />
+    <EntitySet Name="tToolTransferHeads" EntityType="BISPL_CRMDBModel.tToolTransferHead" />
+    <AssociationSet Name="FK_tToolTransferDetail_tToolTransferHead" Association="BISPL_CRMDBModel.FK_tToolTransferDetail_tToolTransferHead">
+      <End Role="tToolTransferHead" EntitySet="tToolTransferHeads" />
+      <End Role="tToolTransferDetail" EntitySet="tToolTransferDetails" />
+    </AssociationSet>
+    <FunctionImport Name="POR_SP_SaveTransferDetails">
+      <Parameter Name="TransferID" Mode="In" Type="Int64" />
+      <Parameter Name="xmlData" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="POR_VW_ToolTransferDetails" EntityType="BISPL_CRMDBModel.POR_VW_ToolTransferDetails" />
+    <FunctionImport Name="POR_SP_SiteWiseTools" ReturnType="Collection(BISPL_CRMDBModel.POR_SP_SiteWiseTools_Result)">
+      <Parameter Name="SiteID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="POR_SP_Update_mToolSiteHistory">
+      <Parameter Name="SiteID" Mode="In" Type="Int64" />
+      <Parameter Name="TransferID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="POR_SP_InsertInto_mToolSiteHistory">
+      <Parameter Name="xmlData1" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="POR_SP_GetToolTransferDetailsByTransferID" ReturnType="Collection(BISPL_CRMDBModel.POR_SP_GetToolTransferDetailsByTransferID_Result)">
+      <Parameter Name="TransferID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="mDropdownValues" EntityType="BISPL_CRMDBModel.mDropdownValue" />
+    <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+    <EntitySet Name="mMessageEMailTemplates" EntityType="BISPL_CRMDBModel.mMessageEMailTemplate" />
+    <EntitySet Name="vGetTemplateLists" EntityType="BISPL_CRMDBModel.vGetTemplateList" />
+    <EntitySet Name="vGetTemplateList1" EntityType="BISPL_CRMDBModel.vGetTemplateList1" />
+    <EntitySet Name="mInterfaceMaps" EntityType="BISPL_CRMDBModel.mInterfaceMap" />
+    <EntitySet Name="mUserTerritoryDetails" EntityType="BISPL_CRMDBModel.mUserTerritoryDetail" />
+    <EntitySet Name="VW_GetSKUDetailsWithPack" EntityType="BISPL_CRMDBModel.VW_GetSKUDetailsWithPack" />
+    <EntitySet Name="tImages" EntityType="BISPL_CRMDBModel.tImage" />
+    <EntitySet Name="mMessageTrans" EntityType="BISPL_CRMDBModel.mMessageTran" />
+    <EntitySet Name="GWC_VW_MessOrderHeadImport" EntityType="BISPL_CRMDBModel.GWC_VW_MessOrderHeadImport" />
+    <EntitySet Name="GetProductSerialDetails" EntityType="BISPL_CRMDBModel.GetProductSerialDetail" />
+    <EntitySet Name="GetProductDetails" EntityType="BISPL_CRMDBModel.GetProductDetail" />
+  </EntityContainer>
+  <EntityType Name="mProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProductCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ProductTypeID" />
+    <Property Type="Int64" Name="ProductCategoryID" />
+    <Property Type="Int64" Name="ProductSubCategoryID" />
+    <Property Type="Int64" Name="UOMID" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="PrincipalPrice" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="FixedDiscount" Precision="13" Scale="2" />
+    <Property Type="Boolean" Name="FixedDiscountPercent" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Warranty" />
+    <Property Type="Boolean" Name="Guarantee" />
+    <Property Type="Boolean" Name="Installable" />
+    <Property Type="Boolean" Name="AMC" />
+    <Property Type="Int32" Name="WarrantyDays" />
+    <Property Type="Int32" Name="GuaranteeDays" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="OpeningBalance" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CurrentBalance" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="ReorderLevel" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MaxBalanceQuantity" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MinOrderQuantity" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="LeadTimeDays" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="mProductCategory" Relationship="BISPL_CRMDBModel.FK_mProduct_mProductCategory" FromRole="mProduct" ToRole="mProductCategory" />
+    <NavigationProperty Name="mProductSubCategory" Relationship="BISPL_CRMDBModel.FK_mProduct_mProductSubCategory" FromRole="mProduct" ToRole="mProductSubCategory" />
+    <NavigationProperty Name="mProductType" Relationship="BISPL_CRMDBModel.FK_mProduct_mProductType" FromRole="mProduct" ToRole="mProductType" />
+    <NavigationProperty Name="mProductSpecificationDetails" Relationship="BISPL_CRMDBModel.FK_tProductSpecificationDetails_mProduct" FromRole="mProduct" ToRole="mProductSpecificationDetail" />
+    <NavigationProperty Name="mUOM" Relationship="BISPL_CRMDBModel.FK_mProduct_mUOM" FromRole="mProduct" ToRole="mUOM" />
+    <Property Type="Int64" Name="StoreId" />
+    <Property Type="Int64" Name="BOMHeaderId" />
+    <Property Type="String" Name="Packkey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OMSSKUCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Cost" Precision="13" Scale="2" />
+    <Property Type="String" Name="GroupSet" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="moq" />
+    <Property Type="String" Name="ProductType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSim" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="serialflag" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mProductCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="mProducts" Relationship="BISPL_CRMDBModel.FK_mProduct_mProductCategory" FromRole="mProductCategory" ToRole="mProduct" />
+    <NavigationProperty Name="mProductSubCategories" Relationship="BISPL_CRMDBModel.FK_mProductSubCategory_mProductCategory" FromRole="mProductCategory" ToRole="mProductSubCategory" />
+  </EntityType>
+  <EntityType Name="mProductRateDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProdID" />
+    <Property Type="Decimal" Name="Rate" Precision="13" Scale="2" />
+    <Property Type="DateTime" Name="EffectiveDate" Precision="3" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="mProductSpecificationDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProductID" />
+    <Property Type="String" Name="SpecificationTitle" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SpecificationDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" />
+    <NavigationProperty Name="mProduct" Relationship="BISPL_CRMDBModel.FK_tProductSpecificationDetails_mProduct" FromRole="mProductSpecificationDetail" ToRole="mProduct" />
+  </EntityType>
+  <EntityType Name="mProductSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProductCategoryID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="Companyid" Nullable="false" />
+    <NavigationProperty Name="mProducts" Relationship="BISPL_CRMDBModel.FK_mProduct_mProductSubCategory" FromRole="mProductSubCategory" ToRole="mProduct" />
+    <NavigationProperty Name="mProductCategory" Relationship="BISPL_CRMDBModel.FK_mProductSubCategory_mProductCategory" FromRole="mProductSubCategory" ToRole="mProductCategory" />
+  </EntityType>
+  <EntityType Name="mProductTaxDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="Int64" Name="TaxID" Nullable="false" />
+    <Property Type="Decimal" Name="TaxPercent" Nullable="false" Precision="10" Scale="3" />
+    <Property Type="Boolean" Name="IsEdit" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifedDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="mProductType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProductType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <NavigationProperty Name="mProducts" Relationship="BISPL_CRMDBModel.FK_mProduct_mProductType" FromRole="mProductType" ToRole="mProduct" />
+  </EntityType>
+  <Association Name="FK_mProduct_mProductCategory">
+    <End Type="BISPL_CRMDBModel.mProductCategory" Role="mProductCategory" Multiplicity="0..1" />
+    <End Type="BISPL_CRMDBModel.mProduct" Role="mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="ProductCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProduct_mProductSubCategory">
+    <End Type="BISPL_CRMDBModel.mProductSubCategory" Role="mProductSubCategory" Multiplicity="0..1" />
+    <End Type="BISPL_CRMDBModel.mProduct" Role="mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductSubCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="ProductSubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProduct_mProductType">
+    <End Type="BISPL_CRMDBModel.mProductType" Role="mProductType" Multiplicity="0..1" />
+    <End Type="BISPL_CRMDBModel.mProduct" Role="mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="ProductTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tProductSpecificationDetails_mProduct">
+    <End Type="BISPL_CRMDBModel.mProduct" Role="mProduct" Multiplicity="0..1" />
+    <End Type="BISPL_CRMDBModel.mProductSpecificationDetail" Role="mProductSpecificationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProduct">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProductSpecificationDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProductSubCategory_mProductCategory">
+    <End Type="BISPL_CRMDBModel.mProductCategory" Role="mProductCategory" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mProductSubCategory" Role="mProductSubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProductSubCategory">
+        <PropertyRef Name="ProductCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Active" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+  </EntityType>
+  <EntityType Name="mUOM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <NavigationProperty Name="mProducts" Relationship="BISPL_CRMDBModel.FK_mProduct_mUOM" FromRole="mUOM" ToRole="mProduct" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tDiscountHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="FromDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ToDate" Precision="3" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vGetProductCagetoryList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProductCategory" MaxLength="61" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+  </EntityType>
+  <EntityType Name="vGetProductSubCagetoryList">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+      <PropertyRef Name="ProductSubCategory" />
+    </Key>
+    <Property Type="Int64" Name="ID" />
+    <Property Type="Int64" Name="ProductCategoryID" Nullable="false" />
+    <Property Type="String" Name="ProductSubCategory" Nullable="false" MaxLength="61" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+  </EntityType>
+  <Association Name="FK_mProduct_mUOM">
+    <End Type="BISPL_CRMDBModel.mUOM" Role="mUOM" Multiplicity="0..1" />
+    <End Type="BISPL_CRMDBModel.mProduct" Role="mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mUOM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="UOMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetProductMasterTaxSetupByProductID_Result">
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="Percent" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="ParentTaxPercent" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Int32" Name="TaxSequence" Nullable="true" />
+    <Property Type="Boolean" Name="CheckBoxVisible" Nullable="true" />
+    <Property Type="String" Name="Checked" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_GetProductListForDiscountMaster_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="Int64" Name="ProductID" Nullable="true" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="PrincipalPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="UOM" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="DiscountRate" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsDiscountPercent" Nullable="true" />
+    <Property Type="Int64" Name="MinOrderQuantity" Nullable="true" />
+    <Property Type="Decimal" Name="AmountAfterDiscount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Active" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastUpdated" Nullable="false" Precision="3" />
+    <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vProductSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ProductCategoryID" Nullable="false" />
+    <Property Type="String" Name="PrdCategoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SP_GetSiteWiseInventoryByProductIDs_Result">
+    <Property Type="Int64" Name="ProductID" Nullable="true" />
+    <Property Type="Int64" Name="SiteID" Nullable="false" />
+    <Property Type="String" Name="Territory" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="OpeningStock" Nullable="false" />
+    <Property Type="Int64" Name="MaxStockLimit" Nullable="false" />
+    <Property Type="Int64" Name="ReorderQty" Nullable="false" />
+    <Property Type="Int64" Name="AvailableBalance" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveDate" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mToolSiteHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProdID" />
+    <Property Type="Int64" Name="SiteID" />
+    <Property Type="DateTime" Name="EffectiveDate" Precision="3" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="Enddate" Precision="3" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="Boolean" Name="Active" />
+  </EntityType>
+  <EntityType Name="VW_ToolSiteHistoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="ProdID" />
+    <Property Type="String" Name="ProductCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="SiteID" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EffectiveDate" Precision="3" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="Enddate" Precision="3" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="Boolean" Name="Active" />
+  </EntityType>
+  <EntityType Name="tToolTransferDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="TransferID" Nullable="false" />
+    <Property Type="Int64" Name="ProductCode" />
+    <NavigationProperty Name="tToolTransferHead" Relationship="BISPL_CRMDBModel.FK_tToolTransferDetail_tToolTransferHead" FromRole="tToolTransferDetail" ToRole="tToolTransferHead" />
+  </EntityType>
+  <EntityType Name="tToolTransferHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="TransferDate" Precision="3" />
+    <Property Type="Int64" Name="TransferedBy" />
+    <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="TransferFromSite" />
+    <Property Type="Int64" Name="TransferToSite" />
+    <Property Type="String" Name="Airwaybill" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ShippingType" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ShippingDate" Precision="3" />
+    <Property Type="DateTime" Name="ExpDeliveryDate" Precision="3" />
+    <Property Type="String" Name="TransporterName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="Int64" Name="Modifiedby" />
+    <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+    <NavigationProperty Name="tToolTransferDetails" Relationship="BISPL_CRMDBModel.FK_tToolTransferDetail_tToolTransferHead" FromRole="tToolTransferHead" ToRole="tToolTransferDetail" />
+  </EntityType>
+  <Association Name="FK_tToolTransferDetail_tToolTransferHead">
+    <End Type="BISPL_CRMDBModel.tToolTransferHead" Role="tToolTransferHead" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.tToolTransferDetail" Role="tToolTransferDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tToolTransferHead">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tToolTransferDetail">
+        <PropertyRef Name="TransferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="POR_VW_ToolTransferDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="TransferDate" Precision="3" />
+    <Property Type="Int64" Name="TransferedBy" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="TransferFromSite" />
+    <Property Type="String" Name="FromSite" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="TransferToSite" />
+    <Property Type="String" Name="ToSite" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Airwaybill" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ShippingType" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ShippingDate" Precision="3" />
+    <Property Type="DateTime" Name="ExpDeliveryDate" Precision="3" />
+    <Property Type="String" Name="TransporterName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TransferedByName" MaxLength="101" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="POR_SP_SiteWiseTools_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="ProdID" Nullable="true" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="SiteID" Nullable="true" />
+    <Property Type="String" Name="Territory" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="EffectiveDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Enddate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="POR_SP_GetToolTransferDetailsByTransferID_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="TransferID" Nullable="false" />
+    <Property Type="Int64" Name="ProductCode" Nullable="true" />
+    <Property Type="String" Name="ProductCode1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mDropdownValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Parameter" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="StatusID" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="Int16" Name="Level" />
+    <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Boolean" Name="IsMandatory" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApprovalLevel" />
+    <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="cancelDays" />
+    <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="AutoRemSchedule" />
+    <Property Type="Int64" Name="ApproRemSchedul" />
+    <Property Type="Boolean" Name="ECommerce" />
+    <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="GwcDeliveries" />
+    <Property Type="Int64" Name="MaxDeliveryDays" />
+    <Property Type="Int64" Name="FinApproverID" />
+    <Property Type="Int64" Name="AddressType" />
+    <Property Type="Boolean" Name="PriceChange" />
+    <Property Type="String" Name="location" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="MerchantCode" />
+    <Property Type="Decimal" Name="TokenExptime" Precision="10" Scale="2" />
+    <Property Type="Int64" Name="UserID" />
+    <Property Type="Decimal" Name="PreOrderExpTime" Precision="10" Scale="2" />
+    <Property Type="String" Name="CustAnalytics" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="IsGpsTracking" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="mMessageEMailTemplate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="mStatusID" />
+    <Property Type="String" Name="MailType" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MailSubject" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MailBody" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="DateTime" Name="ModifiedDate" Precision="0" />
+    <Property Type="Int64" Name="ModifiedBy" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="Int64" Name="ActivityID" />
+    <Property Type="Int64" Name="MessageID" />
+    <Property Type="String" Name="TemplateTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EcommMail" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="IsGps" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vGetTemplateList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="MailSubject" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MailBody" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="Int64" Name="ActivityID" />
+    <Property Type="String" Name="Activity" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="MessageID" />
+    <Property Type="String" Name="MessageType" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TemplateTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vGetTemplateList1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="MailSubject" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MailBody" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="Int64" Name="ActivityID" />
+    <Property Type="String" Name="Activity" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="MessageID" />
+    <Property Type="String" Name="MessageType" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TemplateTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mInterfaceMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Fieldname" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FieldDataType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsNull" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TableName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="0" />
+    <Property Type="Int64" Name="ModifyBy" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="0" />
+  </EntityType>
+  <EntityType Name="mUserTerritoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="TerritoryID" />
+    <Property Type="Int64" Name="Level" />
+    <Property Type="Int64" Name="UserID" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastMofidiedDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="VW_GetSKUDetailsWithPack">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ProductCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="PrincipalPrice" Precision="13" Scale="2" />
+    <Property Type="String" Name="Packkey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GroupSet" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Path" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="Int64" Name="StoreId" />
+    <Property Type="Decimal" Name="AvailableBalance" Precision="18" Scale="2" />
+    <Property Type="String" Name="DDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="String" Name="ImageName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Path" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Extension" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="ImgeTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ImageDesc" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="SkuImage" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="mMessageTran">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="MessageHdrId" />
+    <Property Type="String" Name="MsgDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Destination" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Object" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Status" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="Createdby" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GWC_VW_MessOrderHeadImport">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InvoiceNo" />
+      <PropertyRef Name="LocationCode" />
+      <PropertyRef Name="ConsigneeName" />
+      <PropertyRef Name="ConsigneeAddress" />
+      <PropertyRef Name="ConsigneePhone" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="Sitecode" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="AccessRequirement" />
+      <PropertyRef Name="SiteName" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="OrderNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Orderdate" Precision="3" />
+    <Property Type="DateTime" Name="Deliverydate" Precision="3" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Con1" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Con2" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine1" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="addressline12" MaxLength="239" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ContactP2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OrderNo" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LocationCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RequestorName" MaxLength="101" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RequestorMobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConsigneeName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConsigneeAddress" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ConsigneePhone" Nullable="false" />
+    <Property Type="Int64" Name="Con1MobileNo" />
+    <Property Name="ProjectType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sitecode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccessRequirement" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ChkApproval" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GetProductSerialDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SKUId" Type="Int64" />
+    <Property Name="StoreId" Type="Int64" />
+    <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AvailableQty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ResurveQty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DispatchQty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreationBy" Type="Int64" />
+    <Property Name="LastModifiedBy" Type="Int64" />
+  </EntityType>
+  <EntityType Name="GetProductDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductTypeID" Type="Int64" />
+    <Property Name="ProductCategoryID" Type="Int64" />
+    <Property Name="ProductSubCategoryID" Type="Int64" />
+    <Property Name="UOMID" Type="Int64" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PrincipalPrice" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="FixedDiscount" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="FixedDiscountPercent" Type="Boolean" />
+    <Property Name="Active" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Warranty" Type="Boolean" />
+    <Property Name="Guarantee" Type="Boolean" />
+    <Property Name="Installable" Type="Boolean" />
+    <Property Name="AMC" Type="Boolean" />
+    <Property Name="WarrantyDays" Type="Int32" />
+    <Property Name="GuaranteeDays" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OpeningBalance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentBalance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReorderLevel" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MaxBalanceQuantity" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MinOrderQuantity" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeadTimeDays" Type="Int64" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CompanyID" Type="Int64" Nullable="false" />
+    <Property Name="ProductCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSubCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="OMSSKUCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GroupSet" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="Int64" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Territory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvailableBalance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="moq" Type="Int64" />
+    <Property Name="VirtualQty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AvailVirtualQty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISSim" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="serialflag" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="mDropdownValues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="Parameter" Type="nvarchar(max)" />
+    <Property Name="StatusID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mInterfaceMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fieldname" Type="nvarchar" MaxLength="50" />
+    <Property Name="FieldDataType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsNull" Type="nvarchar" MaxLength="6" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="80" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="date" />
+    <Property Name="ModifyBy" Type="bigint" />
+    <Property Name="ModifyDate" Type="date" />
+  </EntityType>
+  <EntityType Name="mMessageEMailTemplates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="100" />
+    <Property Name="mStatusID" Type="bigint" />
+    <Property Name="MailType" Type="varchar" MaxLength="100" />
+    <Property Name="MailSubject" Type="nvarchar(max)" />
+    <Property Name="MailBody" Type="nvarchar(max)" />
+    <Property Name="Active" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="ActivityID" Type="bigint" />
+    <Property Name="MessageID" Type="bigint" />
+    <Property Name="TemplateTitle" Type="nvarchar(max)" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="EcommMail" Type="nvarchar" MaxLength="5" />
+    <Property Name="IsGps" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="mMessageTrans">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageHdrId" Type="bigint" />
+    <Property Name="MsgDescription" Type="nvarchar(max)" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" />
+    <Property Name="Object" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="Createdby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductTypeID" Type="bigint" />
+    <Property Name="ProductCategoryID" Type="bigint" />
+    <Property Name="ProductSubCategoryID" Type="bigint" />
+    <Property Name="UOMID" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PrincipalPrice" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="FixedDiscount" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="FixedDiscountPercent" Type="bit" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Warranty" Type="bit" />
+    <Property Name="Guarantee" Type="bit" />
+    <Property Name="Installable" Type="bit" />
+    <Property Name="AMC" Type="bit" />
+    <Property Name="WarrantyDays" Type="int" />
+    <Property Name="GuaranteeDays" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OpeningBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReorderLevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MaxBalanceQuantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MinOrderQuantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LeadTimeDays" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="StoreId" Type="bigint" />
+    <Property Name="BOMHeaderId" Type="bigint" />
+    <Property Name="Packkey" Type="nvarchar" MaxLength="50" />
+    <Property Name="OMSSKUCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cost" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="GroupSet" Type="nvarchar" MaxLength="10" />
+    <Property Name="moq" Type="bigint" />
+    <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsSim" Type="varchar" MaxLength="5" />
+    <Property Name="serialflag" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="mProductCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mProductRateDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdID" Type="bigint" />
+    <Property Name="Rate" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mProductSpecificationDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" />
+    <Property Name="SpecificationTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpecificationDescription" Type="nvarchar(max)" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mProductSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductCategoryID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="Companyid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mProductTaxDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="TaxID" Type="bigint" Nullable="false" />
+    <Property Name="TaxPercent" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="IsEdit" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mProductType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApprovalLevel" Type="bigint" />
+    <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+    <Property Name="cancelDays" Type="bigint" />
+    <Property Name="Active" Type="varchar" MaxLength="5" />
+    <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+    <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+    <Property Name="AutoRemSchedule" Type="bigint" />
+    <Property Name="ApproRemSchedul" Type="bigint" />
+    <Property Name="ECommerce" Type="bit" />
+    <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="GwcDeliveries" Type="bit" />
+    <Property Name="MaxDeliveryDays" Type="bigint" />
+    <Property Name="FinApproverID" Type="bigint" />
+    <Property Name="AddressType" Type="bigint" />
+    <Property Name="PriceChange" Type="bit" />
+    <Property Name="location" Type="nvarchar" MaxLength="5" />
+    <Property Name="MerchantCode" Type="int" />
+    <Property Name="TokenExptime" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="PreOrderExpTime" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CustAnalytics" Type="nvarchar" MaxLength="5" />
+    <Property Name="IsGpsTracking" Type="bit" />
+  </EntityType>
+  <EntityType Name="mTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" />
+    <Property Name="Sequence" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mToolSiteHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdID" Type="bigint" />
+    <Property Name="SiteID" Type="bigint" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="mUOM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mUserTerritoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TerritoryID" Type="bigint" />
+    <Property Name="Level" Type="bigint" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastMofidiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tDiscountHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FromDate" Type="datetime" Nullable="false" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Name="TempDataID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="xml" Nullable="false" />
+    <Property Name="XmlData" Type="xml" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TableName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Extension" Type="varchar" MaxLength="20" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="ImgeTitle" Type="varchar" MaxLength="50" />
+    <Property Name="ImageDesc" Type="varchar(max)" />
+    <Property Name="SkuImage" Type="image" />
+  </EntityType>
+  <EntityType Name="tToolTransferDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransferID" Type="bigint" Nullable="false" />
+    <Property Name="ProductCode" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tToolTransferHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransferDate" Type="datetime" />
+    <Property Name="TransferedBy" Type="bigint" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="TransferFromSite" Type="bigint" />
+    <Property Name="TransferToSite" Type="bigint" />
+    <Property Name="Airwaybill" Type="varchar" MaxLength="100" />
+    <Property Name="ShippingType" Type="varchar" MaxLength="100" />
+    <Property Name="ShippingDate" Type="datetime" />
+    <Property Name="ExpDeliveryDate" Type="datetime" />
+    <Property Name="TransporterName" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="Modifiedby" Type="bigint" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.GetProductDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GetProductDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductTypeID" Type="bigint" />
+    <Property Name="ProductCategoryID" Type="bigint" />
+    <Property Name="ProductSubCategoryID" Type="bigint" />
+    <Property Name="UOMID" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PrincipalPrice" Type="numeric" Precision="13" Scale="2" />
+    <Property Name="FixedDiscount" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="FixedDiscountPercent" Type="bit" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Warranty" Type="bit" />
+    <Property Name="Guarantee" Type="bit" />
+    <Property Name="Installable" Type="bit" />
+    <Property Name="AMC" Type="bit" />
+    <Property Name="WarrantyDays" Type="int" />
+    <Property Name="GuaranteeDays" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OpeningBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReorderLevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MaxBalanceQuantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MinOrderQuantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LeadTimeDays" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="ProductCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductSubCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cost" Type="numeric" Precision="13" Scale="2" />
+    <Property Name="OMSSKUCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupSet" Type="nvarchar" MaxLength="10" />
+    <Property Name="StoreId" Type="bigint" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="AvailableBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="moq" Type="bigint" />
+    <Property Name="VirtualQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AvailVirtualQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISSim" Type="varchar" MaxLength="5" />
+    <Property Name="serialflag" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.GetProductSerialDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GetProductSerialDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SKUId" Type="bigint" />
+    <Property Name="StoreId" Type="bigint" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AvailableQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ResurveQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DispatchQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CreationBy" Type="bigint" />
+    <Property Name="LastModifiedBy" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.GWC_VW_MessOrderHeadImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GWC_VW_MessOrderHeadImport">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InvoiceNo" />
+      <PropertyRef Name="LocationCode" />
+      <PropertyRef Name="ConsigneeName" />
+      <PropertyRef Name="ConsigneeAddress" />
+      <PropertyRef Name="ConsigneePhone" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="Sitecode" />
+      <PropertyRef Name="SiteName" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="AccessRequirement" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Orderdate" Type="datetime" />
+    <Property Name="Deliverydate" Type="datetime" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="Con1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Con2" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="100" />
+    <Property Name="addressline12" Type="nvarchar" MaxLength="239" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="ContactP2" Type="nvarchar(max)" />
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LocationCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RequestorName" Type="nvarchar" MaxLength="101" />
+    <Property Name="RequestorMobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsigneeName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ConsigneeAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ConsigneePhone" Type="bigint" Nullable="false" />
+    <Property Name="Con1MobileNo" Type="bigint" />
+    <Property Name="ProjectType" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sitecode" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SiteName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccessRequirement" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChkApproval" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.POR_VW_ToolTransferDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="POR_VW_ToolTransferDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="TransferDate" Type="datetime" />
+    <Property Name="TransferedBy" Type="bigint" />
+    <Property Name="TransferedByName" Type="nvarchar" MaxLength="101" />
+    <Property Name="Status" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="TransferFromSite" Type="bigint" />
+    <Property Name="FromSite" Type="varchar" MaxLength="50" />
+    <Property Name="TransferToSite" Type="bigint" />
+    <Property Name="ToSite" Type="varchar" MaxLength="50" />
+    <Property Name="Airwaybill" Type="varchar" MaxLength="100" />
+    <Property Name="ShippingType" Type="varchar" MaxLength="100" />
+    <Property Name="ShippingDate" Type="datetime" />
+    <Property Name="ExpDeliveryDate" Type="datetime" />
+    <Property Name="TransporterName" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.vGetProductCagetoryList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vGetProductCagetoryList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductCategory" Type="nvarchar" MaxLength="61" />
+    <Property Name="Sequence" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.vGetProductSubCagetoryList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vGetProductSubCagetoryList">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+      <PropertyRef Name="ProductSubCategory" />
+    </Key>
+    <Property Name="ID" Type="bigint" />
+    <Property Name="ProductCategoryID" Type="bigint" Nullable="false" />
+    <Property Name="ProductSubCategory" Type="nvarchar" MaxLength="61" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.vGetTemplateList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vGetTemplateList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="MailSubject" Type="varchar(max)" />
+    <Property Name="MailBody" Type="varchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="ActivityID" Type="bigint" />
+    <Property Name="Activity" Type="nvarchar(max)" />
+    <Property Name="MessageID" Type="bigint" />
+    <Property Name="MessageType" Type="nvarchar(max)" />
+    <Property Name="TemplateTitle" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.vGetTemplateList1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vGetTemplateList1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="MailSubject" Type="nvarchar(max)" />
+    <Property Name="MailBody" Type="nvarchar(max)" />
+    <Property Name="Active" Type="varchar" MaxLength="10" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="ActivityID" Type="bigint" />
+    <Property Name="Activity" Type="nvarchar(max)" />
+    <Property Name="MessageID" Type="bigint" />
+    <Property Name="MessageType" Type="nvarchar(max)" />
+    <Property Name="TemplateTitle" Type="nvarchar(max)" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.vProductSubCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vProductSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="ProductCategoryID" Type="bigint" Nullable="false" />
+    <Property Name="PrdCategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.VW_GetSKUDetailsWithPack' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_GetSKUDetailsWithPack">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PrincipalPrice" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="Packkey" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupSet" Type="nvarchar" MaxLength="10" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="StoreId" Type="bigint" />
+    <Property Name="AvailableBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DDescription" Type="nvarchar(max)" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GWCDEEcomm.dbo.VW_ToolSiteHistoryDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_ToolSiteHistoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="ProdID" Type="bigint" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="SiteID" Type="bigint" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <Association Name="FK_mProduct_mProductCategory">
+    <End Role="mProductCategory" Type="Self.mProductCategory" Multiplicity="0..1" />
+    <End Role="mProduct" Type="Self.mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="ProductCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProduct_mProductSubCategory">
+    <End Role="mProductSubCategory" Type="Self.mProductSubCategory" Multiplicity="0..1" />
+    <End Role="mProduct" Type="Self.mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductSubCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="ProductSubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProduct_mProductType">
+    <End Role="mProductType" Type="Self.mProductType" Multiplicity="0..1" />
+    <End Role="mProduct" Type="Self.mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="ProductTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProduct_mUOM">
+    <End Role="mUOM" Type="Self.mUOM" Multiplicity="0..1" />
+    <End Role="mProduct" Type="Self.mProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mUOM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProduct">
+        <PropertyRef Name="UOMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mProductSubCategory_mProductCategory">
+    <End Role="mProductCategory" Type="Self.mProductCategory" Multiplicity="1" />
+    <End Role="mProductSubCategory" Type="Self.mProductSubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProductCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProductSubCategory">
+        <PropertyRef Name="ProductCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tProductSpecificationDetails_mProduct">
+    <End Role="mProduct" Type="Self.mProduct" Multiplicity="0..1" />
+    <End Role="mProductSpecificationDetails" Type="Self.mProductSpecificationDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mProduct">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mProductSpecificationDetails">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tToolTransferDetail_tToolTransferHead">
+    <End Role="tToolTransferHead" Type="Self.tToolTransferHead" Multiplicity="1" />
+    <End Role="tToolTransferDetail" Type="Self.tToolTransferDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tToolTransferHead">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tToolTransferDetail">
+        <PropertyRef Name="TransferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="POR_SP_GetToolTransferDetailsByTransferID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TransferID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="POR_SP_InsertInto_mToolSiteHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xmlData1" Type="xml" Mode="In" />
+  </Function>
+  <Function Name="POR_SP_SaveTransferDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TransferID" Type="bigint" Mode="In" />
+    <Parameter Name="xmlData" Type="xml" Mode="In" />
+  </Function>
+  <Function Name="POR_SP_SiteWiseTools" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SiteID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="POR_SP_Update_mToolSiteHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SiteID" Type="bigint" Mode="In" />
+    <Parameter Name="TransferID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProductListForDiscountMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraDiscountID" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProductMasterTaxSetupByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetSiteWiseInventoryByProductIDs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductIDs" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertInto_mProductTaxDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xmlData" Type="xml" Mode="In" />
+    <Parameter Name="ProductID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertInto_tProductStockDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ModifiedByUserID" Type="bigint" Mode="In" />
+    <Parameter Name="xmlData" Type="xml" Mode="In" />
+  </Function>
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mDropdownValues" EntityType="Self.mDropdownValues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mInterfaceMap" EntityType="Self.mInterfaceMap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMessageEMailTemplates" EntityType="Self.mMessageEMailTemplates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMessageTrans" EntityType="Self.mMessageTrans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProduct" EntityType="Self.mProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProductCategory" EntityType="Self.mProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProductRateDetails" EntityType="Self.mProductRateDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProductSpecificationDetails" EntityType="Self.mProductSpecificationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProductSubCategory" EntityType="Self.mProductSubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProductTaxDetail" EntityType="Self.mProductTaxDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mProductType" EntityType="Self.mProductType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mTerritory" EntityType="Self.mTerritory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mTitle" EntityType="Self.mTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mToolSiteHistory" EntityType="Self.mToolSiteHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mUOM" EntityType="Self.mUOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mUserTerritoryDetail" EntityType="Self.mUserTerritoryDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDiscountHead" EntityType="Self.tDiscountHead" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TempData" EntityType="Self.TempData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tImage" EntityType="Self.tImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tToolTransferDetail" EntityType="Self.tToolTransferDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tToolTransferHead" EntityType="Self.tToolTransferHead" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GetProductDetails" EntityType="Self.GetProductDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[GetProductDetails].[ID] AS [ID], 
+[GetProductDetails].[ProductCode] AS [ProductCode], 
+[GetProductDetails].[ProductTypeID] AS [ProductTypeID], 
+[GetProductDetails].[ProductCategoryID] AS [ProductCategoryID], 
+[GetProductDetails].[ProductSubCategoryID] AS [ProductSubCategoryID], 
+[GetProductDetails].[UOMID] AS [UOMID], 
+[GetProductDetails].[Name] AS [Name], 
+[GetProductDetails].[Description] AS [Description], 
+[GetProductDetails].[PrincipalPrice] AS [PrincipalPrice], 
+[GetProductDetails].[FixedDiscount] AS [FixedDiscount], 
+[GetProductDetails].[FixedDiscountPercent] AS [FixedDiscountPercent], 
+[GetProductDetails].[Active] AS [Active], 
+[GetProductDetails].[Warranty] AS [Warranty], 
+[GetProductDetails].[Guarantee] AS [Guarantee], 
+[GetProductDetails].[Installable] AS [Installable], 
+[GetProductDetails].[AMC] AS [AMC], 
+[GetProductDetails].[WarrantyDays] AS [WarrantyDays], 
+[GetProductDetails].[GuaranteeDays] AS [GuaranteeDays], 
+[GetProductDetails].[CreatedBy] AS [CreatedBy], 
+[GetProductDetails].[OpeningBalance] AS [OpeningBalance], 
+[GetProductDetails].[CurrentBalance] AS [CurrentBalance], 
+[GetProductDetails].[ReorderLevel] AS [ReorderLevel], 
+[GetProductDetails].[MaxBalanceQuantity] AS [MaxBalanceQuantity], 
+[GetProductDetails].[MinOrderQuantity] AS [MinOrderQuantity], 
+[GetProductDetails].[LeadTimeDays] AS [LeadTimeDays], 
+[GetProductDetails].[CreationDate] AS [CreationDate], 
+[GetProductDetails].[LastModifiedBy] AS [LastModifiedBy], 
+[GetProductDetails].[LastModifiedDate] AS [LastModifiedDate], 
+[GetProductDetails].[CompanyID] AS [CompanyID], 
+[GetProductDetails].[ProductCategory] AS [ProductCategory], 
+[GetProductDetails].[ProductSubCategory] AS [ProductSubCategory], 
+[GetProductDetails].[UOM] AS [UOM], 
+[GetProductDetails].[Cost] AS [Cost], 
+[GetProductDetails].[OMSSKUCode] AS [OMSSKUCode], 
+[GetProductDetails].[GroupSet] AS [GroupSet], 
+[GetProductDetails].[StoreId] AS [StoreId], 
+[GetProductDetails].[CompanyName] AS [CompanyName], 
+[GetProductDetails].[Territory] AS [Territory], 
+[GetProductDetails].[AvailableBalance] AS [AvailableBalance], 
+[GetProductDetails].[moq] AS [moq], 
+[GetProductDetails].[VirtualQty] AS [VirtualQty], 
+[GetProductDetails].[AvailVirtualQty] AS [AvailVirtualQty], 
+[GetProductDetails].[ProductType] AS [ProductType], 
+[GetProductDetails].[ISSim] AS [ISSim], 
+[GetProductDetails].[serialflag] AS [serialflag]
+FROM [dbo].[GetProductDetails] AS [GetProductDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GetProductSerialDetails" EntityType="Self.GetProductSerialDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[GetProductSerialDetails].[ID] AS [ID], 
+[GetProductSerialDetails].[SKUId] AS [SKUId], 
+[GetProductSerialDetails].[StoreId] AS [StoreId], 
+[GetProductSerialDetails].[SerialNumber] AS [SerialNumber], 
+[GetProductSerialDetails].[AvailableQty] AS [AvailableQty], 
+[GetProductSerialDetails].[ResurveQty] AS [ResurveQty], 
+[GetProductSerialDetails].[DispatchQty] AS [DispatchQty], 
+[GetProductSerialDetails].[CreationDate] AS [CreationDate], 
+[GetProductSerialDetails].[LastModifiedDate] AS [LastModifiedDate], 
+[GetProductSerialDetails].[CreationBy] AS [CreationBy], 
+[GetProductSerialDetails].[LastModifiedBy] AS [LastModifiedBy]
+FROM [dbo].[GetProductSerialDetails] AS [GetProductSerialDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GWC_VW_MessOrderHeadImport" EntityType="Self.GWC_VW_MessOrderHeadImport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[GWC_VW_MessOrderHeadImport].[Id] AS [Id], 
+[GWC_VW_MessOrderHeadImport].[OrderNumber] AS [OrderNumber], 
+[GWC_VW_MessOrderHeadImport].[Orderdate] AS [Orderdate], 
+[GWC_VW_MessOrderHeadImport].[Deliverydate] AS [Deliverydate], 
+[GWC_VW_MessOrderHeadImport].[Territory] AS [Territory], 
+[GWC_VW_MessOrderHeadImport].[Con1] AS [Con1], 
+[GWC_VW_MessOrderHeadImport].[Con2] AS [Con2], 
+[GWC_VW_MessOrderHeadImport].[AddressLine1] AS [AddressLine1], 
+[GWC_VW_MessOrderHeadImport].[addressline12] AS [addressline12], 
+[GWC_VW_MessOrderHeadImport].[Remark] AS [Remark], 
+[GWC_VW_MessOrderHeadImport].[StoreCode] AS [StoreCode], 
+[GWC_VW_MessOrderHeadImport].[ContactP2] AS [ContactP2], 
+[GWC_VW_MessOrderHeadImport].[OrderNo] AS [OrderNo], 
+[GWC_VW_MessOrderHeadImport].[InvoiceNo] AS [InvoiceNo], 
+[GWC_VW_MessOrderHeadImport].[LocationCode] AS [LocationCode], 
+[GWC_VW_MessOrderHeadImport].[RequestorName] AS [RequestorName], 
+[GWC_VW_MessOrderHeadImport].[RequestorMobileNo] AS [RequestorMobileNo], 
+[GWC_VW_MessOrderHeadImport].[ConsigneeName] AS [ConsigneeName], 
+[GWC_VW_MessOrderHeadImport].[ConsigneeAddress] AS [ConsigneeAddress], 
+[GWC_VW_MessOrderHeadImport].[ConsigneePhone] AS [ConsigneePhone], 
+[GWC_VW_MessOrderHeadImport].[Con1MobileNo] AS [Con1MobileNo], 
+[GWC_VW_MessOrderHeadImport].[ProjectType] AS [ProjectType], 
+[GWC_VW_MessOrderHeadImport].[Sitecode] AS [Sitecode], 
+[GWC_VW_MessOrderHeadImport].[SiteName] AS [SiteName], 
+[GWC_VW_MessOrderHeadImport].[Latitude] AS [Latitude], 
+[GWC_VW_MessOrderHeadImport].[Longitude] AS [Longitude], 
+[GWC_VW_MessOrderHeadImport].[AccessRequirement] AS [AccessRequirement], 
+[GWC_VW_MessOrderHeadImport].[ChkApproval] AS [ChkApproval]
+FROM [dbo].[GWC_VW_MessOrderHeadImport] AS [GWC_VW_MessOrderHeadImport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="POR_VW_ToolTransferDetails" EntityType="Self.POR_VW_ToolTransferDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[POR_VW_ToolTransferDetails].[ID] AS [ID], 
+[POR_VW_ToolTransferDetails].[TransferDate] AS [TransferDate], 
+[POR_VW_ToolTransferDetails].[TransferedBy] AS [TransferedBy], 
+[POR_VW_ToolTransferDetails].[TransferedByName] AS [TransferedByName], 
+[POR_VW_ToolTransferDetails].[Status] AS [Status], 
+[POR_VW_ToolTransferDetails].[TransferFromSite] AS [TransferFromSite], 
+[POR_VW_ToolTransferDetails].[FromSite] AS [FromSite], 
+[POR_VW_ToolTransferDetails].[TransferToSite] AS [TransferToSite], 
+[POR_VW_ToolTransferDetails].[ToSite] AS [ToSite], 
+[POR_VW_ToolTransferDetails].[Airwaybill] AS [Airwaybill], 
+[POR_VW_ToolTransferDetails].[ShippingType] AS [ShippingType], 
+[POR_VW_ToolTransferDetails].[ShippingDate] AS [ShippingDate], 
+[POR_VW_ToolTransferDetails].[ExpDeliveryDate] AS [ExpDeliveryDate], 
+[POR_VW_ToolTransferDetails].[TransporterName] AS [TransporterName], 
+[POR_VW_ToolTransferDetails].[Remark] AS [Remark]
+FROM [dbo].[POR_VW_ToolTransferDetails] AS [POR_VW_ToolTransferDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetProductCagetoryList" EntityType="Self.vGetProductCagetoryList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vGetProductCagetoryList].[ID] AS [ID], 
+[vGetProductCagetoryList].[ProductCategory] AS [ProductCategory], 
+[vGetProductCagetoryList].[Sequence] AS [Sequence]
+FROM [dbo].[vGetProductCagetoryList] AS [vGetProductCagetoryList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetProductSubCagetoryList" EntityType="Self.vGetProductSubCagetoryList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vGetProductSubCagetoryList].[ID] AS [ID], 
+[vGetProductSubCagetoryList].[ProductCategoryID] AS [ProductCategoryID], 
+[vGetProductSubCagetoryList].[ProductSubCategory] AS [ProductSubCategory], 
+[vGetProductSubCagetoryList].[Sequence] AS [Sequence]
+FROM [dbo].[vGetProductSubCagetoryList] AS [vGetProductSubCagetoryList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetTemplateList" EntityType="Self.vGetTemplateList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vGetTemplateList].[ID] AS [ID], 
+[vGetTemplateList].[MailSubject] AS [MailSubject], 
+[vGetTemplateList].[MailBody] AS [MailBody], 
+[vGetTemplateList].[Active] AS [Active], 
+[vGetTemplateList].[CompanyID] AS [CompanyID], 
+[vGetTemplateList].[CompanyName] AS [CompanyName], 
+[vGetTemplateList].[Territory] AS [Territory], 
+[vGetTemplateList].[DepartmentID] AS [DepartmentID], 
+[vGetTemplateList].[ActivityID] AS [ActivityID], 
+[vGetTemplateList].[Activity] AS [Activity], 
+[vGetTemplateList].[MessageID] AS [MessageID], 
+[vGetTemplateList].[MessageType] AS [MessageType], 
+[vGetTemplateList].[TemplateTitle] AS [TemplateTitle]
+FROM [dbo].[vGetTemplateList] AS [vGetTemplateList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetTemplateList1" EntityType="Self.vGetTemplateList1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vGetTemplateList1].[ID] AS [ID], 
+[vGetTemplateList1].[MailSubject] AS [MailSubject], 
+[vGetTemplateList1].[MailBody] AS [MailBody], 
+[vGetTemplateList1].[Active] AS [Active], 
+[vGetTemplateList1].[CompanyID] AS [CompanyID], 
+[vGetTemplateList1].[CompanyName] AS [CompanyName], 
+[vGetTemplateList1].[Territory] AS [Territory], 
+[vGetTemplateList1].[DepartmentID] AS [DepartmentID], 
+[vGetTemplateList1].[ActivityID] AS [ActivityID], 
+[vGetTemplateList1].[Activity] AS [Activity], 
+[vGetTemplateList1].[MessageID] AS [MessageID], 
+[vGetTemplateList1].[MessageType] AS [MessageType], 
+[vGetTemplateList1].[TemplateTitle] AS [TemplateTitle], 
+[vGetTemplateList1].[Language] AS [Language]
+FROM [dbo].[vGetTemplateList1] AS [vGetTemplateList1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vProductSubCategory" EntityType="Self.vProductSubCategory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vProductSubCategory].[ID] AS [ID], 
+[vProductSubCategory].[Name] AS [Name], 
+[vProductSubCategory].[Sequence] AS [Sequence], 
+[vProductSubCategory].[Active] AS [Active], 
+[vProductSubCategory].[ProductCategoryID] AS [ProductCategoryID], 
+[vProductSubCategory].[PrdCategoryName] AS [PrdCategoryName]
+FROM [dbo].[vProductSubCategory] AS [vProductSubCategory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_GetSKUDetailsWithPack" EntityType="Self.VW_GetSKUDetailsWithPack" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VW_GetSKUDetailsWithPack].[ID] AS [ID], 
+[VW_GetSKUDetailsWithPack].[ProductCode] AS [ProductCode], 
+[VW_GetSKUDetailsWithPack].[Name] AS [Name], 
+[VW_GetSKUDetailsWithPack].[Description] AS [Description], 
+[VW_GetSKUDetailsWithPack].[PrincipalPrice] AS [PrincipalPrice], 
+[VW_GetSKUDetailsWithPack].[Packkey] AS [Packkey], 
+[VW_GetSKUDetailsWithPack].[GroupSet] AS [GroupSet], 
+[VW_GetSKUDetailsWithPack].[Path] AS [Path], 
+[VW_GetSKUDetailsWithPack].[CompanyID] AS [CompanyID], 
+[VW_GetSKUDetailsWithPack].[StoreId] AS [StoreId], 
+[VW_GetSKUDetailsWithPack].[AvailableBalance] AS [AvailableBalance], 
+[VW_GetSKUDetailsWithPack].[DDescription] AS [DDescription], 
+[VW_GetSKUDetailsWithPack].[Active] AS [Active]
+FROM [dbo].[VW_GetSKUDetailsWithPack] AS [VW_GetSKUDetailsWithPack]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_ToolSiteHistoryDetail" EntityType="Self.VW_ToolSiteHistoryDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VW_ToolSiteHistoryDetail].[ID] AS [ID], 
+[VW_ToolSiteHistoryDetail].[ProdID] AS [ProdID], 
+[VW_ToolSiteHistoryDetail].[ProductCode] AS [ProductCode], 
+[VW_ToolSiteHistoryDetail].[Name] AS [Name], 
+[VW_ToolSiteHistoryDetail].[SiteID] AS [SiteID], 
+[VW_ToolSiteHistoryDetail].[Territory] AS [Territory], 
+[VW_ToolSiteHistoryDetail].[EffectiveDate] AS [EffectiveDate], 
+[VW_ToolSiteHistoryDetail].[StartDate] AS [StartDate], 
+[VW_ToolSiteHistoryDetail].[Enddate] AS [Enddate], 
+[VW_ToolSiteHistoryDetail].[Sequence] AS [Sequence], 
+[VW_ToolSiteHistoryDetail].[Active] AS [Active]
+FROM [dbo].[VW_ToolSiteHistoryDetail] AS [VW_ToolSiteHistoryDetail]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_mProduct_mProductCategory" Association="Self.FK_mProduct_mProductCategory">
+      <End Role="mProductCategory" EntitySet="mProductCategory" />
+      <End Role="mProduct" EntitySet="mProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProduct_mProductSubCategory" Association="Self.FK_mProduct_mProductSubCategory">
+      <End Role="mProductSubCategory" EntitySet="mProductSubCategory" />
+      <End Role="mProduct" EntitySet="mProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProduct_mProductType" Association="Self.FK_mProduct_mProductType">
+      <End Role="mProductType" EntitySet="mProductType" />
+      <End Role="mProduct" EntitySet="mProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProduct_mUOM" Association="Self.FK_mProduct_mUOM">
+      <End Role="mUOM" EntitySet="mUOM" />
+      <End Role="mProduct" EntitySet="mProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mProductSubCategory_mProductCategory" Association="Self.FK_mProductSubCategory_mProductCategory">
+      <End Role="mProductCategory" EntitySet="mProductCategory" />
+      <End Role="mProductSubCategory" EntitySet="mProductSubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tProductSpecificationDetails_mProduct" Association="Self.FK_tProductSpecificationDetails_mProduct">
+      <End Role="mProduct" EntitySet="mProduct" />
+      <End Role="mProductSpecificationDetails" EntitySet="mProductSpecificationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tToolTransferDetail_tToolTransferHead" Association="Self.FK_tToolTransferDetail_tToolTransferHead">
+      <End Role="tToolTransferHead" EntitySet="tToolTransferHead" />
+      <End Role="tToolTransferDetail" EntitySet="tToolTransferDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
