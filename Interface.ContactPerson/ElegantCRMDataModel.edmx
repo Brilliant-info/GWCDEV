@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="mContactType" EntityType="BISPL_CRMDBModel.Store.mContactType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tContactPersonDetail" EntityType="BISPL_CRMDBModel.Store.tContactPersonDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="mContactType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tContactPersonDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+          <Property Name="CustomerHeadID" Type="bigint" Nullable="false" />
+          <Property Name="Sequence" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Department" Type="bigint" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="OfficeNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ContactTypeID" Type="bigint" Nullable="false" />
+          <Property Name="InterestedIn" Type="nvarchar" MaxLength="200" />
+          <Property Name="Hobbies" Type="nvarchar" MaxLength="200" />
+          <Property Name="FacebookID" Type="nvarchar" MaxLength="100" />
+          <Property Name="FacebookPassword" Type="nvarchar" MaxLength="100" />
+          <Property Name="TwitterID" Type="nvarchar" MaxLength="100" />
+          <Property Name="TwitterPassword" Type="nvarchar" MaxLength="100" />
+          <Property Name="OtherID" Type="nvarchar" MaxLength="100" />
+          <Property Name="HighestQualification" Type="nvarchar" MaxLength="100" />
+          <Property Name="CollegeOrUniversity" Type="nvarchar" MaxLength="100" />
+          <Property Name="HighSchool" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="xml" Nullable="false" />
+          <Property Name="XmlData" Type="xml" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Function Name="SP_GetContactPersonListToBindGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GetContactPersonListToBindGridLead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_GetContactPersonsByReferenceID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ObjectName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+          <Parameter Name="SenderObject" Type="nvarchar" Mode="In" />
+          <Parameter Name="SenderObjectID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertIntotContactPersonDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraSessionID" Type="varchar" Mode="In" />
+          <Parameter Name="paraSaveObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+          <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+          <Parameter Name="paraCurrentFormID" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mContactTypes" EntityType="BISPL_CRMDBModel.mContactType" />
+          <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+          <FunctionImport Name="SP_GetContactPersonsByReferenceID" ReturnType="Collection(BISPL_CRMDBModel.SP_GetContactPersonsByReferenceID_Result)">
+            <Parameter Name="ObjectName" Mode="In" Type="String" />
+            <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+            <Parameter Name="SenderObject" Mode="In" Type="String" />
+            <Parameter Name="SenderObjectID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetContactPersonListToBindGridLead" ReturnType="Collection(BISPL_CRMDBModel.SP_GetContactPersonListToBindGridLead_Result)">
+          <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetContactPersonListToBindGrid" ReturnType="Collection(BISPL_CRMDBModel.SP_GetContactPersonListToBindGrid_Result)">
+            <Parameter Name="ObjectName" Mode="In" Type="String" />
+            <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="tContactPersonDetails" EntityType="BISPL_CRMDBModel.tContactPersonDetail" />
+          <FunctionImport Name="SP_InsertIntotContactPersonDetail">
+            <Parameter Name="paraSessionID" Mode="In" Type="String" />
+            <Parameter Name="paraSaveObjectName" Mode="In" Type="String" />
+            <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+            <Parameter Name="paraUserID" Mode="In" Type="String" />
+            <Parameter Name="paraCurrentFormID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="mContactType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastUpdated" Nullable="false" />
+          <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="SP_GetContactPersonsByReferenceID_Result">
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OfficeNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+          <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="InterestedIn" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Hobbies" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FacebookID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FacebookPassword" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TwitterID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TwitterPassword" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OtherID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="HighestQualification" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CollegeOrUniversity" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="HighSchool" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="selected" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SP_GetContactPersonListToBindGridLead_Result">
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OfficeNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+          <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="InterestedIn" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Hobbies" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FacebookID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FacebookPassword" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TwitterID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TwitterPassword" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OtherID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="HighestQualification" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CollegeOrUniversity" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="HighSchool" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="selected" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SP_GetContactPersonListToBindGrid_Result">
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="Int64" Name="Department" Nullable="true" />
+          <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OfficeNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+          <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="InterestedIn" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Hobbies" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FacebookID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FacebookPassword" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TwitterID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TwitterPassword" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OtherID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="HighestQualification" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CollegeOrUniversity" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="HighSchool" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="selected" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <EntityType Name="tContactPersonDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Department" />
+          <Property Type="String" Name="Designation" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OfficeNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+          <Property Type="String" Name="InterestedIn" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Hobbies" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FacebookID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FacebookPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TwitterID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TwitterPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OtherID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HighestQualification" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CollegeOrUniversity" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HighSchool" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <EntitySetMapping Name="mContactTypes">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mContactType">
+              <MappingFragment StoreEntitySet="mContactType">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempDatas">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.TempData">
+              <MappingFragment StoreEntitySet="TempData">
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="XmlData" ColumnName="XmlData" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="TempDataID" ColumnName="TempDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetContactPersonsByReferenceID" FunctionName="BISPL_CRMDBModel.Store.SP_GetContactPersonsByReferenceID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetContactPersonsByReferenceID_Result">
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="OfficeNo" ColumnName="OfficeNo" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="InterestedIn" ColumnName="InterestedIn" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="FacebookPassword" ColumnName="FacebookPassword" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="TwitterPassword" ColumnName="TwitterPassword" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="CollegeOrUniversity" ColumnName="CollegeOrUniversity" />
+                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetContactPersonListToBindGridLead" FunctionName="BISPL_CRMDBModel.Store.SP_GetContactPersonListToBindGridLead">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetContactPersonListToBindGridLead_Result">
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="OfficeNo" ColumnName="OfficeNo" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="InterestedIn" ColumnName="InterestedIn" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="FacebookPassword" ColumnName="FacebookPassword" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="TwitterPassword" ColumnName="TwitterPassword" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="CollegeOrUniversity" ColumnName="CollegeOrUniversity" />
+                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetContactPersonListToBindGrid" FunctionName="BISPL_CRMDBModel.Store.SP_GetContactPersonListToBindGrid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetContactPersonListToBindGrid_Result">
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="OfficeNo" ColumnName="OfficeNo" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="InterestedIn" ColumnName="InterestedIn" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="FacebookPassword" ColumnName="FacebookPassword" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="TwitterPassword" ColumnName="TwitterPassword" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="CollegeOrUniversity" ColumnName="CollegeOrUniversity" />
+                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tContactPersonDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tContactPersonDetail">
+              <MappingFragment StoreEntitySet="tContactPersonDetail">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+                <ScalarProperty Name="CollegeOrUniversity" ColumnName="CollegeOrUniversity" />
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="TwitterPassword" ColumnName="TwitterPassword" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="FacebookPassword" ColumnName="FacebookPassword" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="InterestedIn" ColumnName="InterestedIn" />
+                <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="OfficeNo" ColumnName="OfficeNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertIntotContactPersonDetail" FunctionName="BISPL_CRMDBModel.Store.SP_InsertIntotContactPersonDetail" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ElegantCRMDataModel">
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mContactType" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9417936197916665" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.TempData" Width="1.5" PointX="0.75" PointY="4.75" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tContactPersonDetail" Width="1.5" PointX="3.375" PointY="0.75" Height="6.5955208333333335" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

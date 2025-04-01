@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="POR_Dashboard_UserWise" EntityType="BISPL_CRMDBModel.Store.POR_Dashboard_UserWise" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="POR_Dashboard_UserWise">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="DisplaySequence" Type="bigint" />
+          <Property Name="ChartType" Type="varchar" MaxLength="20" />
+          <Property Name="Text" Type="varchar" MaxLength="50" />
+          <Property Name="Value" Type="varchar" MaxLength="50" />
+          <Property Name="LegentValue" Type="varchar" MaxLength="30" />
+          <Property Name="Series" Type="varchar" MaxLength="10" />
+          <Property Name="Height" Type="varchar" MaxLength="10" />
+          <Property Name="Width" Type="varchar" MaxLength="10" />
+          <Property Name="Is3D" Type="varchar" MaxLength="10" />
+          <Property Name="IsLegend" Type="varchar" MaxLength="10" />
+          <Property Name="LegentPosition" Type="varchar" MaxLength="10" />
+          <Property Name="ChartBackgroundColor" Type="varchar" MaxLength="20" />
+          <Property Name="ChartArea3DRotation" Type="varchar" MaxLength="10" />
+          <Property Name="ChartSyle" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="10" />
+          <Property Name="AllowEdit" Type="varchar" MaxLength="10" />
+          <Property Name="XLable" Type="varchar" MaxLength="20" />
+          <Property Name="YLable" Type="varchar" MaxLength="20" />
+          <Property Name="AllowPrint" Type="varchar" MaxLength="10" />
+          <Property Name="ChartBorderSkin" Type="varchar" MaxLength="30" />
+          <Property Name="DataQuery" Type="varchar(max)" />
+          <Property Name="ShowGridLineX" Type="varchar" MaxLength="7" />
+          <Property Name="ShowGridLineY" Type="varchar" MaxLength="7" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="POR_Dashboard_UserWise" EntityType="BISPL_CRMDBModel.POR_Dashboard_UserWise" />
+        </EntityContainer>
+        <EntityType Name="POR_Dashboard_UserWise">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="UserID" />
+          <Property Type="Int64" Name="DisplaySequence" />
+          <Property Type="String" Name="ChartType" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Text" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LegentValue" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Series" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Height" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Width" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Is3D" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IsLegend" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LegentPosition" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChartBackgroundColor" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChartArea3DRotation" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChartSyle" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AllowEdit" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="XLable" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="YLable" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AllowPrint" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChartBorderSkin" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DataQuery" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShowGridLineX" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShowGridLineY" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <EntitySetMapping Name="POR_Dashboard_UserWise">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.POR_Dashboard_UserWise">
+              <MappingFragment StoreEntitySet="POR_Dashboard_UserWise">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ShowGridLineY" ColumnName="ShowGridLineY" />
+                <ScalarProperty Name="ShowGridLineX" ColumnName="ShowGridLineX" />
+                <ScalarProperty Name="DataQuery" ColumnName="DataQuery" />
+                <ScalarProperty Name="ChartBorderSkin" ColumnName="ChartBorderSkin" />
+                <ScalarProperty Name="AllowPrint" ColumnName="AllowPrint" />
+                <ScalarProperty Name="YLable" ColumnName="YLable" />
+                <ScalarProperty Name="XLable" ColumnName="XLable" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ChartSyle" ColumnName="ChartSyle" />
+                <ScalarProperty Name="ChartArea3DRotation" ColumnName="ChartArea3DRotation" />
+                <ScalarProperty Name="ChartBackgroundColor" ColumnName="ChartBackgroundColor" />
+                <ScalarProperty Name="LegentPosition" ColumnName="LegentPosition" />
+                <ScalarProperty Name="IsLegend" ColumnName="IsLegend" />
+                <ScalarProperty Name="Is3D" ColumnName="Is3D" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="LegentValue" ColumnName="LegentValue" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="ChartType" ColumnName="ChartType" />
+                <ScalarProperty Name="DisplaySequence" ColumnName="DisplaySequence" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ElegantCRMDataModel" ZoomLevel="95">
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.POR_Dashboard_UserWise" Width="1.5" PointX="0.75" PointY="0.75" Height="6.0186165364583317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

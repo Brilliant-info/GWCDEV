@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mContactType" EntityType="BISPL_CRMDBModel.Store.mContactType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tContactPersonDetail" EntityType="BISPL_CRMDBModel.Store.tContactPersonDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="mContactType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContactType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tContactPersonDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="CustomerHeadID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Department" Type="bigint" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="OfficeNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactTypeID" Type="bigint" Nullable="false" />
+    <Property Name="InterestedIn" Type="nvarchar" MaxLength="200" />
+    <Property Name="Hobbies" Type="nvarchar" MaxLength="200" />
+    <Property Name="FacebookID" Type="nvarchar" MaxLength="100" />
+    <Property Name="FacebookPassword" Type="nvarchar" MaxLength="100" />
+    <Property Name="TwitterID" Type="nvarchar" MaxLength="100" />
+    <Property Name="TwitterPassword" Type="nvarchar" MaxLength="100" />
+    <Property Name="OtherID" Type="nvarchar" MaxLength="100" />
+    <Property Name="HighestQualification" Type="nvarchar" MaxLength="100" />
+    <Property Name="CollegeOrUniversity" Type="nvarchar" MaxLength="100" />
+    <Property Name="HighSchool" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="xml" Nullable="false" />
+    <Property Name="XmlData" Type="xml" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Function Name="SP_GetContactPersonListToBindGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetContactPersonListToBindGridLead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetContactPersonsByReferenceID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+    <Parameter Name="SenderObject" Type="nvarchar" Mode="In" />
+    <Parameter Name="SenderObjectID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertIntotContactPersonDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraSessionID" Type="varchar" Mode="In" />
+    <Parameter Name="paraSaveObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+    <Parameter Name="paraCurrentFormID" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

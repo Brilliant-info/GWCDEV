@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mContactTypes" EntityType="BISPL_CRMDBModel.mContactType" />
+    <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+    <FunctionImport Name="SP_GetContactPersonsByReferenceID" ReturnType="Collection(BISPL_CRMDBModel.SP_GetContactPersonsByReferenceID_Result)">
+      <Parameter Name="ObjectName" Mode="In" Type="String" />
+      <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+      <Parameter Name="SenderObject" Mode="In" Type="String" />
+      <Parameter Name="SenderObjectID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetContactPersonListToBindGridLead" ReturnType="Collection(BISPL_CRMDBModel.SP_GetContactPersonListToBindGridLead_Result)">
+      <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetContactPersonListToBindGrid" ReturnType="Collection(BISPL_CRMDBModel.SP_GetContactPersonListToBindGrid_Result)">
+      <Parameter Name="ObjectName" Mode="In" Type="String" />
+      <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="tContactPersonDetails" EntityType="BISPL_CRMDBModel.tContactPersonDetail" />
+    <FunctionImport Name="SP_InsertIntotContactPersonDetail">
+      <Parameter Name="paraSessionID" Mode="In" Type="String" />
+      <Parameter Name="paraSaveObjectName" Mode="In" Type="String" />
+      <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+      <Parameter Name="paraCurrentFormID" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="mContactType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastUpdated" Nullable="false" />
+    <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_GetContactPersonsByReferenceID_Result">
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OfficeNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+    <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="InterestedIn" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Hobbies" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FacebookID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FacebookPassword" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TwitterID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TwitterPassword" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OtherID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HighestQualification" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CollegeOrUniversity" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HighSchool" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="selected" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="SP_GetContactPersonListToBindGridLead_Result">
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OfficeNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+    <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="InterestedIn" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Hobbies" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FacebookID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FacebookPassword" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TwitterID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TwitterPassword" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OtherID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HighestQualification" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CollegeOrUniversity" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HighSchool" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="selected" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="SP_GetContactPersonListToBindGrid_Result">
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="Department" Nullable="true" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OfficeNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+    <Property Type="String" Name="ContactType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="InterestedIn" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Hobbies" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FacebookID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FacebookPassword" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TwitterID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TwitterPassword" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OtherID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HighestQualification" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CollegeOrUniversity" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HighSchool" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="selected" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <EntityType Name="tContactPersonDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Department" />
+    <Property Type="String" Name="Designation" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OfficeNo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+    <Property Type="String" Name="InterestedIn" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hobbies" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FacebookID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FacebookPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TwitterID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TwitterPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OtherID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighestQualification" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CollegeOrUniversity" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighSchool" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+</Schema>

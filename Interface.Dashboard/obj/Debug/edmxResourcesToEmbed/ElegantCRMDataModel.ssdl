@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="POR_Dashboard_UserWise" EntityType="BISPL_CRMDBModel.Store.POR_Dashboard_UserWise" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="POR_Dashboard_UserWise">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="DisplaySequence" Type="bigint" />
+    <Property Name="ChartType" Type="varchar" MaxLength="20" />
+    <Property Name="Text" Type="varchar" MaxLength="50" />
+    <Property Name="Value" Type="varchar" MaxLength="50" />
+    <Property Name="LegentValue" Type="varchar" MaxLength="30" />
+    <Property Name="Series" Type="varchar" MaxLength="10" />
+    <Property Name="Height" Type="varchar" MaxLength="10" />
+    <Property Name="Width" Type="varchar" MaxLength="10" />
+    <Property Name="Is3D" Type="varchar" MaxLength="10" />
+    <Property Name="IsLegend" Type="varchar" MaxLength="10" />
+    <Property Name="LegentPosition" Type="varchar" MaxLength="10" />
+    <Property Name="ChartBackgroundColor" Type="varchar" MaxLength="20" />
+    <Property Name="ChartArea3DRotation" Type="varchar" MaxLength="10" />
+    <Property Name="ChartSyle" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="10" />
+    <Property Name="AllowEdit" Type="varchar" MaxLength="10" />
+    <Property Name="XLable" Type="varchar" MaxLength="20" />
+    <Property Name="YLable" Type="varchar" MaxLength="20" />
+    <Property Name="AllowPrint" Type="varchar" MaxLength="10" />
+    <Property Name="ChartBorderSkin" Type="varchar" MaxLength="30" />
+    <Property Name="DataQuery" Type="varchar(max)" />
+    <Property Name="ShowGridLineX" Type="varchar" MaxLength="7" />
+    <Property Name="ShowGridLineY" Type="varchar" MaxLength="7" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+</Schema>
