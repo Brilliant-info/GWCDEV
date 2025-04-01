@@ -1,0 +1,267 @@
+D:\GWCVer3Test\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWCVer3Test\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWCVer3Test\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWCVer3Test\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWCVer3Test\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWCVer3Test\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWCVer3Test\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+D:\GWCVer3Test\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWCVer3Test\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojResolveAssemblyReference.cache
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+C:\GWCTest\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+D:\GWC TEST\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Approval.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Domain.Server.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\bin\Debug\Interface.Approval.dll.config
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csprojAssemblyReference.cache
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CoreCompileInputs.cache
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.csproj.CopyComplete
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Domain.Approval\obj\Debug\Domain.Approval.pdb
