@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mApprovalLevels" EntityType="BISPL_CRMDBModel.mApprovalLevel" />
+    <EntitySet Name="mApprovalLevelDetails" EntityType="BISPL_CRMDBModel.mApprovalLevelDetail" />
+    <FunctionImport Name="SP_GetUserForApprovalMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GetUserForApprovalMaster_Result)">
+      <Parameter Name="paraApprovalLevelID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="sysmObjects" EntityType="BISPL_CRMDBModel.sysmObject" />
+    <EntitySet Name="tApprovalDetails" EntityType="BISPL_CRMDBModel.tApprovalDetail" />
+    <AssociationSet Name="FK_mApprovalLevel_sysmObjects" Association="BISPL_CRMDBModel.FK_mApprovalLevel_sysmObjects">
+      <End Role="sysmObject" EntitySet="sysmObjects" />
+      <End Role="mApprovalLevel" EntitySet="mApprovalLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmObjects_sysmObjects" Association="BISPL_CRMDBModel.FK_sysmObjects_sysmObjects">
+      <End Role="sysmObject" EntitySet="sysmObjects" />
+      <End Role="sysmObject1" EntitySet="sysmObjects" />
+    </AssociationSet>
+    <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+    <FunctionImport Name="SP_GWCGetUserForApprovalMaster" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetUserForApprovalMaster_Result)">
+      <Parameter Name="CurrentApprovalLevelID" Mode="In" Type="Int64" />
+      <Parameter Name="UserList" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="vGWCGetApprovelevelDetails" EntityType="BISPL_CRMDBModel.vGWCGetApprovelevelDetail" />
+    <FunctionImport Name="SP_GWCGetApproverListBySp" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetApproverListBySp_Result)">
+      <Parameter Name="CurrentApprovalLevelID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GWCGetApproverListBySp1" ReturnType="Collection(BISPL_CRMDBModel.SP_GWCGetApproverListBySp_Result)">
+      <Parameter Name="CurrentApprovalLevelID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="vGWCGetApprovalDetailsForEdits" EntityType="BISPL_CRMDBModel.vGWCGetApprovalDetailsForEdit" />
+  </EntityContainer>
+  <EntityType Name="mApprovalLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="ApprovalLevel" Nullable="false" />
+    <Property Type="Byte" Name="NoOfApprovers" Nullable="false" />
+    <Property Type="Byte" Name="MinApprovalReq" Nullable="false" />
+    <Property Type="Boolean" Name="IsLowerLevelApprovalReq" Nullable="false" />
+    <Property Type="Decimal" Name="MaxAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="TerritoryID" />
+    <NavigationProperty Name="sysmObject" Relationship="BISPL_CRMDBModel.FK_mApprovalLevel_sysmObjects" FromRole="mApprovalLevel" ToRole="sysmObject" />
+    <Property Type="Int64" Name="OrderCancelInDays" />
+  </EntityType>
+  <EntityType Name="mApprovalLevelDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ApprovalLevelID" Nullable="false" />
+    <Property Type="Int64" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="String" Name="ApproverLogic" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SP_GetUserForApprovalMaster_Result">
+    <Property Type="String" Name="checked" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="EmployeeID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" />
+    <Property Type="Int64" Name="DepartmentID" Nullable="false" />
+    <Property Type="String" Name="DeptName" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="DesignationID" Nullable="false" />
+    <Property Type="String" Name="DesiName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SelectedRec" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <EntityType Name="sysmObject">
+    <Key>
+      <PropertyRef Name="ObjectName" />
+    </Key>
+    <Property Type="String" Name="PhaseName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObjectDisplayName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ApprovalProcess" Nullable="false" />
+    <Property Type="Boolean" Name="AssignTaskProcess" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="HeaderMenu" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FormUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <NavigationProperty Name="mApprovalLevels" Relationship="BISPL_CRMDBModel.FK_mApprovalLevel_sysmObjects" FromRole="sysmObject" ToRole="mApprovalLevel" />
+    <NavigationProperty Name="sysmObjects1" Relationship="BISPL_CRMDBModel.FK_sysmObjects_sysmObjects" FromRole="sysmObject" ToRole="sysmObject1" />
+    <NavigationProperty Name="sysmObject1" Relationship="BISPL_CRMDBModel.FK_sysmObjects_sysmObjects" FromRole="sysmObject1" ToRole="sysmObject" />
+    <Property Type="String" Name="FormUrlArabic" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tApprovalDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ReferenceID" />
+    <Property Type="Byte" Name="ApprovalLevel" />
+    <Property Type="Boolean" Name="IsRequired" />
+    <Property Type="Boolean" Name="MailAlert" />
+    <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApproverUserID" />
+    <Property Type="Int64" Name="StatusChangedBy" />
+    <Property Type="DateTime" Name="ApprovedDate" Precision="3" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Decimal" Name="ObjectTotalAmount" Precision="18" Scale="2" />
+    <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_mApprovalLevel_sysmObjects">
+    <End Type="BISPL_CRMDBModel.sysmObject" Role="sysmObject" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.mApprovalLevel" Role="mApprovalLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmObject">
+        <PropertyRef Name="ObjectName" />
+      </Principal>
+      <Dependent Role="mApprovalLevel">
+        <PropertyRef Name="ObjectName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmObjects_sysmObjects">
+    <End Type="BISPL_CRMDBModel.sysmObject" Role="sysmObject" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.sysmObject" Role="sysmObject1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="sysmObject">
+        <PropertyRef Name="ObjectName" />
+      </Principal>
+      <Dependent Role="sysmObject1">
+        <PropertyRef Name="ObjectName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="Int16" Name="Level" />
+    <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Boolean" Name="IsMandatory" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApprovalLevel" />
+    <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="cancelDays" />
+    <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="AutoRemSchedule" />
+    <Property Type="Int64" Name="ApproRemSchedul" />
+    <Property Type="Boolean" Name="ECommerce" />
+    <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="GwcDeliveries" />
+    <Property Type="Int64" Name="MaxDeliveryDays" />
+    <Property Type="Int64" Name="FinApproverID" />
+    <Property Type="Int64" Name="AddressType" />
+    <Property Type="Boolean" Name="PriceChange" />
+  </EntityType>
+  <ComplexType Name="SP_GWCGetUserForApprovalMaster_Result">
+    <Property Type="Int64" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userName" Nullable="true" MaxLength="103" />
+    <Property Type="String" Name="DeptName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="DepartmentID" Nullable="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="EmployeeID" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ApprovelLevel" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <EntityType Name="vGWCGetApprovelevelDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ObjectName" />
+      <PropertyRef Name="ApprovalLevel" />
+      <PropertyRef Name="NoOFApprovers" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="ApprovalLevel" Nullable="false" />
+    <Property Type="Byte" Name="NoOFApprovers" Nullable="false" />
+    <Property Type="Int64" Name="ApprovalLevelID" />
+    <Property Type="String" Name="userName" MaxLength="103" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="userID" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="String" Name="ApproverLogic" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="OrderCancelInDays" />
+    <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="NoofApprovalLevel" />
+  </EntityType>
+  <ComplexType Name="SP_GWCGetApproverListBySp_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Byte" Name="ApprovalLevel" Nullable="false" />
+    <Property Type="Int64" Name="UserID" Nullable="true" />
+    <Property Type="String" Name="userName" Nullable="true" MaxLength="103" />
+    <Property Type="String" Name="DeptName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="TerritoryID" Nullable="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="EmployeeID" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ApproverLogic" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="vGWCGetApprovalDetailsForEdit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ApprovalLevelID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="userID" />
+    <Property Type="String" Name="userName" MaxLength="103" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeptName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RoleName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApprovalLevelID" Nullable="false" />
+    <Property Type="Int64" Name="mApprovalLevelID" />
+    <Property Type="Byte" Name="ApprovalLevel" />
+  </EntityType>
+</Schema>

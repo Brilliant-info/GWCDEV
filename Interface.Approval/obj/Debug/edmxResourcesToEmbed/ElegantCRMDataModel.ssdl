@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mApprovalLevel" EntityType="BISPL_CRMDBModel.Store.mApprovalLevel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mApprovalLevelDetail" EntityType="BISPL_CRMDBModel.Store.mApprovalLevelDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmObjects" EntityType="BISPL_CRMDBModel.Store.sysmObjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tApprovalDetail" EntityType="BISPL_CRMDBModel.Store.tApprovalDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vGWCGetApprovalDetailsForEdit" EntityType="BISPL_CRMDBModel.Store.vGWCGetApprovalDetailsForEdit" store:Type="Views" store:Schema="dbo" store:Name="vGWCGetApprovalDetailsForEdit">
+      <DefiningQuery>SELECT 
+      [vGWCGetApprovalDetailsForEdit].[ID] AS [ID], 
+      [vGWCGetApprovalDetailsForEdit].[userID] AS [userID], 
+      [vGWCGetApprovalDetailsForEdit].[userName] AS [userName], 
+      [vGWCGetApprovalDetailsForEdit].[DeptName] AS [DeptName], 
+      [vGWCGetApprovalDetailsForEdit].[EmailID] AS [EmailID], 
+      [vGWCGetApprovalDetailsForEdit].[MobileNo] AS [MobileNo], 
+      [vGWCGetApprovalDetailsForEdit].[DepartmentID] AS [DepartmentID], 
+      [vGWCGetApprovalDetailsForEdit].[Active] AS [Active], 
+      [vGWCGetApprovalDetailsForEdit].[EmployeeID] AS [EmployeeID], 
+      [vGWCGetApprovalDetailsForEdit].[CompanyID] AS [CompanyID], 
+      [vGWCGetApprovalDetailsForEdit].[CompanyName] AS [CompanyName], 
+      [vGWCGetApprovalDetailsForEdit].[RoleName] AS [RoleName], 
+      [vGWCGetApprovalDetailsForEdit].[ApprovalLevelID] AS [ApprovalLevelID], 
+      [vGWCGetApprovalDetailsForEdit].[mApprovalLevelID] AS [mApprovalLevelID], 
+      [vGWCGetApprovalDetailsForEdit].[ApprovalLevel] AS [ApprovalLevel]
+      FROM [dbo].[vGWCGetApprovalDetailsForEdit] AS [vGWCGetApprovalDetailsForEdit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGWCGetApprovelevelDetails" EntityType="BISPL_CRMDBModel.Store.vGWCGetApprovelevelDetails" store:Type="Views" store:Schema="dbo" store:Name="vGWCGetApprovelevelDetails">
+      <DefiningQuery>SELECT 
+      [vGWCGetApprovelevelDetails].[ID] AS [ID], 
+      [vGWCGetApprovelevelDetails].[ObjectName] AS [ObjectName], 
+      [vGWCGetApprovelevelDetails].[ApprovalLevel] AS [ApprovalLevel], 
+      [vGWCGetApprovelevelDetails].[NoOFApprovers] AS [NoOFApprovers], 
+      [vGWCGetApprovelevelDetails].[ApprovalLevelID] AS [ApprovalLevelID], 
+      [vGWCGetApprovelevelDetails].[userName] AS [userName], 
+      [vGWCGetApprovelevelDetails].[Territory] AS [Territory], 
+      [vGWCGetApprovelevelDetails].[CompanyName] AS [CompanyName], 
+      [vGWCGetApprovelevelDetails].[Active] AS [Active], 
+      [vGWCGetApprovelevelDetails].[userID] AS [userID], 
+      [vGWCGetApprovelevelDetails].[CompanyID] AS [CompanyID], 
+      [vGWCGetApprovelevelDetails].[NoofApprovalLevel] AS [NoofApprovalLevel], 
+      [vGWCGetApprovelevelDetails].[DepartmentID] AS [DepartmentID], 
+      [vGWCGetApprovelevelDetails].[ApproverLogic] AS [ApproverLogic], 
+      [vGWCGetApprovelevelDetails].[OrderCancelInDays] AS [OrderCancelInDays], 
+      [vGWCGetApprovelevelDetails].[AutoCancel] AS [AutoCancel]
+      FROM [dbo].[vGWCGetApprovelevelDetails] AS [vGWCGetApprovelevelDetails]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_mApprovalLevel_sysmObjects" Association="BISPL_CRMDBModel.Store.FK_mApprovalLevel_sysmObjects">
+      <End Role="sysmObjects" EntitySet="sysmObjects" />
+      <End Role="mApprovalLevel" EntitySet="mApprovalLevel" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="mApprovalLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApprovalLevel" Type="tinyint" Nullable="false" />
+    <Property Name="NoOfApprovers" Type="tinyint" Nullable="false" />
+    <Property Name="MinApprovalReq" Type="tinyint" Nullable="false" />
+    <Property Name="IsLowerLevelApprovalReq" Type="bit" Nullable="false" />
+    <Property Name="MaxAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="TerritoryID" Type="bigint" />
+    <Property Name="OrderCancelInDays" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mApprovalLevelDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApprovalLevelID" Type="bigint" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="ApproverLogic" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApprovalLevel" Type="bigint" />
+    <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+    <Property Name="cancelDays" Type="bigint" />
+    <Property Name="Active" Type="varchar" MaxLength="5" />
+    <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+    <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+    <Property Name="AutoRemSchedule" Type="bigint" />
+    <Property Name="ApproRemSchedul" Type="bigint" />
+    <Property Name="ECommerce" Type="bit" />
+    <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="GwcDeliveries" Type="bit" />
+    <Property Name="MaxDeliveryDays" Type="bigint" />
+    <Property Name="FinApproverID" Type="bigint" />
+    <Property Name="AddressType" Type="bigint" />
+    <Property Name="PriceChange" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysmObjects">
+    <Key>
+      <PropertyRef Name="ObjectName" />
+    </Key>
+    <Property Name="PhaseName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ObjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectDisplayName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ApprovalProcess" Type="bit" Nullable="false" />
+    <Property Name="AssignTaskProcess" Type="bit" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" Nullable="false" />
+    <Property Name="HeaderMenu" Type="nvarchar(max)" />
+    <Property Name="FormUrl" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="FormUrlArabic" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tApprovalDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" />
+    <Property Name="ApprovalLevel" Type="tinyint" />
+    <Property Name="IsRequired" Type="bit" />
+    <Property Name="MailAlert" Type="bit" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApproverUserID" Type="bigint" />
+    <Property Name="StatusChangedBy" Type="bigint" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="ObjectTotalAmount" Type="decimal" Scale="2" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDE.dbo.vGWCGetApprovalDetailsForEdit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGWCGetApprovalDetailsForEdit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ApprovalLevelID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="userID" Type="bigint" />
+    <Property Name="userName" Type="nvarchar" MaxLength="103" />
+    <Property Name="DeptName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ApprovalLevelID" Type="bigint" Nullable="false" />
+    <Property Name="mApprovalLevelID" Type="bigint" />
+    <Property Name="ApprovalLevel" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDE.dbo.vGWCGetApprovelevelDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGWCGetApprovelevelDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ObjectName" />
+      <PropertyRef Name="ApprovalLevel" />
+      <PropertyRef Name="NoOFApprovers" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="ObjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApprovalLevel" Type="tinyint" Nullable="false" />
+    <Property Name="NoOFApprovers" Type="tinyint" Nullable="false" />
+    <Property Name="ApprovalLevelID" Type="bigint" />
+    <Property Name="userName" Type="nvarchar" MaxLength="103" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="userID" Type="bigint" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="NoofApprovalLevel" Type="bigint" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="ApproverLogic" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderCancelInDays" Type="bigint" />
+    <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_mApprovalLevel_sysmObjects">
+    <End Role="sysmObjects" Type="BISPL_CRMDBModel.Store.sysmObjects" Multiplicity="1" />
+    <End Role="mApprovalLevel" Type="BISPL_CRMDBModel.Store.mApprovalLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmObjects">
+        <PropertyRef Name="ObjectName" />
+      </Principal>
+      <Dependent Role="mApprovalLevel">
+        <PropertyRef Name="ObjectName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_GetUserForApprovalMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraApprovalLevelID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GWCGetApproverListBySp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrentApprovalLevelID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GWCGetUserForApprovalMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrentApprovalLevelID" Type="bigint" Mode="In" />
+    <Parameter Name="UserList" Type="varchar(max)" Mode="In" />
+  </Function>
+</Schema>

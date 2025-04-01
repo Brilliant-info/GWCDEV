@@ -1,0 +1,236 @@
+D:\GWCVer3Test\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWCVer3Test\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWCVer3Test\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWCVer3Test\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWCVer3Test\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWCVer3Test\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+D:\GWCVer3Test\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWCVer3Test\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\Ecommerce\GECVer3Test 24-02-2018\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWC\GWCVer3Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC Prod\GWCVer3Prod\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\TFS\GWCVer3Test\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojResolveAssemblyReference.cache
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\BWMSDEVP\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC\ProdGWCVer2\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWC\GWCTestV3\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+F:\TFS GWC\GWCTest\GWCVer2Test\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC SVN\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWC\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\SVN GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC Project\GWC\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC Project\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWC Projects\GWCWebTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC Project\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+C:\GWCTest\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+D:\GWC TEST\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC_Test_Proj\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll.config
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\bin\Debug\Interface.Company.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\bin\Debug\Domain.Server.pdb
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csprojAssemblyReference.cache
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CoreCompileInputs.cache
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.csproj.CopyComplete
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.dll
+E:\GWC_Dev_Proj-13-03-2025\GWCPartRequestSystem\Interface.Company\obj\Debug\Interface.Company.pdb

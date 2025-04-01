@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+    <EntitySetMapping Name="mApprovalLevels">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.mApprovalLevel">
+        <MappingFragment StoreEntitySet="mApprovalLevel">
+          <ScalarProperty Name="OrderCancelInDays" ColumnName="OrderCancelInDays" />
+          <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="MaxAmount" ColumnName="MaxAmount" />
+          <ScalarProperty Name="IsLowerLevelApprovalReq" ColumnName="IsLowerLevelApprovalReq" />
+          <ScalarProperty Name="MinApprovalReq" ColumnName="MinApprovalReq" />
+          <ScalarProperty Name="NoOfApprovers" ColumnName="NoOfApprovers" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mApprovalLevelDetails">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.mApprovalLevelDetail">
+        <MappingFragment StoreEntitySet="mApprovalLevelDetail">
+          <ScalarProperty Name="ApproverLogic" ColumnName="ApproverLogic" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ApprovalLevelID" ColumnName="ApprovalLevelID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetUserForApprovalMaster" FunctionName="BISPL_CRMDBModel.Store.SP_GetUserForApprovalMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetUserForApprovalMaster_Result">
+          <ScalarProperty Name="checked" ColumnName="checked" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+          <ScalarProperty Name="DesiName" ColumnName="DesiName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="SelectedRec" ColumnName="SelectedRec" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sysmObjects">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.sysmObject">
+        <MappingFragment StoreEntitySet="sysmObjects">
+          <ScalarProperty Name="FormUrlArabic" ColumnName="FormUrlArabic" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="FormUrl" ColumnName="FormUrl" />
+          <ScalarProperty Name="HeaderMenu" ColumnName="HeaderMenu" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="AssignTaskProcess" ColumnName="AssignTaskProcess" />
+          <ScalarProperty Name="ApprovalProcess" ColumnName="ApprovalProcess" />
+          <ScalarProperty Name="ObjectDisplayName" ColumnName="ObjectDisplayName" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tApprovalDetails">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.tApprovalDetail">
+        <MappingFragment StoreEntitySet="tApprovalDetail">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ObjectTotalAmount" ColumnName="ObjectTotalAmount" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="StatusChangedBy" ColumnName="StatusChangedBy" />
+          <ScalarProperty Name="ApproverUserID" ColumnName="ApproverUserID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="MailAlert" ColumnName="MailAlert" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mTerritories">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.mTerritory">
+        <MappingFragment StoreEntitySet="mTerritory">
+          <ScalarProperty Name="PriceChange" ColumnName="PriceChange" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="FinApproverID" ColumnName="FinApproverID" />
+          <ScalarProperty Name="MaxDeliveryDays" ColumnName="MaxDeliveryDays" />
+          <ScalarProperty Name="GwcDeliveries" ColumnName="GwcDeliveries" />
+          <ScalarProperty Name="OrderFormat" ColumnName="OrderFormat" />
+          <ScalarProperty Name="ECommerce" ColumnName="ECommerce" />
+          <ScalarProperty Name="ApproRemSchedul" ColumnName="ApproRemSchedul" />
+          <ScalarProperty Name="AutoRemSchedule" ColumnName="AutoRemSchedule" />
+          <ScalarProperty Name="AutoCancRen" ColumnName="AutoCancRen" />
+          <ScalarProperty Name="ApprovalRem" ColumnName="ApprovalRem" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="cancelDays" ColumnName="cancelDays" />
+          <ScalarProperty Name="AutoCancel" ColumnName="AutoCancel" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="GroupTitle" ColumnName="GroupTitle" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GWCGetUserForApprovalMaster" FunctionName="BISPL_CRMDBModel.Store.SP_GWCGetUserForApprovalMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GWCGetUserForApprovalMaster_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="ApprovelLevel" ColumnName="ApprovelLevel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="vGWCGetApprovelevelDetails">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGWCGetApprovelevelDetail">
+        <MappingFragment StoreEntitySet="vGWCGetApprovelevelDetails">
+          <ScalarProperty Name="NoofApprovalLevel" ColumnName="NoofApprovalLevel" />
+          <ScalarProperty Name="AutoCancel" ColumnName="AutoCancel" />
+          <ScalarProperty Name="OrderCancelInDays" ColumnName="OrderCancelInDays" />
+          <ScalarProperty Name="ApproverLogic" ColumnName="ApproverLogic" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="ApprovalLevelID" ColumnName="ApprovalLevelID" />
+          <ScalarProperty Name="NoOFApprovers" ColumnName="NoOFApprovers" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GWCGetApproverListBySp" FunctionName="BISPL_CRMDBModel.Store.SP_GWCGetApproverListBySp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GWCGetApproverListBySp_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ApproverLogic" ColumnName="ApproverLogic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GWCGetApproverListBySp1" FunctionName="BISPL_CRMDBModel.Store.SP_GWCGetApproverListBySp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GWCGetApproverListBySp_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ApproverLogic" ColumnName="ApproverLogic" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="vGWCGetApprovalDetailsForEdits">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.vGWCGetApprovalDetailsForEdit">
+        <MappingFragment StoreEntitySet="vGWCGetApprovalDetailsForEdit">
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="mApprovalLevelID" ColumnName="mApprovalLevelID" />
+          <ScalarProperty Name="ApprovalLevelID" ColumnName="ApprovalLevelID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

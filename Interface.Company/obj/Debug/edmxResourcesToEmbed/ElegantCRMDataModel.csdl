@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mTermsConditions" EntityType="BISPL_CRMDBModel.mTermsCondition" />
+    <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+    <EntitySet Name="tCompanyRegistrationDetails" EntityType="BISPL_CRMDBModel.tCompanyRegistrationDetail" />
+    <EntitySet Name="vGetCompanyDetails" EntityType="BISPL_CRMDBModel.vGetCompanyDetail" />
+    <EntitySet Name="vGetUserProfileLists" EntityType="BISPL_CRMDBModel.vGetUserProfileList" />
+    <FunctionImport Name="SP_GetProductListForTargetPlan" ReturnType="Collection(BISPL_CRMDBModel.SP_GetProductListForTargetPlan_Result)">
+      <Parameter Name="paraTargetID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetTermConditionListForUCTermCondition" ReturnType="Collection(BISPL_CRMDBModel.SP_GetTermConditionListForUCTermCondition_Result)">
+      <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+      <Parameter Name="paraObjectName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="mTermsConditionsGroups" EntityType="BISPL_CRMDBModel.mTermsConditionsGroup" />
+    <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+    <EntitySet Name="mUserTerritoryDetails" EntityType="BISPL_CRMDBModel.mUserTerritoryDetail" />
+    <EntitySet Name="vTermConditions" EntityType="BISPL_CRMDBModel.vTermCondition" />
+    <EntitySet Name="mMessageEMailTemplates" EntityType="BISPL_CRMDBModel.mMessageEMailTemplate" />
+    <EntitySet Name="mPrefixMasters" EntityType="BISPL_CRMDBModel.mPrefixMaster" />
+    <EntitySet Name="tTargetPlans" EntityType="BISPL_CRMDBModel.tTargetPlan" />
+    <EntitySet Name="tTargetPlanDetails" EntityType="BISPL_CRMDBModel.tTargetPlanDetail" />
+    <EntitySet Name="vTargetPlans" EntityType="BISPL_CRMDBModel.vTargetPlan" />
+    <EntitySet Name="mCompanies" EntityType="BISPL_CRMDBModel.mCompany" />
+    <AssociationSet Name="FK_tCompanyRegistrationDetails_mCompany" Association="BISPL_CRMDBModel.FK_tCompanyRegistrationDetails_mCompany">
+      <End Role="mCompany" EntitySet="mCompanies" />
+      <End Role="tCompanyRegistrationDetail" EntitySet="tCompanyRegistrationDetails" />
+    </AssociationSet>
+    <EntitySet Name="tContactPersonDetails" EntityType="BISPL_CRMDBModel.tContactPersonDetail" />
+    <EntitySet Name="mDeptWithConnectionStrings" EntityType="BISPL_CRMDBModel.mDeptWithConnectionString" />
+    <EntitySet Name="View_DeptWithConnString" EntityType="BISPL_CRMDBModel.View_DeptWithConnString" />
+    <EntitySet Name="mReasonCodes" EntityType="BISPL_CRMDBModel.mReasonCode" />
+  </EntityContainer>
+  <EntityType Name="mTermsCondition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="TCGroupID" Nullable="false" />
+    <Property Type="String" Name="Term" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Condition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="Int16" Name="Level" />
+    <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Boolean" Name="IsMandatory" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApprovalLevel" />
+    <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="cancelDays" />
+    <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="AutoRemSchedule" />
+    <Property Type="Int64" Name="ApproRemSchedul" />
+    <Property Type="Boolean" Name="ECommerce" />
+    <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="GwcDeliveries" />
+    <Property Type="Int64" Name="MaxDeliveryDays" />
+    <Property Type="Int64" Name="FinApproverID" />
+    <Property Type="Int64" Name="AddressType" />
+    <Property Type="Boolean" Name="PriceChange" />
+    <Property Type="String" Name="location" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="MerchantCode" />
+    <Property Type="Decimal" Name="TokenExptime" Precision="10" Scale="2" />
+    <Property Type="Int64" Name="UserID" />
+    <Property Type="Decimal" Name="PreOrderExpTime" Precision="10" Scale="2" />
+    <Property Type="String" Name="CustAnalytics" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tCompanyRegistrationDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="Int64" Name="NoOfUsers" Nullable="false" />
+    <Property Type="DateTime" Name="CRMRegistrationDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="CRMExpiryDate" Nullable="false" Precision="0" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <NavigationProperty Name="mCompany" Relationship="BISPL_CRMDBModel.FK_tCompanyRegistrationDetails_mCompany" FromRole="tCompanyRegistrationDetail" ToRole="mCompany" />
+  </EntityType>
+  <EntityType Name="vGetCompanyDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="AddressLine1" />
+      <PropertyRef Name="County" />
+      <PropertyRef Name="State" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Website" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine2" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine3" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Landmark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="County" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FaxNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LogoPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="NoOfUsers" />
+    <Property Type="String" Name="CRMExpiryDate" MaxLength="8000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vGetUserProfileList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="deptname" />
+      <PropertyRef Name="desiName" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userName" MaxLength="158" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="deptname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="desiName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmployeeID" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SP_GetProductListForTargetPlan_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="Int64" Name="ProductID" Nullable="true" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="PrincipalPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="UOM" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="TargetAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Active" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_GetTermConditionListForUCTermCondition_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+    <Property Type="Int64" Name="TermID" Nullable="true" />
+    <Property Type="String" Name="Term" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Condition" Nullable="true" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="String" Name="Active" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastModifyBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifyDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="mTermsConditionsGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="GroupName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastUpdated" Nullable="false" Precision="3" />
+    <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mUserTerritoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="TerritoryID" />
+    <Property Type="Int64" Name="Level" />
+    <Property Type="Int64" Name="UserID" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastMofidiedDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="vTermCondition">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TCGroupID" />
+      <PropertyRef Name="Term" />
+      <PropertyRef Name="Condition" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="TCGroupID" Nullable="false" />
+    <Property Type="String" Name="GroupName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Term" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Condition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+  </EntityType>
+  <EntityType Name="mMessageEMailTemplate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="mStatusID" />
+    <Property Type="String" Name="MailType" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MailSubject" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MailBody" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <Property Type="DateTime" Name="ModifiedDate" Precision="0" />
+    <Property Type="Int64" Name="ModifiedBy" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="Int64" Name="DepartmentID" />
+    <Property Type="Int64" Name="ActivityID" />
+    <Property Type="Int64" Name="MessageID" />
+    <Property Type="String" Name="TemplateTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Language" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EcommMail" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mPrefixMaster">
+    <Key>
+      <PropertyRef Name="PreID" />
+    </Key>
+    <Property Type="Int64" Name="PreID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PreObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Seperator" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Type="Int64" Name="StartingNo" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Creationdate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" />
+  </EntityType>
+  <EntityType Name="tTargetPlan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Month" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Year" Nullable="false" />
+    <Property Type="DateTime" Name="FromDate" Precision="3" />
+    <Property Type="DateTime" Name="ToDate" Precision="3" />
+    <Property Type="DateTime" Name="AlertDate" Precision="3" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ExecutiveID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tTargetPlanDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="TargetID" Nullable="false" />
+    <Property Type="Int64" Name="ProductID" Nullable="false" />
+    <Property Type="Int64" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="TargetAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="vTargetPlan">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Month" />
+      <PropertyRef Name="Year" />
+      <PropertyRef Name="ExecutiveID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Month" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Year" Nullable="false" />
+    <Property Type="DateTime" Name="FromDate" Precision="3" />
+    <Property Type="DateTime" Name="ToDate" Precision="3" />
+    <Property Type="DateTime" Name="AlertDate" Precision="3" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Executive" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ExecutiveID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Website" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine2" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine3" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Landmark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="County" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FaxNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LogoPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="String" Name="MainDataSource" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainDataBaseName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainDBPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DataSource" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DataBaseName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DBPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainServerLogin" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+    <Property Type="Binary" Name="StampImg" MaxLength="Max" FixedLength="false" />
+    <Property Type="Binary" Name="Complogo" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tCompanyRegistrationDetails" Relationship="BISPL_CRMDBModel.FK_tCompanyRegistrationDetails_mCompany" FromRole="mCompany" ToRole="tCompanyRegistrationDetail" />
+    <Property Type="String" Name="SourceEmail" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_tCompanyRegistrationDetails_mCompany">
+    <End Type="BISPL_CRMDBModel.mCompany" Role="mCompany" Multiplicity="1" />
+    <End Type="BISPL_CRMDBModel.tCompanyRegistrationDetail" Role="tCompanyRegistrationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mCompany">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tCompanyRegistrationDetail">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tContactPersonDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Department" />
+    <Property Type="String" Name="Designation" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OfficeNo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileNo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ContactTypeID" Nullable="false" />
+    <Property Type="String" Name="InterestedIn" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hobbies" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FacebookID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FacebookPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TwitterID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TwitterPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OtherID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighestQualification" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CollegeOrUniversity" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HighSchool" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mDeptWithConnectionString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="CompanyId" />
+    <Property Type="Int64" Name="DeptId" />
+    <Property Type="String" Name="DatabaseName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConnectionString" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CompanyNm" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeptNm" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SchemaNm" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeptCode" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_DeptWithConnString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="Int64" Name="CompanyId" />
+    <Property Type="Int64" Name="DeptId" />
+    <Property Type="String" Name="DatabaseName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ConnectionString" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mReasonCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SequenceCode" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReasonCode" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReasonDetails" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Type" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Active" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DefaultValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="companyId" />
+    <Property Type="Int64" Name="DeptId" />
+  </EntityType>
+</Schema>
