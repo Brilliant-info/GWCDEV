@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mRoute" EntityType="BISPL_CRMDBModel.Store.mRoute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mSubZone" EntityType="BISPL_CRMDBModel.Store.mSubZone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mZone" EntityType="BISPL_CRMDBModel.Store.mZone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tAddress" EntityType="BISPL_CRMDBModel.Store.tAddress" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_mSubZone_mZone" Association="BISPL_CRMDBModel.Store.FK_mSubZone_mZone">
+      <End Role="mZone" EntitySet="mZone" />
+      <End Role="mSubZone" EntitySet="mSubZone" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="mRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mSubZone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ZoneID" Type="bigint" />
+    <Property Name="SubZone" Type="varchar" MaxLength="200" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApprovalLevel" Type="bigint" />
+    <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+    <Property Name="cancelDays" Type="bigint" />
+    <Property Name="Active" Type="varchar" MaxLength="5" />
+    <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+    <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+    <Property Name="AutoRemSchedule" Type="bigint" />
+    <Property Name="ApproRemSchedul" Type="bigint" />
+  </EntityType>
+  <EntityType Name="mZone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="varchar" MaxLength="200" />
+    <Property Name="State" Type="varchar" MaxLength="200" />
+    <Property Name="Zone" Type="varchar" MaxLength="200" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine3" Type="nvarchar" MaxLength="100" />
+    <Property Name="RouteID" Type="bigint" />
+    <Property Name="Landmark" Type="nvarchar" MaxLength="50" />
+    <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDefault" Type="varchar" MaxLength="1" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="BillingID" Type="bigint" />
+    <Property Name="ShippingID" Type="bigint" />
+    <Property Name="Zone" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubZone" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="xml" Nullable="false" />
+    <Property Name="XmlData" Type="xml" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_mSubZone_mZone">
+    <End Role="mZone" Type="BISPL_CRMDBModel.Store.mZone" Multiplicity="0..1" />
+    <End Role="mSubZone" Type="BISPL_CRMDBModel.Store.mSubZone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mZone">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mSubZone">
+        <PropertyRef Name="ZoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_GetAddressListToBindGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_InsertIntoAddressList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraSessionID" Type="varchar" Mode="In" />
+    <Parameter Name="paraSaveObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+    <Parameter Name="paraCurrentFormID" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

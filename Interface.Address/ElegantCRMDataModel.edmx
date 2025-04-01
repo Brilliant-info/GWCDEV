@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="mRoute" EntityType="BISPL_CRMDBModel.Store.mRoute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mSubZone" EntityType="BISPL_CRMDBModel.Store.mSubZone" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mZone" EntityType="BISPL_CRMDBModel.Store.mZone" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tAddress" EntityType="BISPL_CRMDBModel.Store.tAddress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_mSubZone_mZone" Association="BISPL_CRMDBModel.Store.FK_mSubZone_mZone">
+            <End Role="mZone" EntitySet="mZone" />
+            <End Role="mSubZone" EntitySet="mSubZone" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="mRoute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mSubZone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneID" Type="bigint" />
+          <Property Name="SubZone" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="mTerritory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentID" Type="bigint" />
+          <Property Name="Level" Type="smallint" />
+          <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+          <Property Name="Territory" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="IsMandatory" Type="bit" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+          <Property Name="ApprovalLevel" Type="bigint" />
+          <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+          <Property Name="cancelDays" Type="bigint" />
+          <Property Name="Active" Type="varchar" MaxLength="5" />
+          <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+          <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+          <Property Name="AutoRemSchedule" Type="bigint" />
+          <Property Name="ApproRemSchedul" Type="bigint" />
+        </EntityType>
+        <EntityType Name="mZone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="varchar" MaxLength="200" />
+          <Property Name="State" Type="varchar" MaxLength="200" />
+          <Property Name="Zone" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tAddress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="AddressLine3" Type="nvarchar" MaxLength="100" />
+          <Property Name="RouteID" Type="bigint" />
+          <Property Name="Landmark" Type="nvarchar" MaxLength="50" />
+          <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsDefault" Type="varchar" MaxLength="1" />
+          <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="BillingID" Type="bigint" />
+          <Property Name="ShippingID" Type="bigint" />
+          <Property Name="Zone" Type="nvarchar" MaxLength="200" />
+          <Property Name="SubZone" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="xml" Nullable="false" />
+          <Property Name="XmlData" Type="xml" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_mSubZone_mZone">
+          <End Role="mZone" Type="BISPL_CRMDBModel.Store.mZone" Multiplicity="0..1" />
+          <End Role="mSubZone" Type="BISPL_CRMDBModel.Store.mSubZone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mZone">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mSubZone">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_GetAddressListToBindGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="ReferenceID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertIntoAddressList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraSessionID" Type="varchar" Mode="In" />
+          <Parameter Name="paraSaveObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+          <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+          <Parameter Name="paraCurrentFormID" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mRoutes" EntityType="BISPL_CRMDBModel.mRoute" />
+          <EntitySet Name="mSubZones" EntityType="BISPL_CRMDBModel.mSubZone" />
+          <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+          <EntitySet Name="mZones" EntityType="BISPL_CRMDBModel.mZone" />
+          <EntitySet Name="tAddresses" EntityType="BISPL_CRMDBModel.tAddress" />
+          <AssociationSet Name="FK_mSubZone_mZone" Association="BISPL_CRMDBModel.FK_mSubZone_mZone">
+            <End Role="mZone" EntitySet="mZones" />
+            <End Role="mSubZone" EntitySet="mSubZones" />
+          </AssociationSet>
+          <FunctionImport Name="SP_GetAddressListToBindGrid" ReturnType="Collection(BISPL_CRMDBModel.SP_GetAddressListToBindGrid_Result)">
+            <Parameter Name="ObjectName" Mode="In" Type="String" />
+            <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+          <FunctionImport Name="SP_InsertIntoAddressList">
+            <Parameter Name="paraSessionID" Mode="In" Type="String" />
+            <Parameter Name="paraSaveObjectName" Mode="In" Type="String" />
+            <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+            <Parameter Name="paraUserID" Mode="In" Type="String" />
+            <Parameter Name="paraCurrentFormID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="mRoute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Details" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mSubZone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ZoneID" />
+          <Property Type="String" Name="SubZone" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <NavigationProperty Name="mZone" Relationship="BISPL_CRMDBModel.FK_mSubZone_mZone" FromRole="mSubZone" ToRole="mZone" />
+        </EntityType>
+        <EntityType Name="mTerritory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ParentID" />
+          <Property Type="Int16" Name="Level" />
+          <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <Property Type="Boolean" Name="IsMandatory" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ApprovalLevel" />
+          <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="cancelDays" />
+          <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="AutoRemSchedule" />
+          <Property Type="Int64" Name="ApproRemSchedul" />
+        </EntityType>
+        <EntityType Name="mZone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Country" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Zone" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <NavigationProperty Name="mSubZones" Relationship="BISPL_CRMDBModel.FK_mSubZone_mZone" FromRole="mZone" ToRole="mSubZone" />
+        </EntityType>
+        <EntityType Name="tAddress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="AddressType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine3" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="RouteID" />
+          <Property Type="String" Name="Landmark" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="County" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FaxNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsDefault" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="Int64" Name="BillingID" />
+          <Property Type="Int64" Name="ShippingID" />
+          <Property Type="String" Name="Zone" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SubZone" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_mSubZone_mZone">
+          <End Type="BISPL_CRMDBModel.mZone" Role="mZone" Multiplicity="0..1" />
+          <End Type="BISPL_CRMDBModel.mSubZone" Role="mSubZone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mZone">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="mSubZone">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="SP_GetAddressListToBindGrid_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" Nullable="true" />
+          <Property Type="String" Name="AddressType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="AddressLine2" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="AddressLine3" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="RouteID" Nullable="true" />
+          <Property Type="String" Name="Landmark" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="County" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Zipcode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FaxNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="IsDefault" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="Zone" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="SubZone" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillIsChecked" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ShipIsChecked" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastUpdated" Nullable="false" />
+          <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <EntitySetMapping Name="mRoutes">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mRoute">
+              <MappingFragment StoreEntitySet="mRoute">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mSubZones">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mSubZone">
+              <MappingFragment StoreEntitySet="mSubZone">
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SubZone" ColumnName="SubZone" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mTerritories">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mTerritory">
+              <MappingFragment StoreEntitySet="mTerritory">
+                <ScalarProperty Name="ApproRemSchedul" ColumnName="ApproRemSchedul" />
+                <ScalarProperty Name="AutoRemSchedule" ColumnName="AutoRemSchedule" />
+                <ScalarProperty Name="AutoCancRen" ColumnName="AutoCancRen" />
+                <ScalarProperty Name="ApprovalRem" ColumnName="ApprovalRem" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="cancelDays" ColumnName="cancelDays" />
+                <ScalarProperty Name="AutoCancel" ColumnName="AutoCancel" />
+                <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+                <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Territory" ColumnName="Territory" />
+                <ScalarProperty Name="GroupTitle" ColumnName="GroupTitle" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mZones">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mZone">
+              <MappingFragment StoreEntitySet="mZone">
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tAddresses">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tAddress">
+              <MappingFragment StoreEntitySet="tAddress">
+                <ScalarProperty Name="SubZone" ColumnName="SubZone" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="ShippingID" ColumnName="ShippingID" />
+                <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetAddressListToBindGrid" FunctionName="BISPL_CRMDBModel.Store.SP_GetAddressListToBindGrid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetAddressListToBindGrid_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="SubZone" ColumnName="SubZone" />
+                <ScalarProperty Name="BillIsChecked" ColumnName="BillIsChecked" />
+                <ScalarProperty Name="ShipIsChecked" ColumnName="ShipIsChecked" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TempDatas">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.TempData">
+              <MappingFragment StoreEntitySet="TempData">
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="XmlData" ColumnName="XmlData" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="TempDataID" ColumnName="TempDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertIntoAddressList" FunctionName="BISPL_CRMDBModel.Store.SP_InsertIntoAddressList" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ElegantCRMDataModel">
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mRoute" Width="1.5" PointX="0.75" PointY="4.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mSubZone" Width="1.5" PointX="3" PointY="1" Height="2.5571907552083326" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mTerritory" Width="1.5" PointX="2.75" PointY="4.75" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mZone" Width="1.5" PointX="0.75" PointY="1" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tAddress" Width="1.5" PointX="4.75" PointY="4.75" Height="6.4032194010416674" />
+        <AssociationConnector Association="BISPL_CRMDBModel.FK_mSubZone_mZone" >
+          <ConnectorPoint PointX="2.25" PointY="2.2785953776041663" />
+          <ConnectorPoint PointX="3" PointY="2.2785953776041663" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.TempData" Width="1.5" PointX="5.375" PointY="0.75" Height="2.5571907552083326" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

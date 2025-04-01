@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mRoutes" EntityType="BISPL_CRMDBModel.mRoute" />
+    <EntitySet Name="mSubZones" EntityType="BISPL_CRMDBModel.mSubZone" />
+    <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+    <EntitySet Name="mZones" EntityType="BISPL_CRMDBModel.mZone" />
+    <EntitySet Name="tAddresses" EntityType="BISPL_CRMDBModel.tAddress" />
+    <AssociationSet Name="FK_mSubZone_mZone" Association="BISPL_CRMDBModel.FK_mSubZone_mZone">
+      <End Role="mZone" EntitySet="mZones" />
+      <End Role="mSubZone" EntitySet="mSubZones" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetAddressListToBindGrid" ReturnType="Collection(BISPL_CRMDBModel.SP_GetAddressListToBindGrid_Result)">
+      <Parameter Name="ObjectName" Mode="In" Type="String" />
+      <Parameter Name="ReferenceID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+    <FunctionImport Name="SP_InsertIntoAddressList">
+      <Parameter Name="paraSessionID" Mode="In" Type="String" />
+      <Parameter Name="paraSaveObjectName" Mode="In" Type="String" />
+      <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+      <Parameter Name="paraCurrentFormID" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="mRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Details" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mSubZone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ZoneID" />
+    <Property Type="String" Name="SubZone" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <NavigationProperty Name="mZone" Relationship="BISPL_CRMDBModel.FK_mSubZone_mZone" FromRole="mSubZone" ToRole="mZone" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentID" />
+    <Property Type="Int16" Name="Level" />
+    <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="Boolean" Name="IsMandatory" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ApprovalLevel" />
+    <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="cancelDays" />
+    <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="AutoRemSchedule" />
+    <Property Type="Int64" Name="ApproRemSchedul" />
+  </EntityType>
+  <EntityType Name="mZone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Country" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="State" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Zone" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedDate" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <NavigationProperty Name="mSubZones" Relationship="BISPL_CRMDBModel.FK_mSubZone_mZone" FromRole="mZone" ToRole="mSubZone" />
+  </EntityType>
+  <EntityType Name="tAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="AddressType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine2" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddressLine3" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="RouteID" />
+    <Property Type="String" Name="Landmark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="County" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FaxNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsDefault" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="Int64" Name="BillingID" />
+    <Property Type="Int64" Name="ShippingID" />
+    <Property Type="String" Name="Zone" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubZone" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_mSubZone_mZone">
+    <End Type="BISPL_CRMDBModel.mZone" Role="mZone" Multiplicity="0..1" />
+    <End Type="BISPL_CRMDBModel.mSubZone" Role="mSubZone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mZone">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mSubZone">
+        <PropertyRef Name="ZoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetAddressListToBindGrid_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="String" Name="AddressType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="AddressLine2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AddressLine3" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="RouteID" Nullable="true" />
+    <Property Type="String" Name="Landmark" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="County" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Zipcode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FaxNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="IsDefault" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" />
+    <Property Type="Int64" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="Zone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="SubZone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BillIsChecked" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="ShipIsChecked" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastUpdated" Nullable="false" />
+    <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

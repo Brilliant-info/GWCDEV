@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="mCustomerType" EntityType="BISPL_CRMDBModel.Store.mCustomerType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mMessageEMailTemplates" EntityType="BISPL_CRMDBModel.Store.mMessageEMailTemplates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mSector" EntityType="BISPL_CRMDBModel.Store.mSector" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mSLA" EntityType="BISPL_CRMDBModel.Store.mSLA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tAddToCartProductDetail" EntityType="BISPL_CRMDBModel.Store.tAddToCartProductDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tCustomerHead" EntityType="BISPL_CRMDBModel.Store.tCustomerHead" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tInvoiceHead" EntityType="BISPL_CRMDBModel.Store.tInvoiceHead" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tOpeningBalance" EntityType="BISPL_CRMDBModel.Store.tOpeningBalance" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GetCustomerDetails" EntityType="BISPL_CRMDBModel.Store.GetCustomerDetails" store:Type="Views" store:Schema="dbo" store:Name="GetCustomerDetails">
+            <DefiningQuery>SELECT 
+      [GetCustomerDetails].[Customerid] AS [Customerid], 
+      [GetCustomerDetails].[SectorID] AS [SectorID], 
+      [GetCustomerDetails].[CustomerName] AS [CustomerName], 
+      [GetCustomerDetails].[CompanyType] AS [CompanyType], 
+      [GetCustomerDetails].[GroupName] AS [GroupName], 
+      [GetCustomerDetails].[CustomerTypeID] AS [CustomerTypeID], 
+      [GetCustomerDetails].[SectorName] AS [SectorName], 
+      [GetCustomerDetails].[CustomerCode] AS [CustomerCode], 
+      [GetCustomerDetails].[WebSite] AS [WebSite], 
+      [GetCustomerDetails].[TurnOver] AS [TurnOver], 
+      [GetCustomerDetails].[Active] AS [Active], 
+      [GetCustomerDetails].[ID] AS [ID]
+      FROM [dbo].[GetCustomerDetails] AS [GetCustomerDetails]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="mCustomerType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mMessageEMailTemplates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="varchar" MaxLength="100" />
+          <Property Name="mStatusID" Type="bigint" />
+          <Property Name="MailType" Type="varchar" MaxLength="100" />
+          <Property Name="MailSubject" Type="nvarchar(max)" />
+          <Property Name="MailBody" Type="nvarchar(max)" />
+          <Property Name="Active" Type="varchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="CompanyID" Type="bigint" />
+          <Property Name="DepartmentID" Type="bigint" />
+          <Property Name="ActivityID" Type="bigint" />
+          <Property Name="MessageID" Type="bigint" />
+          <Property Name="TemplateTitle" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="mSector">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mSLA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeptID" Type="bigint" />
+          <Property Name="PrimeDays" Type="bigint" />
+          <Property Name="ExpressDays" Type="bigint" />
+          <Property Name="RegularDays" Type="bigint" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="mTerritory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentID" Type="bigint" />
+          <Property Name="Level" Type="smallint" />
+          <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+          <Property Name="Territory" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="IsMandatory" Type="bit" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+          <Property Name="ApprovalLevel" Type="bigint" />
+          <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+          <Property Name="cancelDays" Type="bigint" />
+          <Property Name="Active" Type="varchar" MaxLength="5" />
+          <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+          <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+          <Property Name="AutoRemSchedule" Type="bigint" />
+          <Property Name="ApproRemSchedul" Type="bigint" />
+          <Property Name="ECommerce" Type="bit" />
+          <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+          <Property Name="GwcDeliveries" Type="bit" />
+          <Property Name="MaxDeliveryDays" Type="bigint" />
+          <Property Name="FinApproverID" Type="bigint" />
+          <Property Name="AddressType" Type="bigint" />
+          <Property Name="PriceChange" Type="bit" />
+        </EntityType>
+        <EntityType Name="tAddToCartProductDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+          <Property Name="Sequence" Type="bigint" Nullable="false" />
+          <Property Name="ProductID" Type="bigint" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" />
+          <Property Name="ProductPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Quantity" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="UOMID" Type="bigint" />
+          <Property Name="PerUnitDiscount" Type="decimal" Nullable="false" Precision="10" Scale="3" />
+          <Property Name="IsDiscountPercent" Type="bit" Nullable="false" />
+          <Property Name="DiscountID" Type="bigint" />
+          <Property Name="TotalTaxAmount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tCustomerHead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerTypeID" Type="bigint" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectorID" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="TurnOver" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CreditDays" Type="int" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="ConperID" Type="varchar" MaxLength="500" />
+          <Property Name="BillingAddressID" Type="bigint" />
+          <Property Name="ShippingAddressID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="xml" Nullable="false" />
+          <Property Name="XmlData" Type="xml" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tInvoiceHead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+          <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+          <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerHeadID" Type="bigint" Nullable="false" />
+          <Property Name="LeadSourceID" Type="bigint" Nullable="false" />
+          <Property Name="InvoiceStatus" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CustomerPONo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerPODate" Type="datetime" />
+          <Property Name="ParentInvoiceID" Type="bigint" />
+          <Property Name="DispatchThrough" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExpDispatchDate" Type="datetime" />
+          <Property Name="CampaignID" Type="bigint" />
+          <Property Name="SubTotal" Type="decimal" Scale="2" />
+          <Property Name="ProductLevelTotalDiscount" Type="decimal" Scale="2" />
+          <Property Name="DiscountOnSubTotal" Type="decimal" Scale="2" />
+          <Property Name="DiscountOnSubTotalPercent" Type="bit" />
+          <Property Name="TotalDiscount" Type="decimal" Scale="2" />
+          <Property Name="TotalAfterDiscount" Type="decimal" Scale="2" />
+          <Property Name="ProductLevelTotalTax" Type="decimal" Scale="2" />
+          <Property Name="TaxOnTotalAfterDiscount" Type="decimal" Scale="2" />
+          <Property Name="TotalTax" Type="decimal" Scale="2" />
+          <Property Name="ShippingCharges" Type="decimal" Scale="2" />
+          <Property Name="OtherChargesDescription" Type="nvarchar(max)" />
+          <Property Name="OtherCharges" Type="decimal" Scale="2" />
+          <Property Name="TotalAmount" Type="decimal" Scale="2" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="BillingAddressID" Type="bigint" />
+          <Property Name="ShippingAddressID" Type="bigint" />
+          <Property Name="ConperID" Type="varchar" MaxLength="500" />
+          <Property Name="IsPrint" Type="bit" />
+          <Property Name="SalesExi" Type="varchar" MaxLength="50" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Executive" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tOpeningBalance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FinancialYear" Type="varchar" MaxLength="50" />
+          <Property Name="ObjectName" Type="varchar" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" />
+          <Property Name="OpeningBalance" Type="decimal" Scale="2" />
+          <Property Name="DrCr" Type="varchar" MaxLength="2" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDE.dbo.GetCustomerDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="GetCustomerDetails">
+          <Key>
+            <PropertyRef Name="Customerid" />
+            <PropertyRef Name="SectorID" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="GroupName" />
+            <PropertyRef Name="CustomerTypeID" />
+            <PropertyRef Name="SectorName" />
+            <PropertyRef Name="TurnOver" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Customerid" Type="bigint" Nullable="false" />
+          <Property Name="SectorID" Type="bigint" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="CompanyType" Type="nvarchar" MaxLength="50" />
+          <Property Name="GroupName" Type="varchar" Nullable="false" MaxLength="7" />
+          <Property Name="CustomerTypeID" Type="bigint" Nullable="false" />
+          <Property Name="SectorName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="TurnOver" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="ID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Function Name="SP_AcountHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraInvoiceId" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mCustomerTypes" EntityType="BISPL_CRMDBModel.mCustomerType" />
+          <EntitySet Name="mSectors" EntityType="BISPL_CRMDBModel.mSector" />
+          <FunctionImport Name="SP_AcountHistory" ReturnType="Collection(BISPL_CRMDBModel.SP_AcountHistory_Result)">
+          <Parameter Name="paraInvoiceId" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tOpeningBalances" EntityType="BISPL_CRMDBModel.tOpeningBalance" />
+          <FunctionImport Name="SP_CourseStudentWise" ReturnType="Collection(BISPL_CRMDBModel.SP_CourseStudentWise_Result)">
+          <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+          <FunctionImport Name="SP_InsertInto_tCustomerCourse">
+          <Parameter Name="xmlData" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tAddToCartProductDetails" EntityType="BISPL_CRMDBModel.tAddToCartProductDetail" />
+          <EntitySet Name="tCustomerHeads" EntityType="BISPL_CRMDBModel.tCustomerHead" />
+          <EntitySet Name="tInvoiceHeads" EntityType="BISPL_CRMDBModel.tInvoiceHead" />
+          <EntitySet Name="GetCustomerDetails" EntityType="BISPL_CRMDBModel.GetCustomerDetail" />
+          <EntitySet Name="mSLAs" EntityType="BISPL_CRMDBModel.mSLA" />
+          <EntitySet Name="mMessageEMailTemplates" EntityType="BISPL_CRMDBModel.mMessageEMailTemplate" />
+          <EntitySet Name="mTerritories" EntityType="BISPL_CRMDBModel.mTerritory" />
+        </EntityContainer>
+        <EntityType Name="mCustomerType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CompanyID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mSector">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CompanyID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="SP_AcountHistory_Result">
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="InvHeadId" Nullable="false" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+          <Property Type="String" Name="Customer" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="PaymentRecAmount" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="due" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <EntityType Name="tOpeningBalance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FinancialYear" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ReferenceID" />
+          <Property Type="Decimal" Name="OpeningBalance" Precision="18" Scale="2" />
+          <Property Type="String" Name="DrCr" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+        </EntityType>
+        <ComplexType Name="SP_CourseStudentWise_Result">
+          <Property Type="Int64" Name="ID" Nullable="true" />
+          <Property Type="Int64" Name="StudentID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="Int64" Name="CourseID" Nullable="true" />
+          <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastUpdated" Nullable="false" Precision="3" />
+          <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tAddToCartProductDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int64" Name="Sequence" Nullable="false" />
+          <Property Type="Int64" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="ProductPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int64" Name="UOMID" />
+          <Property Type="Decimal" Name="PerUnitDiscount" Nullable="false" Precision="10" Scale="3" />
+          <Property Type="Boolean" Name="IsDiscountPercent" Nullable="false" />
+          <Property Type="Int64" Name="DiscountID" />
+          <Property Type="Decimal" Name="TotalTaxAmount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tCustomerHead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CustomerTypeID" />
+          <Property Type="String" Name="CustomerCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="SectorID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DisplayName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebSite" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TurnOver" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreditDays" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="ConperID" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="BillingAddressID" />
+          <Property Type="Int64" Name="ShippingAddressID" />
+        </EntityType>
+        <EntityType Name="tInvoiceHead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="InvoiceType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="false" />
+          <Property Type="Int64" Name="LeadSourceID" Nullable="false" />
+          <Property Type="String" Name="InvoiceStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPONo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CustomerPODate" Precision="3" />
+          <Property Type="Int64" Name="ParentInvoiceID" />
+          <Property Type="String" Name="DispatchThrough" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExpDispatchDate" Precision="3" />
+          <Property Type="Int64" Name="CampaignID" />
+          <Property Type="Decimal" Name="SubTotal" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="ProductLevelTotalDiscount" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="DiscountOnSubTotal" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="DiscountOnSubTotalPercent" />
+          <Property Type="Decimal" Name="TotalDiscount" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalAfterDiscount" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="ProductLevelTotalTax" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TaxOnTotalAfterDiscount" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalTax" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="ShippingCharges" Precision="18" Scale="2" />
+          <Property Type="String" Name="OtherChargesDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="OtherCharges" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalAmount" Precision="18" Scale="2" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CompanyID" Nullable="false" />
+          <Property Type="Int64" Name="BillingAddressID" />
+          <Property Type="Int64" Name="ShippingAddressID" />
+          <Property Type="String" Name="ConperID" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPrint" />
+          <Property Type="String" Name="SalesExi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsCompleted" />
+          <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" />
+          <Property Type="String" Name="Executive" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GetCustomerDetail">
+          <Key>
+            <PropertyRef Name="Customerid" />
+            <PropertyRef Name="SectorID" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="GroupName" />
+            <PropertyRef Name="CustomerTypeID" />
+            <PropertyRef Name="SectorName" />
+            <PropertyRef Name="TurnOver" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="Customerid" Nullable="false" />
+          <Property Type="Int64" Name="SectorID" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GroupName" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CustomerTypeID" Nullable="false" />
+          <Property Type="String" Name="SectorName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebSite" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TurnOver" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mSLA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="DeptID" />
+          <Property Type="Int64" Name="PrimeDays" />
+          <Property Type="Int64" Name="ExpressDays" />
+          <Property Type="Int64" Name="RegularDays" />
+          <Property Type="Int64" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="Int64" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="mMessageEMailTemplate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ObjectName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="mStatusID" />
+          <Property Type="String" Name="MailType" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MailSubject" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MailBody" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Active" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="0" />
+          <Property Type="Int64" Name="ModifiedBy" />
+          <Property Type="Int64" Name="CompanyID" />
+          <Property Type="Int64" Name="DepartmentID" />
+          <Property Type="Int64" Name="ActivityID" />
+          <Property Type="Int64" Name="MessageID" />
+          <Property Type="String" Name="TemplateTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mTerritory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ParentID" />
+          <Property Type="Int16" Name="Level" />
+          <Property Type="String" Name="GroupTitle" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Territory" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Boolean" Name="IsMandatory" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="StoreCode" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ApprovalLevel" />
+          <Property Type="String" Name="AutoCancel" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="cancelDays" />
+          <Property Type="String" Name="Active" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovalRem" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AutoCancRen" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="AutoRemSchedule" />
+          <Property Type="Int64" Name="ApproRemSchedul" />
+          <Property Type="Boolean" Name="ECommerce" />
+          <Property Type="String" Name="OrderFormat" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="GwcDeliveries" />
+          <Property Type="Int64" Name="MaxDeliveryDays" />
+          <Property Type="Int64" Name="FinApproverID" />
+          <Property Type="Int64" Name="AddressType" />
+          <Property Type="Boolean" Name="PriceChange" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <EntitySetMapping Name="mCustomerTypes"><EntityTypeMapping TypeName="BISPL_CRMDBModel.mCustomerType"><MappingFragment StoreEntitySet="mCustomerType">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+            <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+            <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+            <ScalarProperty Name="Remark" ColumnName="Remark" />
+            <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="mSectors"><EntityTypeMapping TypeName="BISPL_CRMDBModel.mSector"><MappingFragment StoreEntitySet="mSector">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+            <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+            <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+            <ScalarProperty Name="Remark" ColumnName="Remark" />
+            <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_AcountHistory" FunctionName="BISPL_CRMDBModel.Store.SP_AcountHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_AcountHistory_Result">
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvHeadId" ColumnName="InvHeadId" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PaymentRecAmount" ColumnName="PaymentRecAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="due" ColumnName="due" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tOpeningBalances">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tOpeningBalance">
+              <MappingFragment StoreEntitySet="tOpeningBalance">
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DrCr" ColumnName="DrCr" />
+                <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempDatas">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.TempData">
+              <MappingFragment StoreEntitySet="TempData">
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="XmlData" ColumnName="XmlData" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="TempDataID" ColumnName="TempDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tAddToCartProductDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tAddToCartProductDetail">
+              <MappingFragment StoreEntitySet="tAddToCartProductDetail">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TotalTaxAmount" ColumnName="TotalTaxAmount" />
+                <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+                <ScalarProperty Name="IsDiscountPercent" ColumnName="IsDiscountPercent" />
+                <ScalarProperty Name="PerUnitDiscount" ColumnName="PerUnitDiscount" />
+                <ScalarProperty Name="UOMID" ColumnName="UOMID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tCustomerHeads">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tCustomerHead">
+              <MappingFragment StoreEntitySet="tCustomerHead">
+                <ScalarProperty Name="ShippingAddressID" ColumnName="ShippingAddressID" />
+                <ScalarProperty Name="BillingAddressID" ColumnName="BillingAddressID" />
+                <ScalarProperty Name="ConperID" ColumnName="ConperID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreditDays" ColumnName="CreditDays" />
+                <ScalarProperty Name="TurnOver" ColumnName="TurnOver" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tInvoiceHeads">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tInvoiceHead">
+              <MappingFragment StoreEntitySet="tInvoiceHead">
+                <ScalarProperty Name="Executive" ColumnName="Executive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="SalesExi" ColumnName="SalesExi" />
+                <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+                <ScalarProperty Name="ConperID" ColumnName="ConperID" />
+                <ScalarProperty Name="ShippingAddressID" ColumnName="ShippingAddressID" />
+                <ScalarProperty Name="BillingAddressID" ColumnName="BillingAddressID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="OtherCharges" ColumnName="OtherCharges" />
+                <ScalarProperty Name="OtherChargesDescription" ColumnName="OtherChargesDescription" />
+                <ScalarProperty Name="ShippingCharges" ColumnName="ShippingCharges" />
+                <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+                <ScalarProperty Name="TaxOnTotalAfterDiscount" ColumnName="TaxOnTotalAfterDiscount" />
+                <ScalarProperty Name="ProductLevelTotalTax" ColumnName="ProductLevelTotalTax" />
+                <ScalarProperty Name="TotalAfterDiscount" ColumnName="TotalAfterDiscount" />
+                <ScalarProperty Name="TotalDiscount" ColumnName="TotalDiscount" />
+                <ScalarProperty Name="DiscountOnSubTotalPercent" ColumnName="DiscountOnSubTotalPercent" />
+                <ScalarProperty Name="DiscountOnSubTotal" ColumnName="DiscountOnSubTotal" />
+                <ScalarProperty Name="ProductLevelTotalDiscount" ColumnName="ProductLevelTotalDiscount" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="ExpDispatchDate" ColumnName="ExpDispatchDate" />
+                <ScalarProperty Name="DispatchThrough" ColumnName="DispatchThrough" />
+                <ScalarProperty Name="ParentInvoiceID" ColumnName="ParentInvoiceID" />
+                <ScalarProperty Name="CustomerPODate" ColumnName="CustomerPODate" />
+                <ScalarProperty Name="CustomerPONo" ColumnName="CustomerPONo" />
+                <ScalarProperty Name="InvoiceStatus" ColumnName="InvoiceStatus" />
+                <ScalarProperty Name="LeadSourceID" ColumnName="LeadSourceID" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GetCustomerDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.GetCustomerDetail">
+              <MappingFragment StoreEntitySet="GetCustomerDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="TurnOver" ColumnName="TurnOver" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+                <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+                <ScalarProperty Name="Customerid" ColumnName="Customerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mSLAs">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mSLA">
+              <MappingFragment StoreEntitySet="mSLA">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="RegularDays" ColumnName="RegularDays" />
+                <ScalarProperty Name="ExpressDays" ColumnName="ExpressDays" />
+                <ScalarProperty Name="PrimeDays" ColumnName="PrimeDays" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mMessageEMailTemplates">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mMessageEMailTemplate">
+              <MappingFragment StoreEntitySet="mMessageEMailTemplates">
+                <ScalarProperty Name="TemplateTitle" ColumnName="TemplateTitle" />
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MailBody" ColumnName="MailBody" />
+                <ScalarProperty Name="MailSubject" ColumnName="MailSubject" />
+                <ScalarProperty Name="MailType" ColumnName="MailType" />
+                <ScalarProperty Name="mStatusID" ColumnName="mStatusID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mTerritories">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.mTerritory">
+              <MappingFragment StoreEntitySet="mTerritory">
+                <ScalarProperty Name="PriceChange" ColumnName="PriceChange" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="FinApproverID" ColumnName="FinApproverID" />
+                <ScalarProperty Name="MaxDeliveryDays" ColumnName="MaxDeliveryDays" />
+                <ScalarProperty Name="GwcDeliveries" ColumnName="GwcDeliveries" />
+                <ScalarProperty Name="OrderFormat" ColumnName="OrderFormat" />
+                <ScalarProperty Name="ECommerce" ColumnName="ECommerce" />
+                <ScalarProperty Name="ApproRemSchedul" ColumnName="ApproRemSchedul" />
+                <ScalarProperty Name="AutoRemSchedule" ColumnName="AutoRemSchedule" />
+                <ScalarProperty Name="AutoCancRen" ColumnName="AutoCancRen" />
+                <ScalarProperty Name="ApprovalRem" ColumnName="ApprovalRem" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="cancelDays" ColumnName="cancelDays" />
+                <ScalarProperty Name="AutoCancel" ColumnName="AutoCancel" />
+                <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+                <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Territory" ColumnName="Territory" />
+                <ScalarProperty Name="GroupTitle" ColumnName="GroupTitle" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ElegantCRMDataModel" ZoomLevel="56">
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mCustomerType" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mSector" Width="1.5" PointX="2.75" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tOpeningBalance" Width="1.5" PointX="0.75" PointY="3.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.TempData" Width="1.5" PointX="9.375" PointY="8.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tAddToCartProductDetail" Width="1.5" PointX="0.75" PointY="10.75" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tCustomerHead" Width="1.5" PointX="5.2173633525228889" PointY="14.76376470120799" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tInvoiceHead" Width="1.5" PointX="5.625" PointY="0.75" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.GetCustomerDetail" Width="1.5" PointX="11.425281649187804" PointY="0.024089604627382757" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mSLA" Width="1.5" PointX="11.654345612812017" PointY="30.162849887350038" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mMessageEMailTemplate" Width="1.5" PointX="11.437619402742769" PointY="14.019769570799436" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.mTerritory" Width="1.5" PointX="7.9345800745927644" PointY="27.392529679179439" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

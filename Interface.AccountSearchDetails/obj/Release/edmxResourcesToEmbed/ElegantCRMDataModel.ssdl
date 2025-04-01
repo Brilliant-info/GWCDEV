@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mCustomerType" EntityType="BISPL_CRMDBModel.Store.mCustomerType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mMessageEMailTemplates" EntityType="BISPL_CRMDBModel.Store.mMessageEMailTemplates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mSector" EntityType="BISPL_CRMDBModel.Store.mSector" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mSLA" EntityType="BISPL_CRMDBModel.Store.mSLA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tAddToCartProductDetail" EntityType="BISPL_CRMDBModel.Store.tAddToCartProductDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tCustomerHead" EntityType="BISPL_CRMDBModel.Store.tCustomerHead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tInvoiceHead" EntityType="BISPL_CRMDBModel.Store.tInvoiceHead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tOpeningBalance" EntityType="BISPL_CRMDBModel.Store.tOpeningBalance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GetCustomerDetails" EntityType="BISPL_CRMDBModel.Store.GetCustomerDetails" store:Type="Views" store:Schema="dbo" store:Name="GetCustomerDetails">
+      <DefiningQuery>SELECT 
+      [GetCustomerDetails].[Customerid] AS [Customerid], 
+      [GetCustomerDetails].[SectorID] AS [SectorID], 
+      [GetCustomerDetails].[CustomerName] AS [CustomerName], 
+      [GetCustomerDetails].[CompanyType] AS [CompanyType], 
+      [GetCustomerDetails].[GroupName] AS [GroupName], 
+      [GetCustomerDetails].[CustomerTypeID] AS [CustomerTypeID], 
+      [GetCustomerDetails].[SectorName] AS [SectorName], 
+      [GetCustomerDetails].[CustomerCode] AS [CustomerCode], 
+      [GetCustomerDetails].[WebSite] AS [WebSite], 
+      [GetCustomerDetails].[TurnOver] AS [TurnOver], 
+      [GetCustomerDetails].[Active] AS [Active], 
+      [GetCustomerDetails].[ID] AS [ID]
+      FROM [dbo].[GetCustomerDetails] AS [GetCustomerDetails]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="mCustomerType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mMessageEMailTemplates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="100" />
+    <Property Name="mStatusID" Type="bigint" />
+    <Property Name="MailType" Type="varchar" MaxLength="100" />
+    <Property Name="MailSubject" Type="nvarchar(max)" />
+    <Property Name="MailBody" Type="nvarchar(max)" />
+    <Property Name="Active" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="DepartmentID" Type="bigint" />
+    <Property Name="ActivityID" Type="bigint" />
+    <Property Name="MessageID" Type="bigint" />
+    <Property Name="TemplateTitle" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="mSector">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mSLA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeptID" Type="bigint" />
+    <Property Name="PrimeDays" Type="bigint" />
+    <Property Name="ExpressDays" Type="bigint" />
+    <Property Name="RegularDays" Type="bigint" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="StoreCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApprovalLevel" Type="bigint" />
+    <Property Name="AutoCancel" Type="varchar" MaxLength="10" />
+    <Property Name="cancelDays" Type="bigint" />
+    <Property Name="Active" Type="varchar" MaxLength="5" />
+    <Property Name="ApprovalRem" Type="varchar" MaxLength="5" />
+    <Property Name="AutoCancRen" Type="varchar" MaxLength="5" />
+    <Property Name="AutoRemSchedule" Type="bigint" />
+    <Property Name="ApproRemSchedul" Type="bigint" />
+    <Property Name="ECommerce" Type="bit" />
+    <Property Name="OrderFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="GwcDeliveries" Type="bit" />
+    <Property Name="MaxDeliveryDays" Type="bigint" />
+    <Property Name="FinApproverID" Type="bigint" />
+    <Property Name="AddressType" Type="bigint" />
+    <Property Name="PriceChange" Type="bit" />
+  </EntityType>
+  <EntityType Name="tAddToCartProductDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProductDescription" Type="nvarchar(max)" />
+    <Property Name="ProductPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="UOMID" Type="bigint" />
+    <Property Name="PerUnitDiscount" Type="decimal" Nullable="false" Precision="10" Scale="3" />
+    <Property Name="IsDiscountPercent" Type="bit" Nullable="false" />
+    <Property Name="DiscountID" Type="bigint" />
+    <Property Name="TotalTaxAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tCustomerHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerTypeID" Type="bigint" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SectorID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="50" />
+    <Property Name="TurnOver" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CreditDays" Type="int" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="ConperID" Type="varchar" MaxLength="500" />
+    <Property Name="BillingAddressID" Type="bigint" />
+    <Property Name="ShippingAddressID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="xml" Nullable="false" />
+    <Property Name="XmlData" Type="xml" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tInvoiceHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+    <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerHeadID" Type="bigint" Nullable="false" />
+    <Property Name="LeadSourceID" Type="bigint" Nullable="false" />
+    <Property Name="InvoiceStatus" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerPONo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerPODate" Type="datetime" />
+    <Property Name="ParentInvoiceID" Type="bigint" />
+    <Property Name="DispatchThrough" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpDispatchDate" Type="datetime" />
+    <Property Name="CampaignID" Type="bigint" />
+    <Property Name="SubTotal" Type="decimal" Scale="2" />
+    <Property Name="ProductLevelTotalDiscount" Type="decimal" Scale="2" />
+    <Property Name="DiscountOnSubTotal" Type="decimal" Scale="2" />
+    <Property Name="DiscountOnSubTotalPercent" Type="bit" />
+    <Property Name="TotalDiscount" Type="decimal" Scale="2" />
+    <Property Name="TotalAfterDiscount" Type="decimal" Scale="2" />
+    <Property Name="ProductLevelTotalTax" Type="decimal" Scale="2" />
+    <Property Name="TaxOnTotalAfterDiscount" Type="decimal" Scale="2" />
+    <Property Name="TotalTax" Type="decimal" Scale="2" />
+    <Property Name="ShippingCharges" Type="decimal" Scale="2" />
+    <Property Name="OtherChargesDescription" Type="nvarchar(max)" />
+    <Property Name="OtherCharges" Type="decimal" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Scale="2" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="BillingAddressID" Type="bigint" />
+    <Property Name="ShippingAddressID" Type="bigint" />
+    <Property Name="ConperID" Type="varchar" MaxLength="500" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="SalesExi" Type="varchar" MaxLength="50" />
+    <Property Name="IsCompleted" Type="bit" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Executive" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tOpeningBalance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FinancialYear" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" />
+    <Property Name="OpeningBalance" Type="decimal" Scale="2" />
+    <Property Name="DrCr" Type="varchar" MaxLength="2" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GWCDE.dbo.GetCustomerDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="GetCustomerDetails">
+    <Key>
+      <PropertyRef Name="Customerid" />
+      <PropertyRef Name="SectorID" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="GroupName" />
+      <PropertyRef Name="CustomerTypeID" />
+      <PropertyRef Name="SectorName" />
+      <PropertyRef Name="TurnOver" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Customerid" Type="bigint" Nullable="false" />
+    <Property Name="SectorID" Type="bigint" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CompanyType" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupName" Type="varchar" Nullable="false" MaxLength="7" />
+    <Property Name="CustomerTypeID" Type="bigint" Nullable="false" />
+    <Property Name="SectorName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="50" />
+    <Property Name="TurnOver" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Function Name="SP_AcountHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraInvoiceId" Type="varchar" Mode="In" />
+  </Function>
+</Schema>
