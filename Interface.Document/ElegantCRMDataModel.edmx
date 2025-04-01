@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+          <EntitySet Name="tDocument" EntityType="BISPL_CRMDBModel.Store.tDocument" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tDocumentDetail" EntityType="BISPL_CRMDBModel.Store.tDocumentDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tDocument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="varchar" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+          <Property Name="DocumentName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Sequence" Type="bigint" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DocumentDownloadPath" Type="nvarchar(max)" />
+          <Property Name="DocumentSavePath" Type="nvarchar(max)" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+          <Property Name="AccessTo" Type="nvarchar(max)" />
+          <Property Name="ViewAccess" Type="varchar(max)" />
+          <Property Name="DowloadAccess" Type="varchar(max)" />
+          <Property Name="DeleteAccess" Type="varchar(max)" />
+          <Property Name="Active" Type="nvarchar" MaxLength="1" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="CustomerHeadID" Type="bigint" />
+          <Property Name="CompanyID" Type="bigint" />
+          <Property Name="AttachedFile" Type="image" />
+          <Property Name="DocumentType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tDocumentDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReferenceID" Type="bigint" />
+          <Property Name="DocumentID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="xml" Nullable="false" />
+          <Property Name="XmlData" Type="xml" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Function Name="SP_GetDocumentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+          <Parameter Name="paraObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tDocuments" EntityType="BISPL_CRMDBModel.tDocument" />
+          <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+          <EntitySet Name="tDocumentDetails" EntityType="BISPL_CRMDBModel.tDocumentDetail" />
+          <FunctionImport Name="SP_GetDocumentList" ReturnType="Collection(BISPL_CRMDBModel.SP_GetDocumentList_Result)">
+            <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+            <Parameter Name="paraObjectName" Mode="In" Type="String" />
+            <Parameter Name="paraUserID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="tDocument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ObjectName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+          <Property Type="String" Name="DocumentName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sequence" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DocumentDownloadPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DocumentSavePath" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Keywords" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AccessTo" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ViewAccess" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DowloadAccess" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeleteAccess" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Active" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+          <Property Type="Int64" Name="CustomerHeadID" />
+          <Property Type="Int64" Name="CompanyID" />
+          <Property Type="Binary" Name="AttachedFile" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="DocumentType" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TempData">
+          <Key>
+            <PropertyRef Name="TempDataID" />
+          </Key>
+          <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastUpdated" Nullable="false" Precision="3" />
+          <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tDocumentDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ObjectName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ReferenceID" />
+          <Property Type="Int64" Name="DocumentID" />
+        </EntityType>
+        <ComplexType Name="SP_GetDocumentList_Result">
+          <Property Type="Int32" Name="ID" Nullable="true" />
+          <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+          <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="Sequence" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="DocumentDownloadPath" Nullable="true" />
+          <Property Type="String" Name="DocumentSavePath" Nullable="true" />
+          <Property Type="String" Name="FileType" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Keywords" Nullable="true" />
+          <Property Type="String" Name="AccessTo" Nullable="true" />
+          <Property Type="String" Name="ViewAccess" Nullable="true" />
+          <Property Type="String" Name="DowloadAccess" Nullable="true" />
+          <Property Type="String" Name="DeleteAccess" Nullable="true" />
+          <Property Type="String" Name="ViewAccess_Value" Nullable="true" />
+          <Property Type="String" Name="DowloadAccess_Value" Nullable="true" />
+          <Property Type="String" Name="DeleteAccess_Value" Nullable="true" />
+          <Property Type="String" Name="Active" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CustomerHeadID" Nullable="true" />
+          <Property Type="Int64" Name="CompanyID" Nullable="true" />
+          <Property Type="String" Name="DocumentType" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+          <EntitySetMapping Name="tDocuments">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tDocument">
+              <MappingFragment StoreEntitySet="tDocument">
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="AttachedFile" ColumnName="AttachedFile" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DeleteAccess" ColumnName="DeleteAccess" />
+                <ScalarProperty Name="DowloadAccess" ColumnName="DowloadAccess" />
+                <ScalarProperty Name="ViewAccess" ColumnName="ViewAccess" />
+                <ScalarProperty Name="AccessTo" ColumnName="AccessTo" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="DocumentSavePath" ColumnName="DocumentSavePath" />
+                <ScalarProperty Name="DocumentDownloadPath" ColumnName="DocumentDownloadPath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempDatas">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.TempData">
+              <MappingFragment StoreEntitySet="TempData">
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="XmlData" ColumnName="XmlData" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="TempDataID" ColumnName="TempDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tDocumentDetails">
+            <EntityTypeMapping TypeName="BISPL_CRMDBModel.tDocumentDetail">
+              <MappingFragment StoreEntitySet="tDocumentDetail">
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetDocumentList" FunctionName="BISPL_CRMDBModel.Store.SP_GetDocumentList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetDocumentList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DocumentDownloadPath" ColumnName="DocumentDownloadPath" />
+                <ScalarProperty Name="DocumentSavePath" ColumnName="DocumentSavePath" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="AccessTo" ColumnName="AccessTo" />
+                <ScalarProperty Name="ViewAccess" ColumnName="ViewAccess" />
+                <ScalarProperty Name="DowloadAccess" ColumnName="DowloadAccess" />
+                <ScalarProperty Name="DeleteAccess" ColumnName="DeleteAccess" />
+                <ScalarProperty Name="ViewAccess_Value" ColumnName="ViewAccess_Value" />
+                <ScalarProperty Name="DowloadAccess_Value" ColumnName="DowloadAccess_Value" />
+                <ScalarProperty Name="DeleteAccess_Value" ColumnName="DeleteAccess_Value" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ElegantCRMDataModel">
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tDocument" Width="1.5" PointX="0.75" PointY="0.75" Height="5.057109375" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.TempData" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5571907552083326" />
+        <EntityTypeShape EntityType="BISPL_CRMDBModel.tDocumentDetail" Width="1.5" PointX="3.375" PointY="4.75" Height="1.7879850260416674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="POR_vGetInboxData" EntityType="BISPL_CRMDBModel.Store.POR_vGetInboxData" store:Type="Views" store:Schema="dbo" store:Name="POR_vGetInboxData">
+      <DefiningQuery>SELECT 
+      [POR_vGetInboxData].[inboxID] AS [inboxID], 
+      [POR_vGetInboxData].[Date] AS [Date], 
+      [POR_vGetInboxData].[SiteID] AS [SiteID], 
+      [POR_vGetInboxData].[SiteName] AS [SiteName], 
+      [POR_vGetInboxData].[ObjectName] AS [ObjectName], 
+      [POR_vGetInboxData].[Subject] AS [Subject], 
+      [POR_vGetInboxData].[Details] AS [Details], 
+      [POR_vGetInboxData].[Status] AS [Status], 
+      [POR_vGetInboxData].[IsRead] AS [IsRead], 
+      [POR_vGetInboxData].[IsArchive] AS [IsArchive], 
+      [POR_vGetInboxData].[ToUserID] AS [ToUserID], 
+      [POR_vGetInboxData].[FolderName] AS [FolderName]
+      FROM [dbo].[POR_vGetInboxData] AS [POR_vGetInboxData]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'elegantcrm.dbo.POR_vGetInboxData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="POR_vGetInboxData">
+    <Key>
+      <PropertyRef Name="inboxID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="inboxID" Type="bigint" Nullable="false" />
+    <Property Name="Date" Type="varchar" MaxLength="30" />
+    <Property Name="SiteID" Type="bigint" />
+    <Property Name="SiteName" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="200" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" />
+    <Property Name="Details" Type="varchar(max)" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="IsArchive" Type="bit" />
+    <Property Name="ToUserID" Type="bigint" />
+    <Property Name="FolderName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Function Name="SP_GetInboxData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LogInUserID" Type="bigint" Mode="In" />
+    <Parameter Name="IsAll" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetInboxDataOfApproval" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LoginUserID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetInboxRecordByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="bigint" Mode="In" />
+  </Function>
+</Schema>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tDocuments" EntityType="BISPL_CRMDBModel.tDocument" />
+    <EntitySet Name="TempDatas" EntityType="BISPL_CRMDBModel.TempData" />
+    <EntitySet Name="tDocumentDetails" EntityType="BISPL_CRMDBModel.tDocumentDetail" />
+    <FunctionImport Name="SP_GetDocumentList" ReturnType="Collection(BISPL_CRMDBModel.SP_GetDocumentList_Result)">
+      <Parameter Name="paraReferenceID" Mode="In" Type="Int64" />
+      <Parameter Name="paraObjectName" Mode="In" Type="String" />
+      <Parameter Name="paraUserID" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tDocument">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="String" Name="DocumentName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sequence" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DocumentDownloadPath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DocumentSavePath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileType" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Keywords" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AccessTo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ViewAccess" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DowloadAccess" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DeleteAccess" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Active" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LastModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifiedDate" Precision="3" />
+    <Property Type="Int64" Name="CustomerHeadID" />
+    <Property Type="Int64" Name="CompanyID" />
+    <Property Type="Binary" Name="AttachedFile" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="DocumentType" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Type="Int32" Name="TempDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="XmlData" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastUpdated" Nullable="false" Precision="3" />
+    <Property Type="String" Name="SessionID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ObjectName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TableName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tDocumentDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ObjectName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ReferenceID" />
+    <Property Type="Int64" Name="DocumentID" />
+  </EntityType>
+  <ComplexType Name="SP_GetDocumentList_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+    <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="Sequence" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="DocumentDownloadPath" Nullable="true" />
+    <Property Type="String" Name="DocumentSavePath" Nullable="true" />
+    <Property Type="String" Name="FileType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Keywords" Nullable="true" />
+    <Property Type="String" Name="AccessTo" Nullable="true" />
+    <Property Type="String" Name="ViewAccess" Nullable="true" />
+    <Property Type="String" Name="DowloadAccess" Nullable="true" />
+    <Property Type="String" Name="DeleteAccess" Nullable="true" />
+    <Property Type="String" Name="ViewAccess_Value" Nullable="true" />
+    <Property Type="String" Name="DowloadAccess_Value" Nullable="true" />
+    <Property Type="String" Name="DeleteAccess_Value" Nullable="true" />
+    <Property Type="String" Name="Active" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CustomerHeadID" Nullable="true" />
+    <Property Type="Int64" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="DocumentType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_GetInboxData" ReturnType="Collection(BISPL_CRMDBModel.SP_GetInboxData_Result)">
+      <Parameter Name="LogInUserID" Mode="In" Type="Int64" />
+      <Parameter Name="IsAll" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetInboxDataOfApproval" ReturnType="Collection(BISPL_CRMDBModel.SP_GetInboxDataOfApproval_Result)">
+      <Parameter Name="LoginUserID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetInboxRecordByUserID" ReturnType="Collection(BISPL_CRMDBModel.SP_GetInboxRecordByUserID_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="POR_vGetInboxData" EntityType="BISPL_CRMDBModel.POR_vGetInboxData" />
+  </EntityContainer>
+  <ComplexType Name="SP_GetInboxData_Result">
+    <Property Type="Int64" Name="InboxID" Nullable="false" />
+    <Property Type="String" Name="CustomerCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="AccountName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="154" />
+    <Property Type="String" Name="Details" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="TaskRemark" Nullable="true" />
+    <Property Type="String" Name="TaskCreatedBy" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="TaskCreationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Priority" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ECD" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AssignedToUserID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AssignedToName" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="TaskStatus" Nullable="true" MaxLength="102" />
+    <Property Type="String" Name="UpdateTaskRemark" Nullable="true" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+    <Property Type="String" Name="IsRead" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="IsArchive" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="Label" Nullable="true" />
+    <Property Type="String" Name="LabelColor" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsStar" Nullable="true" />
+    <Property Type="Boolean" Name="IsImportant" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetInboxDataOfApproval_Result">
+    <Property Type="DateTime" Name="RequestedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Particulars" Nullable="true" MaxLength="47" />
+    <Property Type="String" Name="RequestedBy" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Site" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="TransID" Nullable="true" />
+    <Property Type="String" Name="TransName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+    <Property Type="String" Name="IsRead" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="IsArchive" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsImportant" Nullable="true" />
+    <Property Type="Boolean" Name="IsStar" Nullable="true" />
+    <Property Type="String" Name="ApprovalStatus" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_GetInboxRecordByUserID_Result">
+    <Property Type="String" Name="InboxDateTime" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="ApprovedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ObjectName" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="true" />
+    <Property Type="String" Name="InboxLabel" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="ApprovalLevel" Nullable="true" />
+    <Property Type="String" Name="RedirectURL" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Boolean" Name="IsArchive" Nullable="true" />
+    <Property Type="Boolean" Name="IsShown" Nullable="true" />
+    <Property Type="Boolean" Name="IsRead" Nullable="true" />
+    <Property Type="String" Name="FlagColor" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="POR_vGetInboxData">
+    <Key>
+      <PropertyRef Name="inboxID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Type="Int64" Name="inboxID" Nullable="false" />
+    <Property Type="String" Name="Date" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="SiteID" />
+    <Property Type="String" Name="SiteName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ObjectName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Subject" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Details" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsRead" />
+    <Property Type="Boolean" Name="IsArchive" />
+    <Property Type="Int64" Name="ToUserID" />
+    <Property Type="String" Name="FolderName" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

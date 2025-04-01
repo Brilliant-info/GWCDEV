@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="tDocument" EntityType="BISPL_CRMDBModel.Store.tDocument" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tDocumentDetail" EntityType="BISPL_CRMDBModel.Store.tDocumentDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tDocument">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="DocumentName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="DocumentDownloadPath" Type="nvarchar(max)" />
+    <Property Name="DocumentSavePath" Type="nvarchar(max)" />
+    <Property Name="FileType" Type="nvarchar" MaxLength="100" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+    <Property Name="AccessTo" Type="nvarchar(max)" />
+    <Property Name="ViewAccess" Type="varchar(max)" />
+    <Property Name="DowloadAccess" Type="varchar(max)" />
+    <Property Name="DeleteAccess" Type="varchar(max)" />
+    <Property Name="Active" Type="nvarchar" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CustomerHeadID" Type="bigint" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="AttachedFile" Type="image" />
+    <Property Name="DocumentType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tDocumentDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" />
+    <Property Name="DocumentID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="xml" Nullable="false" />
+    <Property Name="XmlData" Type="xml" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Function Name="SP_GetDocumentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+    <Parameter Name="paraObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

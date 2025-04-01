@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+    <FunctionImportMapping FunctionImportName="SP_GetInboxData" FunctionName="BISPL_CRMDBModel.Store.SP_GetInboxData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetInboxData_Result">
+          <ScalarProperty Name="InboxID" ColumnName="InboxID" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="TaskRemark" ColumnName="TaskRemark" />
+          <ScalarProperty Name="TaskCreatedBy" ColumnName="TaskCreatedBy" />
+          <ScalarProperty Name="TaskCreationDate" ColumnName="TaskCreationDate" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ECD" ColumnName="ECD" />
+          <ScalarProperty Name="AssignedToUserID" ColumnName="AssignedToUserID" />
+          <ScalarProperty Name="AssignedToName" ColumnName="AssignedToName" />
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+          <ScalarProperty Name="UpdateTaskRemark" ColumnName="UpdateTaskRemark" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="LabelColor" ColumnName="LabelColor" />
+          <ScalarProperty Name="IsStar" ColumnName="IsStar" />
+          <ScalarProperty Name="IsImportant" ColumnName="IsImportant" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetInboxDataOfApproval" FunctionName="BISPL_CRMDBModel.Store.SP_GetInboxDataOfApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetInboxDataOfApproval_Result">
+          <ScalarProperty Name="RequestedDate" ColumnName="RequestedDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="TransName" ColumnName="TransName" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsImportant" ColumnName="IsImportant" />
+          <ScalarProperty Name="IsStar" ColumnName="IsStar" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetInboxRecordByUserID" FunctionName="BISPL_CRMDBModel.Store.SP_GetInboxRecordByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetInboxRecordByUserID_Result">
+          <ScalarProperty Name="InboxDateTime" ColumnName="InboxDateTime" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="InboxLabel" ColumnName="InboxLabel" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="RedirectURL" ColumnName="RedirectURL" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="IsShown" ColumnName="IsShown" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="FlagColor" ColumnName="FlagColor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="POR_vGetInboxData">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.POR_vGetInboxData">
+        <MappingFragment StoreEntitySet="POR_vGetInboxData">
+          <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+          <ScalarProperty Name="ToUserID" ColumnName="ToUserID" />
+          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="inboxID" ColumnName="inboxID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

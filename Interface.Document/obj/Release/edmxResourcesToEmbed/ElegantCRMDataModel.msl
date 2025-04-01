@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BISPL_CRMDBModelStoreContainer" CdmEntityContainer="BISPL_CRMDBEntities">
+    <EntitySetMapping Name="tDocuments">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.tDocument">
+        <MappingFragment StoreEntitySet="tDocument">
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="AttachedFile" ColumnName="AttachedFile" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DeleteAccess" ColumnName="DeleteAccess" />
+          <ScalarProperty Name="DowloadAccess" ColumnName="DowloadAccess" />
+          <ScalarProperty Name="ViewAccess" ColumnName="ViewAccess" />
+          <ScalarProperty Name="AccessTo" ColumnName="AccessTo" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="DocumentSavePath" ColumnName="DocumentSavePath" />
+          <ScalarProperty Name="DocumentDownloadPath" ColumnName="DocumentDownloadPath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempDatas">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.TempData">
+        <MappingFragment StoreEntitySet="TempData">
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="XmlData" ColumnName="XmlData" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="TempDataID" ColumnName="TempDataID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDocumentDetails">
+      <EntityTypeMapping TypeName="BISPL_CRMDBModel.tDocumentDetail">
+        <MappingFragment StoreEntitySet="tDocumentDetail">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDocumentList" FunctionName="BISPL_CRMDBModel.Store.SP_GetDocumentList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BISPL_CRMDBModel.SP_GetDocumentList_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DocumentDownloadPath" ColumnName="DocumentDownloadPath" />
+          <ScalarProperty Name="DocumentSavePath" ColumnName="DocumentSavePath" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="AccessTo" ColumnName="AccessTo" />
+          <ScalarProperty Name="ViewAccess" ColumnName="ViewAccess" />
+          <ScalarProperty Name="DowloadAccess" ColumnName="DowloadAccess" />
+          <ScalarProperty Name="DeleteAccess" ColumnName="DeleteAccess" />
+          <ScalarProperty Name="ViewAccess_Value" ColumnName="ViewAccess_Value" />
+          <ScalarProperty Name="DowloadAccess_Value" ColumnName="DowloadAccess_Value" />
+          <ScalarProperty Name="DeleteAccess_Value" ColumnName="DeleteAccess_Value" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="CustomerHeadID" ColumnName="CustomerHeadID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
