@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BISPL_CRMDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ErrorLogs" EntityType="BISPL_CRMDBModel.ErrorLog" />
+  </EntityContainer>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Data" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GetType" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InnerException" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Source" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateTime" />
+    <Property Type="String" Name="UserID" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

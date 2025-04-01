@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BISPL_CRMDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BISPL_CRMDBModelStoreContainer">
+    <EntitySet Name="mEngine" EntityType="BISPL_CRMDBModel.Store.mEngine" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mStatus" EntityType="BISPL_CRMDBModel.Store.mStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mTerritory" EntityType="BISPL_CRMDBModel.Store.mTerritory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tAddress" EntityType="BISPL_CRMDBModel.Store.tAddress" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TempData" EntityType="BISPL_CRMDBModel.Store.TempData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tGRN" EntityType="BISPL_CRMDBModel.Store.tGRN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tGRNDetail" EntityType="BISPL_CRMDBModel.Store.tGRNDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tInventoryDetail" EntityType="BISPL_CRMDBModel.Store.tInventoryDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tInventoryHead" EntityType="BISPL_CRMDBModel.Store.tInventoryHead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tMIN" EntityType="BISPL_CRMDBModel.Store.tMIN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tMINDetail" EntityType="BISPL_CRMDBModel.Store.tMINDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tOpeningBalance" EntityType="BISPL_CRMDBModel.Store.tOpeningBalance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPartReqDetail" EntityType="BISPL_CRMDBModel.Store.tPartReqDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPartRequisition" EntityType="BISPL_CRMDBModel.Store.tPartRequisition" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tVendorHead" EntityType="BISPL_CRMDBModel.Store.tVendorHead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="v_GetEngineDetails" EntityType="BISPL_CRMDBModel.Store.v_GetEngineDetails" store:Type="Views" store:Schema="dbo" store:Name="v_GetEngineDetails">
+      <DefiningQuery>SELECT 
+      [v_GetEngineDetails].[ID] AS [ID], 
+      [v_GetEngineDetails].[Territory] AS [Territory], 
+      [v_GetEngineDetails].[SiteID] AS [SiteID], 
+      [v_GetEngineDetails].[Container] AS [Container], 
+      [v_GetEngineDetails].[GeneratorModel] AS [GeneratorModel], 
+      [v_GetEngineDetails].[GeneratorSerial] AS [GeneratorSerial], 
+      [v_GetEngineDetails].[EngineModel] AS [EngineModel], 
+      [v_GetEngineDetails].[EngineSerial] AS [EngineSerial], 
+      [v_GetEngineDetails].[DateRecevied] AS [DateRecevied], 
+      [v_GetEngineDetails].[TransformerSerial] AS [TransformerSerial], 
+      [v_GetEngineDetails].[TransformerDateRecevied] AS [TransformerDateRecevied], 
+      [v_GetEngineDetails].[Remark] AS [Remark], 
+      [v_GetEngineDetails].[CreatedBy] AS [CreatedBy], 
+      [v_GetEngineDetails].[CreationDate] AS [CreationDate], 
+      [v_GetEngineDetails].[LastModifiedBy] AS [LastModifiedBy], 
+      [v_GetEngineDetails].[LastModifiedDate] AS [LastModifiedDate]
+      FROM [dbo].[v_GetEngineDetails] AS [v_GetEngineDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_GetSiteDetails" EntityType="BISPL_CRMDBModel.Store.v_GetSiteDetails" store:Type="Views" store:Schema="dbo" store:Name="v_GetSiteDetails">
+      <DefiningQuery>SELECT 
+      [v_GetSiteDetails].[ID] AS [ID], 
+      [v_GetSiteDetails].[AddressID] AS [AddressID], 
+      [v_GetSiteDetails].[ParentID] AS [ParentID], 
+      [v_GetSiteDetails].[Level] AS [Level], 
+      [v_GetSiteDetails].[GroupTitle] AS [GroupTitle], 
+      [v_GetSiteDetails].[Territory] AS [Territory], 
+      [v_GetSiteDetails].[CreationDate] AS [CreationDate], 
+      [v_GetSiteDetails].[LastModifiedBy] AS [LastModifiedBy], 
+      [v_GetSiteDetails].[LastModifiedDate] AS [LastModifiedDate], 
+      [v_GetSiteDetails].[IsMandatory] AS [IsMandatory], 
+      [v_GetSiteDetails].[CreatedBy] AS [CreatedBy], 
+      [v_GetSiteDetails].[ObjectName] AS [ObjectName], 
+      [v_GetSiteDetails].[ReferenceID] AS [ReferenceID], 
+      [v_GetSiteDetails].[AddressType] AS [AddressType], 
+      [v_GetSiteDetails].[Sequence] AS [Sequence], 
+      [v_GetSiteDetails].[AddressLine1] AS [AddressLine1], 
+      [v_GetSiteDetails].[AddressLine2] AS [AddressLine2], 
+      [v_GetSiteDetails].[AddressLine3] AS [AddressLine3], 
+      [v_GetSiteDetails].[RouteID] AS [RouteID], 
+      [v_GetSiteDetails].[Landmark] AS [Landmark], 
+      [v_GetSiteDetails].[County] AS [County], 
+      [v_GetSiteDetails].[State] AS [State], 
+      [v_GetSiteDetails].[City] AS [City], 
+      [v_GetSiteDetails].[Zipcode] AS [Zipcode], 
+      [v_GetSiteDetails].[PhoneNo] AS [PhoneNo], 
+      [v_GetSiteDetails].[FaxNo] AS [FaxNo], 
+      [v_GetSiteDetails].[EmailID] AS [EmailID], 
+      [v_GetSiteDetails].[IsDefault] AS [IsDefault], 
+      [v_GetSiteDetails].[Active] AS [Active], 
+      [v_GetSiteDetails].[Address_CreatedBy] AS [Address_CreatedBy], 
+      [v_GetSiteDetails].[Address_CreationDate] AS [Address_CreationDate], 
+      [v_GetSiteDetails].[Address_LastModifiedBy] AS [Address_LastModifiedBy], 
+      [v_GetSiteDetails].[Address_LastModifiedDate] AS [Address_LastModifiedDate], 
+      [v_GetSiteDetails].[CompanyID] AS [CompanyID], 
+      [v_GetSiteDetails].[BillingID] AS [BillingID], 
+      [v_GetSiteDetails].[ShippingID] AS [ShippingID], 
+      [v_GetSiteDetails].[Zone] AS [Zone], 
+      [v_GetSiteDetails].[SubZone] AS [SubZone]
+      FROM [dbo].[v_GetSiteDetails] AS [v_GetSiteDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetInventoryVendorDetails" EntityType="BISPL_CRMDBModel.Store.vGetInventoryVendorDetails" store:Type="Views" store:Schema="dbo" store:Name="vGetInventoryVendorDetails">
+      <DefiningQuery>SELECT 
+      [vGetInventoryVendorDetails].[PONo] AS [PONo], 
+      [vGetInventoryVendorDetails].[InvHeadId] AS [InvHeadId], 
+      [vGetInventoryVendorDetails].[VendorId] AS [VendorId], 
+      [vGetInventoryVendorDetails].[Vendor] AS [Vendor], 
+      [vGetInventoryVendorDetails].[Date] AS [Date], 
+      [vGetInventoryVendorDetails].[Type] AS [Type], 
+      [vGetInventoryVendorDetails].[Amount] AS [Amount]
+      FROM [dbo].[vGetInventoryVendorDetails] AS [vGetInventoryVendorDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vGetUserProfileList" EntityType="BISPL_CRMDBModel.Store.vGetUserProfileList" store:Type="Views" store:Schema="dbo" store:Name="vGetUserProfileList">
+      <DefiningQuery>SELECT 
+      [vGetUserProfileList].[userID] AS [userID], 
+      [vGetUserProfileList].[userName] AS [userName], 
+      [vGetUserProfileList].[deptname] AS [deptname], 
+      [vGetUserProfileList].[desiName] AS [desiName], 
+      [vGetUserProfileList].[EmailID] AS [EmailID], 
+      [vGetUserProfileList].[MobileNo] AS [MobileNo], 
+      [vGetUserProfileList].[Active] AS [Active], 
+      [vGetUserProfileList].[EmployeeID] AS [EmployeeID]
+      FROM [dbo].[vGetUserProfileList] AS [vGetUserProfileList]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tGRNDetail_tGRN" Association="BISPL_CRMDBModel.Store.FK_tGRNDetail_tGRN">
+      <End Role="tGRN" EntitySet="tGRN" />
+      <End Role="tGRNDetail" EntitySet="tGRNDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tMINDetail_tMIN" Association="BISPL_CRMDBModel.Store.FK_tMINDetail_tMIN">
+      <End Role="tMIN" EntitySet="tMIN" />
+      <End Role="tMINDetail" EntitySet="tMINDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPartReqDetail_tPartReqMaster" Association="BISPL_CRMDBModel.Store.FK_tPartReqDetail_tPartReqMaster">
+      <End Role="tPartRequisition" EntitySet="tPartRequisition" />
+      <End Role="tPartReqDetail" EntitySet="tPartReqDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="mEngine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SiteID" Type="bigint" Nullable="false" />
+    <Property Name="Container" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="GeneratorModel" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="GeneratorSerial" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="EngineModel" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="EngineSerial" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="DateRecevied" Type="datetime" Nullable="false" />
+    <Property Name="TransformerSerial" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TransformerDateRecevied" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="varchar" MaxLength="250" />
+    <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mTerritory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+  </EntityType>
+  <EntityType Name="tAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine3" Type="nvarchar" MaxLength="100" />
+    <Property Name="RouteID" Type="bigint" />
+    <Property Name="Landmark" Type="nvarchar" MaxLength="50" />
+    <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDefault" Type="varchar" MaxLength="1" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="BillingID" Type="bigint" />
+    <Property Name="ShippingID" Type="bigint" />
+    <Property Name="Zone" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubZone" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TempData">
+    <Key>
+      <PropertyRef Name="TempDataID" />
+    </Key>
+    <Property Name="TempDataID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="xml" Nullable="false" />
+    <Property Name="XmlData" Type="xml" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tGRN">
+    <Key>
+      <PropertyRef Name="GRN_ID" />
+    </Key>
+    <Property Name="GRN_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReferenceObjectName" Type="varchar" MaxLength="100" />
+    <Property Name="ReferenceID" Type="bigint" />
+    <Property Name="SiteID" Type="bigint" />
+    <Property Name="ReceiptDt" Type="datetime" />
+    <Property Name="ReceiptByUserID" Type="bigint" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+    <Property Name="PONo" Type="varchar" MaxLength="50" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDt" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="bigint" />
+    <Property Name="LastModifiedDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tGRNDetail">
+    <Key>
+      <PropertyRef Name="GRND_ID" />
+    </Key>
+    <Property Name="GRND_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GRN_ID" Type="bigint" />
+    <Property Name="Prod_ID" Type="bigint" />
+    <Property Name="ReceiptQty" Type="decimal" Scale="2" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tInventoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryHeadID" Type="bigint" Nullable="false" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Rate" Type="decimal" Scale="2" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tInventoryHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="PONo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="VendorID" Type="bigint" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tMIN">
+    <Key>
+      <PropertyRef Name="MIN_ID" />
+    </Key>
+    <Property Name="MIN_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MIN_No" Type="varchar" MaxLength="50" />
+    <Property Name="SiteID" Type="bigint" />
+    <Property Name="IssueAgeinst" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" />
+    <Property Name="IssueDate" Type="datetime" />
+    <Property Name="IssueByUserID" Type="bigint" />
+    <Property Name="IssueToEntityName" Type="varchar" MaxLength="100" />
+    <Property Name="IssueToEntityID" Type="bigint" />
+    <Property Name="AirwayBill" Type="varchar" MaxLength="500" />
+    <Property Name="SupplierCoNo" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingType" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingDate" Type="datetime" />
+    <Property Name="ExpectedDelDate" Type="datetime" />
+    <Property Name="TransporterName" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDt" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="bigint" />
+    <Property Name="LastModifiedDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tMINDetail">
+    <Key>
+      <PropertyRef Name="MIND_ID" />
+    </Key>
+    <Property Name="MIND_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MIN_ID" Type="bigint" />
+    <Property Name="PRD_ID" Type="bigint" />
+    <Property Name="Prod_ID" Type="bigint" />
+    <Property Name="IssueQty" Type="bigint" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="Prod_Rate" Type="decimal" Precision="13" Scale="2" />
+  </EntityType>
+  <EntityType Name="tOpeningBalance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FinancialYear" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" />
+    <Property Name="OpeningBalance" Type="decimal" Scale="2" />
+    <Property Name="DrCr" Type="varchar" MaxLength="2" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="TransID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tPartReqDetail">
+    <Key>
+      <PropertyRef Name="PRD_ID" />
+    </Key>
+    <Property Name="PRD_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PRM_ID" Type="bigint" />
+    <Property Name="Prod_ID" Type="bigint" />
+    <Property Name="ProdDescription" Type="varchar" MaxLength="500" />
+    <Property Name="RequestQty" Type="decimal" Scale="2" />
+    <Property Name="RemaningQty" Type="decimal" Scale="2" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="ProbableShippingDt" Type="datetime" />
+    <Property Name="Container" Type="varchar" MaxLength="100" />
+    <Property Name="GenerateModel" Type="varchar" MaxLength="100" />
+    <Property Name="EngineSerial" Type="varchar" MaxLength="100" />
+    <Property Name="FailureHrs" Type="bigint" />
+    <Property Name="FailureNature" Type="varchar" MaxLength="100" />
+    <Property Name="FailureCauses" Type="varchar" MaxLength="100" />
+    <Property Name="EngineModel" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tPartRequisition">
+    <Key>
+      <PropertyRef Name="PRM_ID" />
+    </Key>
+    <Property Name="PRM_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SiteID" Type="bigint" />
+    <Property Name="RequestedBy" Type="bigint" />
+    <Property Name="RequestType" Type="varchar" MaxLength="100" />
+    <Property Name="RequestedDate" Type="datetime" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+    <Property Name="IsSubmit" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDt" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="bigint" />
+    <Property Name="LastModifiedDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tVendorHead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="BillingAddressID" Type="bigint" />
+    <Property Name="ShippingAddressID" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'elegantcrm.dbo.v_GetEngineDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_GetEngineDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SiteID" />
+      <PropertyRef Name="Container" />
+      <PropertyRef Name="GeneratorModel" />
+      <PropertyRef Name="GeneratorSerial" />
+      <PropertyRef Name="EngineModel" />
+      <PropertyRef Name="EngineSerial" />
+      <PropertyRef Name="DateRecevied" />
+      <PropertyRef Name="TransformerSerial" />
+      <PropertyRef Name="TransformerDateRecevied" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreationDate" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="SiteID" Type="bigint" Nullable="false" />
+    <Property Name="Container" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="GeneratorModel" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="GeneratorSerial" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="EngineModel" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="EngineSerial" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="DateRecevied" Type="datetime" Nullable="false" />
+    <Property Name="TransformerSerial" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TransformerDateRecevied" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="varchar" MaxLength="250" />
+    <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'elegantcrm.dbo.v_GetSiteDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="v_GetSiteDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="AddressID" />
+      <PropertyRef Name="ObjectName" />
+      <PropertyRef Name="ReferenceID" />
+      <PropertyRef Name="AddressType" />
+      <PropertyRef Name="AddressLine1" />
+      <PropertyRef Name="County" />
+      <PropertyRef Name="State" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="Address_CreatedBy" />
+      <PropertyRef Name="Address_CreationDate" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="AddressID" Type="bigint" Nullable="false" />
+    <Property Name="ParentID" Type="bigint" />
+    <Property Name="Level" Type="smallint" />
+    <Property Name="GroupTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Territory" Type="varchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="IsMandatory" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sequence" Type="bigint" />
+    <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine3" Type="nvarchar" MaxLength="100" />
+    <Property Name="RouteID" Type="bigint" />
+    <Property Name="Landmark" Type="nvarchar" MaxLength="50" />
+    <Property Name="County" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDefault" Type="varchar" MaxLength="1" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="Address_CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address_CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Address_LastModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address_LastModifiedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+    <Property Name="BillingID" Type="bigint" />
+    <Property Name="ShippingID" Type="bigint" />
+    <Property Name="Zone" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubZone" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'elegantcrm.dbo.vGetInventoryVendorDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGetInventoryVendorDetails">
+    <Key>
+      <PropertyRef Name="InvHeadId" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="PONo" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvHeadId" Type="bigint" Nullable="false" />
+    <Property Name="VendorId" Type="bigint" />
+    <Property Name="Vendor" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="Amount" Type="decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'elegantcrm.dbo.vGetUserProfileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vGetUserProfileList">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="deptname" />
+      <PropertyRef Name="desiName" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="userID" Type="bigint" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="158" />
+    <Property Name="deptname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="desiName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tGRNDetail_tGRN">
+    <End Role="tGRN" Type="BISPL_CRMDBModel.Store.tGRN" Multiplicity="0..1" />
+    <End Role="tGRNDetail" Type="BISPL_CRMDBModel.Store.tGRNDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tGRN">
+        <PropertyRef Name="GRN_ID" />
+      </Principal>
+      <Dependent Role="tGRNDetail">
+        <PropertyRef Name="GRN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tMINDetail_tMIN">
+    <End Role="tMIN" Type="BISPL_CRMDBModel.Store.tMIN" Multiplicity="0..1" />
+    <End Role="tMINDetail" Type="BISPL_CRMDBModel.Store.tMINDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMIN">
+        <PropertyRef Name="MIN_ID" />
+      </Principal>
+      <Dependent Role="tMINDetail">
+        <PropertyRef Name="MIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPartReqDetail_tPartReqMaster">
+    <End Role="tPartRequisition" Type="BISPL_CRMDBModel.Store.tPartRequisition" Multiplicity="0..1" />
+    <End Role="tPartReqDetail" Type="BISPL_CRMDBModel.Store.tPartReqDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPartRequisition">
+        <PropertyRef Name="PRM_ID" />
+      </Principal>
+      <Dependent Role="tPartReqDetail">
+        <PropertyRef Name="PRM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_GetIssueData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetPartReqData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetProductListForInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+    <Parameter Name="paraUserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProductListForPartRequisition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paraReferenceID" Type="bigint" Mode="In" />
+    <Parameter Name="paraSiteID" Type="bigint" Mode="In" />
+  </Function>
+</Schema>
